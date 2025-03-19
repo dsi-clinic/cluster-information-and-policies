@@ -1,0 +1,25 @@
+{% case site.locale %}
+  {% when "en" %}
+    {% assign locale_text = "You are here:" %}
+  {% else %}
+    {% assign locale_text = "You are here:" %}
+{% endcase %}
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="{{ site.url }}{{ site.baseurl }}/" itemprop="item"><span itemprop="name">Home</span></a>
+      <meta itemprop="position" content="1" />
+    </li>
+    {% if page.collection %}
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="{{ site.url }}{{ site.baseurl }}/{{ page.collection | downcase }}/" itemprop="item"><span itemprop="name">{{ page.collection | capitalize }}</span></a>
+        <meta itemprop="position" content="2" />
+      </li>
+    {% endif %}
+    <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <span itemprop="name">{{ page.title }}</span>
+      <meta itemprop="position" content="{% if page.collection %}3{% else %}2{% endif %}" />
+    </li>
+  </ol>
+</nav>

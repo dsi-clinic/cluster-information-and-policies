@@ -1,0 +1,53 @@
+{% if site.footer_scripts %}
+  {% for script in site.footer_scripts %}
+    <script src="{{ script | relative_url }}"></script>
+  {% endfor %}
+{% else %}
+  <script src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
+{% endif %}
+
+<script>
+  // Back to top button
+  var btnToTop = document.createElement("a");
+  btnToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
+  btnToTop.className = "back-to-top";
+  btnToTop.href = "#";
+  document.body.appendChild(btnToTop);
+
+  window.addEventListener("scroll", function() {
+    if (window.pageYOffset > 300) {
+      btnToTop.style.display = "block";
+    } else {
+      btnToTop.style.display = "none";
+    }
+  });
+
+  btnToTop.addEventListener("click", function(e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+{% if site.search == true or page.layout == "search" %}
+  {%- assign search_provider = site.search_provider | default: "lunr" -%}
+  {%- case search_provider -%}
+    {%- when "lunr" -%}
+      {% include_cached search/lunr-search-scripts.html %}
+    {%- when "google" -%}
+      {% include_cached search/google-search-scripts.html %}
+    {%- when "algolia" -%}
+      {% include_cached search/algolia-search-scripts.html %}
+  {%- endcase -%}
+{% endif %}
+
+{% include analytics.html %}
+{% include /comments-providers/scripts.html %}
+
+{% if site.after_footer_scripts %}
+  {% for script in site.after_footer_scripts %}
+    <script src="{{ script | relative_url }}"></script>
+  {% endfor %}
+{% endif %}

@@ -1,0 +1,91 @@
+# Site settings
+title: UChicago DSI Cluster Information
+description: Information and policies for the UChicago Data Science Institute cluster
+url: "" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-include-cache
+
+# Theme settings
+theme: minimal-mistakes-jekyll
+
+# Minimal Mistakes settings
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Site structure
+include:
+  - _pages
+  - documents
+
+# Collections
+collections:
+  resources:
+    output: true
+    permalink: /:collection/:path/
+  policies:
+    output: true
+    permalink: /:collection/:path/
+  tools:
+    output: true
+    permalink: /:collection/:path/
+
+# Default layouts
+defaults:
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+  # _resources
+  - scope:
+      path: ""
+      type: resources
+    values:
+      layout: single
+      author_profile: false
+      sidebar:
+        nav: "resources"
+  # _policies
+  - scope:
+      path: ""
+      type: policies
+    values:
+      layout: single
+      author_profile: false
+      sidebar:
+        nav: "policies"
+  # _tools
+  - scope:
+      path: ""
+      type: tools
+    values:
+      layout: single
+      author_profile: false
+      sidebar:
+        nav: "tools"
+
+# Navigation
+# Enable breadcrumbs
+breadcrumbs: true
+
+# Main links displayed in the masthead
+header:
+  image: /assets/images/dsi-header.png
+  og_image: /assets/images/dsi-logo.webp
+  
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/dsi-clinic"

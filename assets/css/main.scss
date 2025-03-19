@@ -1,0 +1,220 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+/* Custom styles */
+:root {
+  --uchicago-maroon: #800000;
+  --uchicago-grey: #666666;
+}
+
+/* UChicago Banner */
+.uchicago-banner {
+  background-color: white;
+  border-bottom: 1px solid #f2f3f3;
+  padding-bottom: 30px;
+  padding-top: 40px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.uchicago-banner-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.uchicago-banner-logo {
+  width: 80%;
+  max-width: 1200px;
+  height: auto;
+}
+
+.masthead {
+  background-color: var(--uchicago-maroon);
+  color: white;
+}
+
+.masthead__inner-wrap nav {
+  background-color: var(--uchicago-maroon);
+}
+
+.masthead__menu-item a {
+  color: white !important;
+}
+
+.site-title {
+  color: white !important;
+  font-weight: bold;
+}
+
+/* Override default link styling for site title */
+.greedy-nav .site-title {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.page__footer {
+  background-color: var(--uchicago-maroon) !important;
+}
+
+.page__footer, 
+.page__footer-custom span,
+.page__footer a,
+.page__footer-copyright {
+  color: white !important;
+}
+
+.footer-institution {
+  font-weight: bold;
+  font-size: 1.1em;
+  letter-spacing: 0.5px;
+}
+
+.btn--primary {
+  background-color: var(--uchicago-maroon) !important;
+}
+
+.site-logo img {
+  max-height: 3rem;
+}
+
+.feature__item {
+  margin-bottom: 2em;
+  border: 1px solid #f2f3f3;
+  border-radius: 4px;
+  padding: 1em;
+}
+
+.feature__item-teaser img {
+  max-width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.archive__item-body {
+  text-align: center;
+}
+
+.page__hero--overlay {
+  padding: 3em 0;
+}
+
+.page__hero--overlay .wrapper {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2em;
+  border-radius: 4px;
+}
+
+/* Collection layout improvements */
+.archive__item {
+  position: relative;
+  margin-bottom: 2em;
+  padding: 1em;
+  border: 1px solid #f2f3f3;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.125);
+  transition: box-shadow 0.3s ease;
+}
+
+.archive__item:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.archive__item-title {
+  margin-top: 0;
+  border-bottom: 1px solid #f2f3f3;
+  padding-bottom: 0.5em;
+}
+
+.archive__item-excerpt {
+  margin-top: 1em;
+  font-size: 0.9em;
+}
+
+/* UChicago specific styling */
+h2 {
+  color: var(--uchicago-maroon);
+}
+
+.toc {
+  background-color: #f3f3f3;
+  border-radius: 4px;
+}
+
+.toc .nav__title {
+  background-color: var(--uchicago-maroon);
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--uchicago-maroon);
+  padding: 1em;
+  border-radius: 50%;
+  display: none;
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.back-to-top:hover {
+  background-color: #600000;
+}
+
+/* Home page styling */
+.home-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.home-content h1 {
+  color: var(--uchicago-maroon);
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.feature-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2em 0;
+}
+
+.feature-item {
+  flex: 1;
+  min-width: 250px;
+  margin: 1em;
+  padding: 1.5em;
+  border: 1px solid #f2f3f3;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.feature-item h2 {
+  margin-top: 0;
+}
+
+.home-content-text {
+  margin-top: 3em;
+  border-top: 1px solid #f2f3f3;
+  padding-top: 2em;
+}
