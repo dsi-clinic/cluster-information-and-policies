@@ -1,0 +1,8 @@
+# Local development settings
+# This file is only used when running the site locally
+
+# Override the base URL for local development
+url: "http://localhost:4000"
+
+# Disable some production-only features
+livereload: true

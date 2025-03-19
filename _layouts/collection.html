@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% elsif page.header.video.id and page.header.video.provider %}
+  {% include page__hero_video.html %}
+{% endif %}
+
+{% comment %}
+  <!-- Breadcrumbs removed to avoid redundancy with header -->
+{% endcomment %}
+
+<div id="main" role="main">
+  {% include sidebar.html %}
+
+  <div class="archive">
+    {% unless page.header.overlay_color or page.header.overlay_image %}
+      <h1 id="page-title" class="page__title">{{ page.title }}</h1>
+    {% endunless %}
+
+    {{ content }}
+
+    <div class="entries-{{ page.entries_layout | default: 'list' }}">
+      {% for post in site[page.collection] %}
+        <div class="archive__item">
+          <h2 class="archive__item-title no_toc" itemprop="headline">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h2>
+          {% if post.excerpt %}
+            <div class="archive__item-excerpt">
+              {{ post.excerpt | markdownify | strip_html | truncate: 160 }}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

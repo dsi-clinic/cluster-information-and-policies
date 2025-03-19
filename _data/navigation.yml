@@ -1,0 +1,37 @@
+# Main navigation links
+main:
+  - title: "Home"
+    url: /
+  - title: "Resources"
+    url: /resources/
+  - title: "Policies"
+    url: /policies/
+  - title: "Tools"
+    url: /tools/
+  - title: "FAQ"
+    url: /faq/
+
+# Sidebar navigation for Resources section
+resources:
+  - title: Resources
+    children:
+      - title: "Cluster Information"
+        url: /resources/cluster-information/
+      - title: "Monitor Status"
+        url: /resources/monitor-status/
+
+# Sidebar navigation for Policies section
+policies:
+  - title: Policies
+    children:
+      - title: "General Policies"
+        url: /policies/general/
+      - title: "Purchasing Policies"
+        url: /policies/purchasing/
+
+# Sidebar navigation for Tools section
+tools:
+  - title: Tools
+    children:
+      - title: "DSI Quota"
+        url: /tools/dsiquota/
