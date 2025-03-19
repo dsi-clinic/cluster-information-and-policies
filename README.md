@@ -6,10 +6,10 @@ This repository contains the Jekyll-based website for information regarding the 
 
 The website is organized into several sections:
 
-- [Resources](/resources/): Information about the cluster's hardware and capabilities
-- [Policies](/policies/): General usage and purchasing policies
-- [Tools](/tools/): Useful tools and commands for interacting with the cluster
-- [FAQ](/faq/): Frequently asked questions about the cluster
+- [Resources](https://dsi-clinic.github.io/cluster-information-and-policies/resources/): Information about the cluster's hardware and capabilities
+- [Policies](https://dsi-clinic.github.io/cluster-information-and-policies/policies/): General usage and purchasing policies
+- [Tools](https://dsi-clinic.github.io/cluster-information-and-policies/tools/): Useful tools and commands for interacting with the cluster
+- [FAQ](https://dsi-clinic.github.io/cluster-information-and-policies/faq/): Frequently asked questions about the cluster
 
 ## Development
 

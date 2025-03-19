@@ -3,6 +3,7 @@
 
 # Override the base URL for local development
 url: "http://localhost:4000"
+baseurl: ""  # Empty baseurl for local development
 
 # Disable some production-only features
 livereload: true

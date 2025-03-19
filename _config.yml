@@ -1,7 +1,8 @@
 # Site settings
 title: UChicago DSI Cluster Information
 description: Information and policies for the UChicago Data Science Institute cluster
-url: "" # the base hostname & protocol for your site
+url: "https://dsi-clinic.github.io" # the base hostname & protocol for your site
+baseurl: "/cluster-information-and-policies" # the subpath of your site, e.g. /blog
 
 # Build settings
 markdown: kramdown

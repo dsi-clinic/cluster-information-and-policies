@@ -10,4 +10,4 @@ Sharing your login credentials with another user is a violation of the cluster u
 
 ### Scratch space
 
-Each user is allocated 50GB of scratch space on `/net/scratch` and `/net/scratch2` (for a total fo 100GB). For information on how to check your usage, as well as the usage of projects, please refer to the [dsiquota command](./dsiquota.md).
+Each user is allocated 50GB of scratch space on `/net/scratch` and `/net/scratch2` (for a total fo 100GB). For information on how to check your usage, as well as the usage of projects, please refer to the [dsiquota command]({{ site.baseurl }}/tools/dsiquota/).
