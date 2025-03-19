@@ -7,3 +7,5 @@ This document is a work in progress
 ### Usage
 
 Sharing your login credentials with another user is a violation of the cluster use and will result in an automatic suspension of your account.
+
+### Scratch space

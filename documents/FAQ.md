@@ -60,3 +60,6 @@ The cluster is designed to efficiently process the most common use cases. We con
 
 Yes. In SLURM, this is called OverSubscribe. If a user is not utilizing a resource (GPU, CPU, or MEM) completely, then SLURM will assign jobs to the portion of your allocation that is unused.
 
+### How do I check how much space I'm using in either a project or home directory? 
+
+Users are only allowed a certain amount of space 
