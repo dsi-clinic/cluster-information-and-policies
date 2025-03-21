@@ -7,17 +7,19 @@ This document contains an overview of the policies around (a) purchasing additio
 
 <!-- toc -->
 
-- [Welcome to the DSI Investor Guidelines](#welcome-to-the-dsi-investor-guidelines)
-- [Overview and Framework](#overview-and-framework)
-- [Minimum Investment for Priority Hardware Solution:](#minimum-investment-for-priority-hardware-solution)
-- [Current minimum hardware](#current-minimum-hardware)
-- [Definition of Priority](#definition-of-priority)
-- [Lifecycle Polices](#lifecycle-polices)
-  * [Duration of Access for Grants with a Defined Timeline:](#duration-of-access-for-grants-with-a-defined-timeline)
-  * [Handling Grants without a Defined Timeline](#handling-grants-without-a-defined-timeline)
-- [Other Purchasing Considerations](#other-purchasing-considerations)
-  * [Troubleshooting and Support](#troubleshooting-and-support)
-- [Additional Questions](#additional-questions)
+- [Cluster Purchase Guide](#cluster-purchase-guide)
+  - [Table of Contents](#table-of-contents)
+  - [Welcome to the DSI Investor Guidelines](#welcome-to-the-dsi-investor-guidelines)
+  - [Overview and Framework](#overview-and-framework)
+  - [Minimum Investment for Priority Hardware Solution:](#minimum-investment-for-priority-hardware-solution)
+  - [Current minimum hardware](#current-minimum-hardware)
+  - [Definition of Priority](#definition-of-priority)
+  - [Lifecycle Polices](#lifecycle-polices)
+    - [Duration of Access for Grants with a Defined Timeline:](#duration-of-access-for-grants-with-a-defined-timeline)
+    - [Handling Grants without a Defined Timeline](#handling-grants-without-a-defined-timeline)
+  - [Other Purchasing Considerations](#other-purchasing-considerations)
+    - [Troubleshooting and Support](#troubleshooting-and-support)
+  - [Additional Questions](#additional-questions)
 
 <!-- tocstop -->
 
@@ -36,7 +38,7 @@ Our framework:
 
 This document contains a description of the implementation details of this framework.
 
-## Minimum Investment for Priority Hardware Solution:
+## Minimum Investment for Priority Hardware Solution
 
 Depending on the current configuration of the cluster there are limitations to what types of hardware can be added. 
 
@@ -81,7 +83,7 @@ There are a number of different factors that effect the lifecycle of any purchas
 
 * End of Life Policy: The retirement of any GPU model from our cluster will align with NVIDIA's end-of-life policies for that particular model. We will proactively monitor these guidelines to ensure our hardware remains current and supported.
 
-### Duration of Access for Grants with a Defined Timeline:
+### Duration of Access for Grants with a Defined Timeline
 
 * Access Duration: Investors who meet the investment requirements will receive priority access to the hardware they fund for the duration of the grant. 
 

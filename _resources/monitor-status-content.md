@@ -18,5 +18,5 @@ From each node these attempt to list files within certain network drives, making
 
 ### Curl from the login nodes
 
-These alerts verify that the login nodes have access to the internet. Every two minutes it attempts to ping a website and, if the internet connection is working it will show okay.
+These alerts verify that the login nodes have access to the Internet. Every two minutes it attempts to ping a website and, if the Internet connection is working it will show okay.
 
