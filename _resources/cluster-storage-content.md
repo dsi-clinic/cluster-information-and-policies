@@ -13,8 +13,7 @@ The current file system uses NFS/ZFS which has some blocking elements that affec
   - Limited to 50GB
   - Mirrored across all of the login nodes
   - Can be found at `/home/[cnet-id]`
-  - You can check your quota usage with the [`dsiquota` tool]({% link _tools/dsiquota.md %})
-
+  
 ## Project folders:
   - Project folders can be found in either `/net/projects/[project-name]` or `/net/projects2/[project-name]`
   - These are (generally) shared around a specific project or dataset that will be used repeatedly by multiple users with a specific focus area
