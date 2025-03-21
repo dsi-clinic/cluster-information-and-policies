@@ -4,6 +4,57 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/dsi-logo.webp">
 <link rel="manifest" href="/assets/site.webmanifest">
 
+<!-- Mermaid diagram support -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      flowchart: {
+        useMaxWidth: true,
+        htmlLabels: true,
+        curve: 'basis'
+      },
+      securityLevel: 'loose',
+      fontFamily: 'Arial, sans-serif'
+    });
+  });
+</script>
+<style>
+  /* Custom styling for Mermaid diagrams */
+  .mermaid {
+    font-size: 16px !important;
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+  }
+  .mermaid svg {
+    width: 100% !important;
+    max-width: 1000px !important;
+    height: auto !important;
+    min-height: 300px !important;
+  }
+  .mermaid .node rect, 
+  .mermaid .node circle, 
+  .mermaid .node ellipse, 
+  .mermaid .node polygon, 
+  .mermaid .node path {
+    fill: #f5f5f5 !important;
+    stroke: #333 !important;
+    stroke-width: 2px !important;
+  }
+  .mermaid .edgePath .path {
+    stroke: #333 !important;
+    stroke-width: 2px !important;
+  }
+  .mermaid .label {
+    font-family: Arial, sans-serif !important;
+    color: #333 !important;
+    font-size: 16px !important;
+  }
+</style>
+
 <!-- end custom head snippets -->
 
 <!-- UChicago branding styles -->
@@ -36,5 +87,78 @@
 
 .site-logo img {
   max-height: 3rem;
+}
+
+.footer-update {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* FAQ Styling Options */
+/* Option 1: Box with border and background */
+.faq-answer {
+  background-color: #f8f8f8;
+  border-left: 4px solid var(--uchicago-maroon);
+  padding: 15px;
+  margin: 15px 0 30px 0;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Option 2: Card style */
+.faq-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.faq-card-question {
+  background-color: #f0f0f0;
+  padding: 15px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-card-answer {
+  padding: 15px;
+  background-color: white;
+}
+
+/* Option 3: Accordion style (toggling would require JavaScript) */
+.faq-accordion-question {
+  background-color: var(--uchicago-maroon);
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  margin-top: 15px;
+}
+
+.faq-accordion-answer {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-top: none;
+  margin-bottom: 15px;
+  border-radius: 0 0 5px 5px;
+}
+
+/* Option 4: UChicago-themed callout */
+.uchicago-callout {
+  background-color: rgba(128, 0, 0, 0.05);
+  border: 1px solid rgba(128, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.uchicago-callout-header {
+  color: var(--uchicago-maroon);
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(128, 0, 0, 0.2);
+  padding-bottom: 5px;
 }
 </style>

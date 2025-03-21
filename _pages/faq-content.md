@@ -3,9 +3,7 @@
 This document contains some frequently asked questions about the cluster and its abilities. This document does not contain support information.
 
 ## Table of Contents
-<!-- do not change TOC, generated from script -->
-<!-- `npx markdown-toc -i FAQ.md` -->
-<!-- tried automating but ran afoul of branch protections.>
+<!-- TOC is auto-generated -->
 
 <!-- toc -->
 
@@ -35,11 +33,11 @@ If you are looking for compute resources and are more generally affiliated with 
 
 ### I want to install additional software.
 
-Please utilize MiniConda or MicroMamba to create a custom software environment tailored to your needs.
+Please use MiniConda or MicroMamba to create a custom software environment tailored to your needs.
 
 ### Is there a way to use the cluster via a GUI?
 
-You maybe able to set up X11 forwarding for using software that requires a GUI. This is not the intended use of the cluster and while users are allowed to access X11 forwarding, it is not supported behavior. You can find a brief "How-to" [here](https://github.com/dsi-clinic/the-clinic/blob/main/tutorials/X11.md).
+You may be able to set up X11 forwarding for using software that requires a GUI. This is not the intended use of the cluster and while users are allowed to access X11 forwarding, it is not supported behavior. You can find a brief "How-to" [here](https://github.com/dsi-clinic/the-clinic/blob/main/tutorials/X11.md).
 
 ### The current time limit on jobs is too low for what I want to do. Can I increase the job time limit? 
 
@@ -51,10 +49,10 @@ No. The current concurrency limit is set to maximize the cluster's performance g
 
 ### I feel like the cluster isn't working for me. Can we set up any additional configurations to allow for my specific job?
 
-The cluster is designed to efficiently process the most common use cases. We constantly monitor cluster performance and think through ways to increase _overall_ performance. Given our limited resources we do not have the bandwidth to accommodate, implement and monitor additional configurations. If you have a specific use case which is not being efficiently handled by the current configuration there are two options:
+The cluster is designed to efficiently process the most common use cases. We constantly monitor cluster performance and think through ways to increase _overall_ performance. Given our limited resources we do not have the bandwidth to accommodate, implement and monitor additional configurations. If you have a specific use case that is not being efficiently handled by the current configuration there are two options:
 
   1. Use an alternative compute resources (such as [AWS](https://aws.amazon.com/), [GCP](https://cloud.google.com/) or [UChicago's RCC](https://rcc.uchicago.edu/)).
-  2. Purchase specific compute within the guidelines listed [here](./cluster_purchasing_policies.md). For allocated resources we are able to implement alternative QOS policies.
+  2. Purchase specific compute within the guidelines listed [here]({% link _policies/purchasing.md %}). For allocated resources we are able to implement alternative QOS policies.
 
 ### There are processes not owned by me running on the GPU that I reserved. Is this expected? 
 
@@ -62,4 +60,6 @@ Yes. In SLURM, this is called OverSubscribe. If a user is not utilizing a resour
 
 ### How do I check how much space I'm using in either a project or home directory? 
 
-Users are only allowed a certain amount of space 
+<div class="faq-answer">
+Users are allocated limited space on home directories (50GB) and scratch space (50GB per location). To check your current usage, use the `dsiquota` command. See the detailed instructions in the [DSI Quota Tool]({% link _tools/dsiquota.md %}) documentation.
+</div>

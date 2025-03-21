@@ -2,9 +2,7 @@
 
 The command `dsiquota` provides information on the current space use and available space remaining for different storage resources on the cluster. 
 
-To use the command simply type 
-
-`dsiquota` [ARGS] which will return your use and the allotment that you have access to
+To use the command, simply type `dsiquota [ARGS]` which will return your usage and available space allocation.
 
 ### Home drive 
 
@@ -45,16 +43,16 @@ In this example, the `spun-hyper` project is on `project2` which means that if y
 
 ### Checking Scratch and Scratch 2
 
-To check an individuals use of the scratch drives use the commands:
+To check an individual's use of the scratch drives, use the following commands:
 
-```
+```bash
 ~$ dsiquota --scratch
 ```
 
 and
 
-```
-dsiquota --scratch2
+```bash
+~$ dsiquota --scratch2
 ```
 
-these commands will return the current usage and limit on an individual's `scratch` locations.
+These commands will return the current usage and limit on an individual's `scratch` locations.

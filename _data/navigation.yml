@@ -17,6 +17,8 @@ resources:
     children:
       - title: "Cluster Information"
         url: /resources/cluster-information/
+      - title: "Cluster Storage"
+        url: /resources/cluster-storage/
       - title: "Monitor Status"
         url: /resources/monitor-status/
 

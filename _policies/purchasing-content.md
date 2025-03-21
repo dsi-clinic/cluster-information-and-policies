@@ -3,9 +3,7 @@
 This document contains an overview of the policies around (a) purchasing additional equipment for the DSI cluster and (b) the priorities that we can grant on that provisioned hardware.
 
 ## Table of Contents
-<!-- do not change TOC, generated from script -->
-<!-- `npx markdown-toc -i cluster_purchasing_policies.md` -->
-<!-- tried automating but ran afoul of branch protections.>
+<!-- TOC is auto-generated -->
 
 <!-- toc -->
 
@@ -44,7 +42,7 @@ Depending on the current configuration of the cluster there are limitations to w
 
 The minimum investment required to gain priority access to hardware is approximately $100,000. However, the specific hardware specifications fluctuate due to current technological trends and market availability.
 
-As of winter 2024, this investment looks like the follow, with a total cost of roughly \$115,000:
+As of winter 2024, this investment looks like the following, with a total cost of roughly $115,000:
 
 * 4x Nvidia H100 80GB GPUs
 * 2x Intel LGA4677 CPUs
@@ -59,7 +57,7 @@ As of Winter 2024, the following types of GPUs are allowed and not-allowed to be
 
 | Allowable | Not Allowed |
 | --- | --- |
-| <ul><li>H100</li><li>A100</li><li>L405S</li><li>A40 (Getting a bit long in the tooth)</li></ul> | <ul><li>4090</li></ul> | 
+| - H100<br>- A100<br>- L405S<br>- A40 (Getting a bit long in the tooth) | - 4090 | 
 
 There are a number of different reasons that hardware may not be allowed. We will try to keep this up to date regarding why certain decisions were made
 

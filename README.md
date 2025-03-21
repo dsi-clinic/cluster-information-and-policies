@@ -2,20 +2,11 @@
 
 This repository contains the Jekyll-based website for information regarding the DSI's GPU-based cluster. The site provides information about cluster resources, policies, and tools.
 
-## Website Content
-
-The website is organized into several sections:
-
-- [Resources](https://dsi-clinic.github.io/cluster-information-and-policies/resources/): Information about the cluster's hardware and capabilities
-- [Policies](https://dsi-clinic.github.io/cluster-information-and-policies/policies/): General usage and purchasing policies
-- [Tools](https://dsi-clinic.github.io/cluster-information-and-policies/tools/): Useful tools and commands for interacting with the cluster
-- [FAQ](https://dsi-clinic.github.io/cluster-information-and-policies/faq/): Frequently asked questions about the cluster
-
 ## Development
 
 ### Prerequisites
 
-You can run this website using Docker. Make sure you have Docker installed on your system.
+You can run this website using Docker (and `make`). Make sure you have Docker installed on your system.
 
 ### Running Locally
 
@@ -70,11 +61,3 @@ Content is stored in Markdown files within the `documents/` directory. After upd
 ## Deployment
 
 This site is configured to be deployed using GitHub Pages. When changes are pushed to the main branch, GitHub will automatically build and deploy the site.
-
-## For Support
-
-NOTE: This repository does not contain _support_ information or tutorials for using the cluster. 
-
-For support information please start [here](https://github.com/dsi-clinic/the-clinic/blob/main/tutorials/slurm.md). 
-
-If the document above does not answer your questions please contact the DSI techstaff either through slack or email.

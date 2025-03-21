@@ -5,8 +5,6 @@ This document contains some frequently asked questions about the cluster and its
 ## Table of Contents
 <!-- do not change TOC, generated from script -->
 <!-- `npx markdown-toc -i FAQ.md` -->
-<!-- tried automating but ran afoul of branch protections.>
-
 <!-- toc -->
 
 - [Questions](#questions)
@@ -62,4 +60,4 @@ Yes. In SLURM, this is called OverSubscribe. If a user is not utilizing a resour
 
 ### How do I check how much space I'm using in either a project or home directory? 
 
-Users are only allowed a certain amount of space 
+Users are only allowed a certain amount of space on different directors. If you would like to see how much space you are using in a specific location, refer to the [`dsiquota` tool]({% link _tools/dsiquota.md %}).

@@ -14,7 +14,7 @@ These monitors verify that there is more than 30GB free on each of the root file
 
 ### File listing from login nodes
 
-From each node these attempt to list files within certain network drives, making sure that it takes less than 30 seconds to complete the `ls` command. These are done every two minutes. The prefix on the alert is the node attempting the file listing while the suffix represents the directory being listed.
+From each node these attempt to list files within certain network drives, making sure that it takes less than 30 seconds to complete the `ls` command. These are done every two minutes. The prefix on each alert indicates the node attempting the file listing while the suffix represents the directory being listed.
 
 ### Curl from the login nodes
 
