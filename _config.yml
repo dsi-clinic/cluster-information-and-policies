@@ -38,6 +38,10 @@ collections:
   tools:
     output: true
     permalink: /:collection/:path/
+  howto:
+    output: true
+    permalink: /:collection/:path/
+
 
 # Default layouts
 defaults:
@@ -75,6 +79,15 @@ defaults:
       author_profile: false
       sidebar:
         nav: "tools"
+  # _howto
+  - scope:
+      path: ""
+      type: howto
+    values:
+      layout: single
+      author_profile: false
+      sidebar:
+        nav: "howto"
 
 # Navigation
 # Enable breadcrumbs

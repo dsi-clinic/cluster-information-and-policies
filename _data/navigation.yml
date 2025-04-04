@@ -10,6 +10,9 @@ main:
     url: /tools/
   - title: "FAQ"
     url: /faq/
+  - title: "HOWTO"
+    url: /howto/
+
 
 # Sidebar navigation for Resources section
 resources:
@@ -37,3 +40,10 @@ tools:
     children:
       - title: "DSI Quota"
         url: /tools/dsiquota/
+
+# Sidebar navigation for howto section
+howto:
+  - title: How To
+    children:
+      - title: "Change CUDA Versions"
+        url: /howto/change-cuda-version 
