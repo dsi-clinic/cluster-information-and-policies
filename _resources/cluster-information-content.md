@@ -1,4 +1,4 @@
-## DSI Cluster Information (as of May 2024)
+## DSI Cluster Information (as of May 2025)
 
 This document contains specification information on the DSI Cluster. The table shows the total available resources on the cluster. Some resources, however, are reserved for specific research initiatives and grants of principal investigators.
 
