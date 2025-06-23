@@ -18,7 +18,7 @@ The current file system uses NFS/ZFS which has some blocking elements that affec
   - Project folders can be found in either `/net/projects/[project-name]` or `/net/projects2/[project-name]`
   - These are (generally) shared around a specific project or dataset that will be used repeatedly by multiple users with a specific focus area
   - This data is backed up with the expectation that it is recoverable in case of system failure
-  - Project folders are created by techstaff
+  - Project folders are created by DSI Techstaff
   - When requesting a project folder, please include who the project lead is as well as the amount of space required
   - These are designed for longer-term (but not permanent) storage
 
@@ -27,7 +27,7 @@ The current file system uses NFS/ZFS which has some blocking elements that affec
   - This is _ephemeral_ storage, meaning that the space should be used for temporary storage while working on projects
   - Any file that has not been used in more than 60 days will be automatically deleted
   - Scratch is not designed for recovery. If there is a system failure, data on scratch is not designed to be restored
-  - Users are allotted 50GB of scratch space. They can request more by emailing techstaff
+  - Users are allotted 50GB of scratch space. They can request more by emailing DSI Techstaff
 
 # Best Practices
 
@@ -68,13 +68,13 @@ graph TB
 
 # FAQ
 
-### Can techstaff put together a shared data resource, such as joint hosting of a number of LLMs? 
+### Can DSI Techstaff put together a shared data resource, such as joint hosting of a number of LLMs? 
 
 <div class="faq-answer">
-Unfortunately this is out of bounds for techstaff for a number of reasons:
+Unfortunately this is out of bounds for DSI Techstaff for a number of reasons:
 <ul>
 <li>Maintaining and managing such a storage space takes time. Deciding which assets are included, not included and handling ongoing changes to such a dataset is not straightforward.</li>
-<li>The purpose of the cluster is for data in use in active research, it is not for long term storage. Unless someone is actively working in a specific research area (which techstaff is not) designating what data can be deleted and what data should be kept is impossible. The cluster does not have infinite storage and we want to avoid situations where data grows without control and pruning.</li>
+<li>The purpose of the cluster is for data in use in active research, it is not for long term storage. Unless someone is actively working in a specific research area (which DSI Techstaff is not) designating what data can be deleted and what data should be kept is impossible. The cluster does not have infinite storage and we want to avoid situations where data grows without control and pruning.</li>
 <li>If there are multiple teams working on a common dataset then there is nothing stopping them from identifying a maintainer who is willing to <strong>both</strong> prune unused data as well as keep the current data aligned with active research and then creating a project folder to put them in and updating the permissions appropriately.</li>
 <li>Finally, the current storage infrastructure (this is on the roadmap to change) uses NFS/ZFS which has some properties that limit the effectiveness of shared files. Specifically, multiple users reading the same file at the same time can cause slow down.</li>
 </ul>

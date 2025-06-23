@@ -55,7 +55,7 @@ For up-to-date information on the minimum required specifications, please contac
 
 ## Current minimum hardware
 
-As of Winter 2024, the following types of GPUs are allowed and not-allowed to be purchased for the cluster. Note that this list is not comprehensive, if there are any questions about particular types of GPUs please contact techstaff.
+As of Winter 2024, the following types of GPUs are allowed and not-allowed to be purchased for the cluster. Note that this list is not comprehensive, if there are any questions about particular types of GPUs please contact DSI Techstaff.
 
 | Allowable | Not Allowed |
 | --- | --- |
