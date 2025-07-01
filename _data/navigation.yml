@@ -1,49 +1,16 @@
-# Main navigation links
+# This file defines the structure of your site's navigation.
+# It's used by _includes/sidebar.html to build the sidebar.
+
 main:
   - title: "Home"
-    url: /
-  - title: "Resources"
-    url: /resources/
+    url: "/"
   - title: "Policies"
-    url: /policies/
-  - title: "Tools"
-    url: /tools/
-  - title: "FAQ"
-    url: /faq/
-  - title: "HOWTO"
-    url: /howto/
-
-
-# Sidebar navigation for Resources section
-resources:
-  - title: Resources
-    children:
-      - title: "Cluster Information"
-        url: /resources/cluster-information/
-      - title: "Cluster Storage"
-        url: /resources/cluster-storage/
-      - title: "Monitor Status"
-        url: /resources/monitor-status/
-
-# Sidebar navigation for Policies section
-policies:
-  - title: Policies
     children:
       - title: "General Policies"
-        url: /policies/general/
+        url: "/policies/general/"
       - title: "Purchasing Policies"
-        url: /policies/purchasing/
-
-# Sidebar navigation for Tools section
-tools:
-  - title: Tools
+        url: "/policies/purchasing/"
+  - title: "Tools"
     children:
-      - title: "DSI Quota"
-        url: /tools/dsiquota/
-
-# Sidebar navigation for howto section
-howto:
-  - title: How To
-    children:
-      - title: "Change CUDA Versions"
-        url: /howto/change-cuda-version 
+      - title: "dsiquota Tool"
+        url: "/tools/dsiquota/" # Assumes permalink for the dsiquota tool page
