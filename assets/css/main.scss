@@ -21,7 +21,7 @@
   border-bottom: 1px solid #f2f3f3;
   padding-bottom: 30px;
   padding-top: 40px;
-  margin-top: var(--masthead-height); /* Push down below fixed masthead */
+  margin-top: var(--masthead-height);
   width: 100%;
 }
 
@@ -40,7 +40,7 @@
   height: auto;
 }
 
-/* Fixed masthead */
+/* Fixed masthead with left-aligned title */
 .masthead {
   background-color: var(--uchicago-maroon);
   color: white;
@@ -52,23 +52,21 @@
   z-index: 1030;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Ensures the inner container aligns to the left */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
+  justify-content: center; /* center the inner-wrap container itself */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .masthead__inner-wrap {
   max-width: 1280px;
   width: 100%;
-  padding: 0 2rem; /* This creates the space on the left and right */
+  padding: 0 2rem;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Aligns the menu/nav to the left */
-  text-align: left;
-  font-weight: bold;
+  justify-content: flex-start; /* align title to the left */
 }
 
 .masthead__inner-wrap nav {
-  background-color: transparent; /* Remove internal nav background */
+  background-color: transparent;
 }
 
 .masthead__menu-item a {
@@ -81,15 +79,16 @@
 }
 
 .greedy-nav {
-  margin: 0;
-  display: flex; /* Ensure it's a flex container */
-  justify-content: flex-start; /* This is the key property for left-alignment */
+  margin: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   width: 100%;
 }
 
 .greedy-nav .site-title {
-  margin: 0; /* Remove any default margins */
-  padding: 0; /* Remove any default padding */
+  margin: 0;
+  padding: 0;
   font-weight: bold;
   font-size: 1.2rem;
   color: white;
@@ -102,6 +101,7 @@
   padding-top: var(--masthead-height);
 }
 
+/* Footer */
 .page__footer {
   background-color: var(--uchicago-maroon) !important;
 }
@@ -119,6 +119,7 @@
   letter-spacing: 0.5px;
 }
 
+/* Primary Button */
 .btn--primary {
   background-color: var(--uchicago-maroon) !important;
 }
@@ -127,6 +128,7 @@
   max-height: 3rem;
 }
 
+/* Feature Box */
 .feature__item {
   margin-bottom: 2em;
   border: 1px solid #f2f3f3;
@@ -144,6 +146,7 @@
   text-align: center;
 }
 
+/* Page Hero Overlay */
 .page__hero--overlay {
   padding: 3em 0;
 }
@@ -154,6 +157,7 @@
   border-radius: 4px;
 }
 
+/* Archive Item Cards */
 .archive__item {
   position: relative;
   margin-bottom: 2em;
@@ -179,10 +183,12 @@
   font-size: 0.9em;
 }
 
+/* Typography */
 h2 {
   color: var(--uchicago-maroon);
 }
 
+/* Table of Contents */
 .toc {
   background-color: #f3f3f3;
   border-radius: 4px;
@@ -192,6 +198,7 @@ h2 {
   background-color: var(--uchicago-maroon);
 }
 
+/* Back to Top Button */
 .back-to-top {
   position: fixed;
   bottom: 2em;
@@ -210,6 +217,7 @@ h2 {
   background-color: #600000;
 }
 
+/* Homepage */
 .home-content {
   max-width: 1280px;
   margin: 0 auto;
