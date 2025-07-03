@@ -5,12 +5,14 @@
 @charset "utf-8";
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
+@import "minimal-mistakes"; // Main theme partials
+@import "sidebar";
 
 /* Custom styles */
 :root {
   --uchicago-maroon: #800000;
   --uchicago-grey: #666666;
+  --masthead-height: 60px;
 }
 
 /* UChicago Banner */
@@ -19,7 +21,7 @@
   border-bottom: 1px solid #f2f3f3;
   padding-bottom: 30px;
   padding-top: 40px;
-  margin-top: 10px;
+  margin-top: var(--masthead-height); /* Push down below fixed masthead */
   width: 100%;
 }
 
@@ -38,44 +40,73 @@
   height: auto;
 }
 
+/* Fixed masthead */
 .masthead {
   background-color: var(--uchicago-maroon);
   color: white;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.masthead__inner-wrap nav {
-  background-color: var(--uchicago-maroon);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--masthead-height);
+  z-index: 1030;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Ensures the inner container aligns to the left */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
 }
 
 .masthead__inner-wrap {
-  justify-content: flex-end; /* Aligns content to the right */
-  align-items: center;      /* Vertically centers items for a cleaner look */
+  max-width: 1280px;
+  width: 100%;
+  padding: 0 2rem; /* This creates the space on the left and right */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Aligns the menu/nav to the left */
+  text-align: left;
+  font-weight: bold;
+}
+
+.masthead__inner-wrap nav {
+  background-color: transparent; /* Remove internal nav background */
 }
 
 .masthead__menu-item a {
   color: white !important;
 }
 
-
-
 .site-title {
   color: white !important;
   font-weight: bold;
 }
 
-/* Override default link styling for site title */
-.greedy-nav .site-title {
+.greedy-nav {
   margin: 0;
-  padding: 10px 0;
+  display: flex; /* Ensure it's a flex container */
+  justify-content: flex-start; /* This is the key property for left-alignment */
+  width: 100%;
+}
+
+.greedy-nav .site-title {
+  margin: 0; /* Remove any default margins */
+  padding: 0; /* Remove any default padding */
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+  display: block;
+}
+
+/* Offset content below masthead */
+.main--with-sidebar {
+  margin-left: 260px;
+  padding-top: var(--masthead-height);
 }
 
 .page__footer {
   background-color: var(--uchicago-maroon) !important;
 }
 
-.page__footer, 
+.page__footer,
 .page__footer-custom span,
 .page__footer a,
 .page__footer-copyright {
@@ -123,19 +154,18 @@
   border-radius: 4px;
 }
 
-/* Collection layout improvements */
 .archive__item {
   position: relative;
   margin-bottom: 2em;
   padding: 1em;
   border: 1px solid #f2f3f3;
   border-radius: 4px;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.125);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
   transition: box-shadow 0.3s ease;
 }
 
 .archive__item:hover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 .archive__item-title {
@@ -149,7 +179,6 @@
   font-size: 0.9em;
 }
 
-/* UChicago specific styling */
 h2 {
   color: var(--uchicago-maroon);
 }
@@ -163,7 +192,6 @@ h2 {
   background-color: var(--uchicago-maroon);
 }
 
-/* Back to top button */
 .back-to-top {
   position: fixed;
   bottom: 2em;
@@ -182,7 +210,6 @@ h2 {
   background-color: #600000;
 }
 
-/* Home page styling */
 .home-content {
   max-width: 1280px;
   margin: 0 auto;
@@ -210,12 +237,12 @@ h2 {
   border: 1px solid #f2f3f3;
   border-radius: 4px;
   text-align: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
 }
 
 .feature-item:hover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 .feature-item h2 {

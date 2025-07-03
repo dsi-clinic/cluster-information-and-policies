@@ -1,19 +1,16 @@
----
-# Empty front matter tells Jekyll to process this file
----
 
 /* Basic Sidebar Styling */
 .sidebar {
   position: fixed;
-  top: 0;
+  top: var(--masthead-height); /* Start below fixed masthead only */
+  overflow-x: hidden;
   left: 0;
   bottom: 0;
-  width: 260px; /* Adjust width as needed */
-  background-color: #f8f9fa; /* A light grey background */
-  border-right: 1px solid #dee2e6; /* A subtle border */
-  padding-top: 60px; /* Space for the top banner */
-  overflow-y: auto; /* Allow scrolling for long menus */
-  z-index: 1000; /* Ensure it's above content */
+  width: 260px;
+  background-color: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+  overflow-y: auto;
+  z-index: 1000;
 }
 
 .sidebar-nav {
@@ -33,20 +30,20 @@
 .sidebar-nav a {
   display: block;
   padding: 0.5rem 1rem;
-  color: #343a40; /* Dark text color */
+  color: #343a40;
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .sidebar-nav a:hover {
-  background-color: #e9ecef; /* Light hover effect */
+  background-color: #e9ecef;
   color: #000;
 }
 
 /* Parent Item Styling (with dropdown) */
 .sidebar-nav li.parent > a {
-  font-weight: bold; /* Make top-level items bold */
+  font-weight: bold;
   position: relative;
 }
 
@@ -58,13 +55,13 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 0.8em;
-  color: #6c757d; /* A muted color for the icon */
+  color: #6c757d;
   transition: color 0.2s ease-in-out;
 }
 
 /* Sub-menu (Dropdown) Styling */
 .sidebar-nav li ul {
-  padding-left: 1rem; /* Indent sub-items */
+  padding-left: 1rem;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
@@ -72,28 +69,24 @@
 
 .sidebar-nav li:hover > ul,
 .sidebar-nav li.active-parent > ul {
-  max-height: 500px; /* A large enough value to show all items */
+  max-height: 500px;
   transition: max-height 0.5s ease-in;
 }
 
 .sidebar-nav li ul a {
   font-weight: normal;
   font-size: 0.9em;
-  padding-left: 1.5rem; /* Further indent sub-item text */
+  padding-left: 1.5rem;
 }
 
 /* Active Item Highlighting */
 .sidebar-nav li.active > a,
 .sidebar-nav li.active-parent > a {
-  background-color: #800000; /* UChicago Maroon */
-  color: #ffffff; /* White text */
+  background-color: #800000;
+  color: #ffffff;
 }
 
 /* Keep icon color consistent on active parent */
 .sidebar-nav li.active-parent > a::after {
   color: #ffffff;
-}
-
-.main--with-sidebar {
-  margin-left: 260px; /* Same as sidebar width */
 }
