@@ -54,15 +54,6 @@
   align-items: center;      /* Vertically centers items for a cleaner look */
 }
 
-/* Hide navigation from masthead and adjust layout */
-.greedy-nav {
-  /* Force-hide nav links in the masthead as they are now in the sidebar */
-  .visible-links {
-    display: none !important;
-  }
-
-}
-
 .masthead__menu-item a {
   color: white !important;
 }
@@ -235,8 +226,4 @@ h2 {
   margin-top: 3em;
   border-top: 1px solid #f2f3f3;
   padding-top: 2em;
-}
-
-.main--with-sidebar {
-  margin-left: 260px !important;
 }
