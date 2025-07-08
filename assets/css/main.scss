@@ -262,3 +262,73 @@ h2 {
   border-top: 1px solid #f2f3f3;
   padding-top: 2em;
 }
+
+/* Force left alignment for left-aligned pages - AGGRESSIVE VERSION */
+/* This targets multiple possible containers that might be centering content */
+
+.left-aligned .page__inner-wrap {
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.left-aligned .page__content {
+  padding: 0 !important;
+}
+
+/* Target all possible centering containers */
+.left-aligned .page,
+.left-aligned .page__inner-wrap,
+.left-aligned .page__content,
+.left-aligned .initial-content,
+.left-aligned .main,
+.left-aligned .wrapper,
+.left-aligned .container {
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Override any flex or grid centering */
+.left-aligned .page__inner-wrap,
+.left-aligned .initial-content {
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+
+/* Ensure body doesn't center on left-aligned pages */
+body.left-aligned {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Flex container for custom sidebar and main content */
+.content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+.content-wrapper .main-content {
+  flex: 1;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  max-width: none !important;
+  width: auto !important;
+}
+
+/* Debug: Add a visible border to see what's happening */
+.left-aligned .content-wrapper {
+  border: 2px solid red !important;
+  background-color: rgba(255, 0, 0, 0.1) !important;
+}
+
+.left-aligned .main-content {
+  border: 2px solid blue !important;
+  background-color: rgba(0, 0, 255, 0.1) !important;
+}
