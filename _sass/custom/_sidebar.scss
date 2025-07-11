@@ -1,0 +1,26 @@
+/* --- Sidebar Active State --- */
+
+/* Keep the parent section expanded when it has the .active class */
+.sidebar .nav__items--collapsible.active > .nav__item-children {
+  display: block;
+  max-height: 1000px; /* Use a large value to ensure all items are visible */
+  visibility: visible;
+  opacity: 1;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Highlight the currently active page link */
+.sidebar .nav__item-children .nav__item.active {
+  background-color: #800000; /* UChicago Maroon */
+  color: #ffffff !important; /* Use !important to override other link color styles */
+  border-radius: 4px;
+
+  &:hover {
+    background-color: #5b0000; /* Darker maroon on hover */
+  }
+}
+
+/* Optional: Style the parent link of the active section */
+.sidebar .nav__items--collapsible.active > .nav__item--parent {
+  font-weight: 600; /* Make parent bold */
+}
