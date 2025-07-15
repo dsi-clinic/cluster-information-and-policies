@@ -4,26 +4,28 @@
 {%- endcomment -%}
 <div class="sidebar">
   <nav class="sidebar-nav">
-    <ul class="nav__items">
+    <ul>
       {%- for item in site.data.navigation.main -%}
         {%- assign is_active_parent = false -%}
+        {%- assign is_active_item = page.url == item.url or page.url contains item.url -%}
         {%- if item.children -%}
           {%- for child in item.children -%}
-            {%- if page.url contains child.url -%}
+            {%- if page.url == child.url or page.url contains child.url -%}
               {%- assign is_active_parent = true -%}
             {%- endif -%}
           {%- endfor -%}
         {%- endif -%}
-
-        <li class="nav__items--collapsible{% if is_active_parent %} active{% endif %}">
-          <div class="nav__item nav__item--parent{% if page.url contains item.url %} active{% endif %}">
-            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-          </div>
-
+        <li class="nav__item{% if is_active_item %} active{% endif %}{% if is_active_parent %} active-parent{% endif %}{% if item.children %} parent{% endif %}">
+          <a href="{{ item.url | relative_url }}">
+            {{ item.title }}
+            {% if item.children %}
+              <span class="sidebar-toggle-indicator">&#9662;</span> {# ▼ triangle #}
+            {% endif %}
+          </a>
           {%- if item.children -%}
             <ul class="nav__item-children">
               {%- for child in item.children -%}
-                <li class="nav__item{% if page.url contains child.url %} active{% endif %}">
+                <li class="nav__item{% if page.url == child.url or page.url contains child.url %} active{% endif %}">
                   <a href="{{ child.url | relative_url }}">{{ child.title }}</a>
                 </li>
               {%- endfor -%}

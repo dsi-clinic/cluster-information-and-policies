@@ -7,6 +7,7 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // Main theme partials
 @import "sidebar";
+@import "custom/sidebar";
 
 /* Custom styles */
 :root {

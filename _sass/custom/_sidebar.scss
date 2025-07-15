@@ -24,3 +24,25 @@
 .sidebar .nav__items--collapsible.active > .nav__item--parent {
   font-weight: 600; /* Make parent bold */
 }
+
+/* --- Sidebar Child Item Alignment --- */
+
+/* Remove default list indentation for sub-navigation to align with parent items. */
+.sidebar .nav__item-children {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* --- Triangle Indicator for Sidebar Items 
+.sidebar-toggle-indicator {
+  font-size: 0.75em;
+  margin-left: 6px;
+  color: #800000; /* UChicago Maroon or your preferred color 
+  transition: transform 0.2s ease-in-out;
+}--- */
+
+/* Optional: Rotate if active */
+.active-parent .sidebar-toggle-indicator {
+  transform: rotate(180deg); /* points up */
+}
