@@ -1,7 +1,7 @@
 /* Basic Sidebar Styling */
 .sidebar {
   position: fixed;
-  top: var(--masthead-height); /* Start below fixed masthead only */
+  top: var(--masthead-height);
   overflow-x: hidden;
   left: 0;
   bottom: 0;
@@ -29,51 +29,61 @@
 .sidebar-nav a {
   display: block;
   padding: 0.5rem 1rem;
-  color: #343a40;
   text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  background-color: #ffffff;
-}
-
-/* Make all sidebar buttons light grey by default */
-.sidebar-nav a {
-  background-color: #f9f9f9; /* very light grey */
-  color: #343a40;
+  border-radius: 6px;
   font-weight: 500;
-}
-
-/* NEW RULE: Make top-level items bold */
-.sidebar-nav > ul > li > a {
-  font-weight: bold;
+  background-color: transparent;
+  color: #343a40;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  box-shadow: none;
 }
 
 .sidebar-nav a:hover {
-  background-color: #dee2e6; /* subtle light grey on hover */
-  color: #111;
+  background-color: #e2e6ea;
+  color: #000;
 }
 
-/* Parent Item Styling (with dropdown) */
-.sidebar-nav li.parent > a {
+/* Top-level items bold */
+.sidebar-nav > ul > li > a {
   font-weight: bold;
-  position: relative;
+  /* Background will now be transparent, inherited from the base 'a' style */
 }
 
-/* Inverted Triangle Icon */
+/* Active parent - only when submenu is open but not necessarily active */
+/* This ensures an open parent folder remains neutral. */
+.sidebar-nav li.active-parent:not(.active) > a {
+  background-color: transparent !important;
+  color: #343a40 !important;
+  font-weight: bold;
+  box-shadow: none;
+}
+
+/* Optional: subtle hover for open but not-active parents */
+.sidebar-nav li.active-parent:not(.active) > a:hover {
+  background-color: #e2e6ea !important;
+  color: #000 !important;
+}
+
+/* Active state - current page only. Placed after active-parent to ensure it wins. */
+.sidebar-nav li.active > a {
+  background-color: #800000 !important;
+  color: #ffffff !important;
+}
+
+/* Maintain maroon ONLY on actual active item */
+.sidebar-nav li.active > a::after,
+.sidebar-nav li.active-parent > a::after {
+  color: #ffffff;
+}
+
+/* Hide triangle if not needed */
 .sidebar-nav li.parent > a::after {
-  content: '▾';
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.8em;
-  color: #6c757d;
-  transition: color 0.2s ease-in-out;
+  display: none !important;
 }
 
-/* Sub-menu (Dropdown) Styling */
+/* Sub-menu dropdown */
 .sidebar-nav li ul {
-  padding-left: 1rem;
+  padding-left: 0.5rem;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
@@ -85,46 +95,33 @@
   transition: max-height 0.5s ease-in;
 }
 
+/* Submenu items styled like sidebar (no white card) */
 .sidebar-nav li ul a {
   font-weight: normal;
   font-size: 0.9em;
-  padding-left: 1.5rem;
-}
-
-/* Active Item Highlighting */
-.sidebar-nav li.active > a,
-.sidebar-nav li.active-parent > a {
-  background-color: #800000;
-  color: #ffffff;
-}
-
-/* Keep icon color consistent on active parent */
-.sidebar-nav li.active-parent > a::after {
-  color: #ffffff;
-}
-
-.sidebar-nav li.parent > a::after {
-  display: none !important;
-}
-
-/* Force all top-level sidebar items to have light background unless active */
-.sidebar-nav > ul > li > a {
-  background-color: #f9f9f9 !important; /* very light grey */
+  padding-left: 1.25rem !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   color: #343a40 !important;
-  font-weight: 600;
-  border-radius: 6px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-  transition: all 0.2s ease-in-out;
 }
 
-/* Maintain maroon background ONLY on active pages */
-.sidebar-nav li.active > a,
-.sidebar-nav li.active-parent > a {
-  background-color: #800000 !important;
-  color: #ffffff !important;
-}
-
-.sidebar-nav > ul > li > a:hover {
+/* Hover for submenu items */
+.sidebar-nav li ul a:hover {
   background-color: #e2e6ea !important;
-  color: #111 !important;
+  color: #000 !important;
+}
+
+/* Final override: non-active parent should look neutral */
+.sidebar-nav li.active-parent:not(.active) > a {
+  background-color: transparent !important;
+  color: #343a40 !important;
+  box-shadow: none !important;
+  font-weight: bold;
+  outline: none;
+}
+
+.sidebar-nav li.active-parent:not(.active) > a:hover {
+  background-color: #e2e6ea !important;
+  color: #000 !important;
 }
