@@ -94,3 +94,7 @@
 .sidebar-nav li.active-parent > a::after {
   color: #ffffff;
 }
+
+.sidebar-nav li.parent > a::after {
+  display: none !important;
+}
