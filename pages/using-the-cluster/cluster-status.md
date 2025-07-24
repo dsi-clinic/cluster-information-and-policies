@@ -1,6 +1,6 @@
 ---
 title: "Checking Job Queue & Cluster Utilization"
-permalink: /common-tools/cluster-status/
+permalink: /using-the-cluster/cluster-status/
 excerpt: "How to monitor the status of the job queue and overall cluster utilization."
 ---
 

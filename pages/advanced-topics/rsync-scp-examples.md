@@ -1,6 +1,6 @@
 ---
 title: "Rsync & SCP Examples"
-permalink: /data-transfer/rsync-scp/
+permalink: /advanced-topics/rsync-scp/
 excerpt: "Practical examples for using rsync and scp to move files securely and efficiently."
 ---
 

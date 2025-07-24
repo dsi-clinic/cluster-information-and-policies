@@ -1,6 +1,6 @@
 ---
 title: "Debugging Jobs & Viewing Logs"
-permalink: /core-workflows/debugging/
+permalink: /using-the-cluster/debugging/
 excerpt: "Techniques for troubleshooting failed jobs and finding your job's output and error logs."
 ---
 

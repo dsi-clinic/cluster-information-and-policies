@@ -1,6 +1,6 @@
 ---
 title: "Containerized Workflows (Singularity, Docker, podman)"
-permalink: /common-tools/containers/
+permalink: /using-the-cluster/containers/
 excerpt: "A guide to using containers for portable and reproducible research workflows."
 ---
 

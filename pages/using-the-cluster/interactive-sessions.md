@@ -1,6 +1,6 @@
 ---
 title: "Interactive Sessions (JupyterLab)"
-permalink: /core-workflows/interactive-sessions/
+permalink: /using-the-cluster/interactive-sessions/
 excerpt: "How to launch and connect to an interactive JupyterLab session on a compute node."
 ---
 

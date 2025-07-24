@@ -1,6 +1,6 @@
 ---
 title: "Checking Your Usage"
-permalink: /data-transfer/checking-usage/
+permalink: /using-the-cluster/checking-usage/
 excerpt: "How to check your current storage usage and quota on the cluster."
 ---
 

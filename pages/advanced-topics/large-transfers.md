@@ -1,6 +1,6 @@
 ---
 title: "Best Practices for Large Transfers"
-permalink: /data-transfer/large-transfers/
+permalink: /advanced-topics/large-transfers/
 excerpt: "Recommendations for transferring large datasets, including using tools like Globus and optimizing rsync."
 ---
 

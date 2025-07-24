@@ -1,6 +1,6 @@
 ---
 title: "Advanced Topics & Tutorials"
-permalink: /howto/
+permalink: /advanced-topics/
 excerpt: "In-depth tutorials for more advanced cluster usage."
 ---
 

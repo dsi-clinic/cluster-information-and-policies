@@ -1,6 +1,6 @@
 ---
 title: "Shared Storage Overview"
-permalink: /data-transfer/storage-overview/
+permalink: /using-the-cluster/storage-overview/
 excerpt: "An overview of the different storage tiers available on the cluster, including home, project, and scratch spaces."
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: "Common Tools"
-permalink: /common-tools/
+title: "Using the Cluster"
+permalink: /using-the-cluster/
 excerpt: "Documentation for essential tools and software available on the cluster."
 ---
 

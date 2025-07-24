@@ -1,6 +1,6 @@
 ---
 title: "Submitting Batch Jobs (Slurm Examples)"
-permalink: /core-workflows/batch-jobs/
+permalink: /using-the-cluster/batch-jobs/
 excerpt: "A guide to writing Slurm submission scripts and managing batch jobs."
 ---
 

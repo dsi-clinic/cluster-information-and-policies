@@ -1,6 +1,6 @@
 ---
 title: "Change CUDA Version"
-permalink: /howto/change-cuda-version/
+permalink: /advanced-topics/change-cuda-version/
 excerpt: "How to Change CUDA Versions"
 ---
 
