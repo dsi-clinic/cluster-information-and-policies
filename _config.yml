@@ -52,6 +52,16 @@ defaults:
     values:
       layout: single
       author_profile: false
+  # pages
+  - scope:
+      path: "pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+      header:
+        overlay_color: "#800000"
+        overlay_filter: "0.5"
   # _resources
   - scope:
       path: ""
@@ -103,3 +113,7 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/dsi-clinic"
+
+
+sass:
+  sass_dir: assets/css

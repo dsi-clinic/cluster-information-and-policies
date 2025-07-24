@@ -7,7 +7,7 @@
     <ul>
       {%- for item in site.data.navigation.main -%}
         {%- assign is_active_parent = false -%}
-        {%- assign is_active_item = page.url == item.url or page.url contains item.url -%}
+        {%- assign is_active_item = page.url == item.url -%}
         {%- if item.children -%}
           {%- for child in item.children -%}
             {%- if page.url == child.url or page.url contains child.url -%}

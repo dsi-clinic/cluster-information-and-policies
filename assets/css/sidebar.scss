@@ -32,10 +32,10 @@
   text-decoration: none;
   border-radius: 6px;
   font-weight: 500;
-  background-color: transparent;
+  background-color: #f9f9f9;
   color: #343a40;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  box-shadow: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .sidebar-nav a:hover {
@@ -46,28 +46,20 @@
 /* Top-level items bold */
 .sidebar-nav > ul > li > a {
   font-weight: bold;
-  /* Background will now be transparent, inherited from the base 'a' style */
-}
-
-/* Active parent - only when submenu is open but not necessarily active */
-/* This ensures an open parent folder remains neutral. */
-.sidebar-nav li.active-parent:not(.active) > a {
-  background-color: transparent !important;
+  background-color: #f9f9f9 !important;
   color: #343a40 !important;
-  font-weight: bold;
-  box-shadow: none;
 }
 
-/* Optional: subtle hover for open but not-active parents */
-.sidebar-nav li.active-parent:not(.active) > a:hover {
-  background-color: #e2e6ea !important;
-  color: #000 !important;
-}
-
-/* Active state - current page only. Placed after active-parent to ensure it wins. */
+/* Active state - current page only */
 .sidebar-nav li.active > a {
   background-color: #800000 !important;
   color: #ffffff !important;
+}
+
+/* Active parent - only when submenu is open but not necessarily active */
+.sidebar-nav li.active-parent > a {
+  background-color: #f9f9f9 !important;
+  color: #343a40 !important;
 }
 
 /* Maintain maroon ONLY on actual active item */
@@ -114,7 +106,7 @@
 
 /* Final override: non-active parent should look neutral */
 .sidebar-nav li.active-parent:not(.active) > a {
-  background-color: transparent !important;
+  background-color: #f9f9f9 !important;
   color: #343a40 !important;
   box-shadow: none !important;
   font-weight: bold;

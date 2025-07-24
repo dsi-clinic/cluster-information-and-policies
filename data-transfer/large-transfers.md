@@ -1,5 +1,5 @@
 ---
 layout: single
-title: rsync, scp examples
+title: Best practices for large transfers
 permalink: /data-transfer/large-transfers/
 ---

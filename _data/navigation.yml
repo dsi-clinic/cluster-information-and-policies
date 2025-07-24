@@ -49,6 +49,8 @@ main:
     children:
       - title: "Change CUDA Version"
         url: "/howto/change-cuda-version/"
+  - title: "Affiliated Research"
+    url: "/research/"
   - title: "Troubleshooting & FAQ"
     url: "/faq/"
     children:

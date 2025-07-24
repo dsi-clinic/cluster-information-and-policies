@@ -1,7 +1,7 @@
 ---
 layout: single
-title: Data Transfer
+title: Getting Data On/Off the Cluster
 permalink: /data-transfer/
 ---
 
-{% include_relative cluster-information-content.md %}
+
