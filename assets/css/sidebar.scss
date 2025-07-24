@@ -81,7 +81,7 @@
   transition: max-height 0.3s ease-out;
 }
 
-.sidebar-nav li:hover > ul,
+.sidebar-nav li.open > ul,
 .sidebar-nav li.active-parent > ul {
   max-height: 500px;
   transition: max-height 0.5s ease-in;
