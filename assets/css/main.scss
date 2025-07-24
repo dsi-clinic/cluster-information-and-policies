@@ -20,25 +20,30 @@
 .uchicago-banner {
   background-color: white;
   border-bottom: 1px solid #f2f3f3;
-  padding-bottom: 30px;
-  padding-top: 40px;
-  margin-top: var(--masthead-height);
-  width: 100%;
+  margin: var(--masthead-height) auto 0; /* Center the banner on the page */
+  max-width: 770px; /* Set fixed width as requested */
+  height: 125px; /* Set a fixed height for the banner */
+  display: flex; /* Use flexbox for easy centering */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Vertically center the content */
+  padding: 0; /* Reset padding */
 }
 
 .uchicago-banner-content {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1em;
+  width: 100%; /* Occupy the full width of the banner (770px) */
+  height: 115px; /* Set fixed height as requested */
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  object-fit: contain;
 }
 
 .uchicago-banner-logo {
-  width: 80%;
-  max-width: 1200px;
-  height: auto;
+  max-width: 100%; /* Fill the content container */
+  max-height: 100%; /* Fill the content container */
+  object-fit: contain; /* Scale logo to fit without distortion */
+  display: block;
 }
 
 /* Fixed masthead with left-aligned title */
