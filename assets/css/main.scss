@@ -338,3 +338,33 @@ body.left-aligned {
   border: 2px solid blue !important;
   background-color: rgba(0, 0, 255, 0.1) !important;
 }
+
+/* Styling for the publications page */
+
+/* Style for year headers */
+.page__content h3 {
+  color: #800000; /* UChicago Maroon */
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-top: 1.5em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2em;
+}
+
+/* Paper links */
+.page__content a {
+  color: #800000;
+  text-decoration: none;
+}
+
+.page__content a:hover {
+  text-decoration: underline;
+}
+
+/* Author line (citation) */
+.page__content .citation {
+  color: #666666;
+  font-size: 0.95em;
+  display: block;
+  margin-bottom: 0.8em;
+}
