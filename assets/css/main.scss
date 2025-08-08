@@ -368,3 +368,21 @@ body.left-aligned {
   display: block;
   margin-bottom: 0.8em;
 }
+
+/* Masthead */
+.site-title-with-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.site-logo {
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.site-title {
+  text-transform: uppercase;
+}
