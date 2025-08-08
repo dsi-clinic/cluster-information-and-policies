@@ -2,26 +2,7 @@
 
 This document contains an overview of the policies around (a) purchasing additional equipment for the DSI cluster and (b) the priorities that we can grant on that provisioned hardware.
 
-## Table of Contents
-<!-- TOC is auto-generated -->
 
-<!-- toc -->
-
-- [Cluster Purchase Guide](#cluster-purchase-guide)
-  - [Table of Contents](#table-of-contents)
-  - [Welcome to the DSI Investor Guidelines](#welcome-to-the-dsi-investor-guidelines)
-  - [Overview and Framework](#overview-and-framework)
-  - [Minimum Investment for Priority Hardware Solution:](#minimum-investment-for-priority-hardware-solution)
-  - [Current minimum hardware](#current-minimum-hardware)
-  - [Definition of Priority](#definition-of-priority)
-  - [Lifecycle Polices](#lifecycle-polices)
-    - [Duration of Access for Grants with a Defined Timeline:](#duration-of-access-for-grants-with-a-defined-timeline)
-    - [Handling Grants without a Defined Timeline](#handling-grants-without-a-defined-timeline)
-  - [Other Purchasing Considerations](#other-purchasing-considerations)
-    - [Troubleshooting and Support](#troubleshooting-and-support)
-  - [Additional Questions](#additional-questions)
-
-<!-- tocstop -->
 
 ## Welcome to the DSI Investor Guidelines
 

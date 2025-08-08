@@ -52,7 +52,8 @@ No. The current concurrency limit is set to maximize the cluster's performance g
 The cluster is designed to efficiently process the most common use cases. We constantly monitor cluster performance and think through ways to increase _overall_ performance. Given our limited resources we do not have the bandwidth to accommodate, implement and monitor additional configurations. If you have a specific use case which is not being efficiently handled by the current configuration there are two options:
 
   1. Use an alternative compute resources (such as [AWS](https://aws.amazon.com/), [GCP](https://cloud.google.com/) or [UChicago's RCC](https://rcc.uchicago.edu/)).
-  2. Purchase specific compute within the guidelines listed [here]({{ site.baseurl }}/policies/purchasing/). For allocated resources we are able to implement alternative QOS policies.
+  2. Purchase specific compute within the guidelines listed [here]({{ '/policies/purchasing/' | relative_url }}). For allocated resources we are able to implement alternative QOS policies.
+
 
 ### There are processes not owned by me running on the GPU that I reserved. Is this expected? 
 
