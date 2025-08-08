@@ -1,11 +1,12 @@
 ---
-title: General Policies
+title: "General Policies"
 layout: single
+nav_order: 2
+parent: Policies
+category: policies
 permalink: /policies/general/
-excerpt: "General policies governing the use of the DSI cluster, including usage and scratch space guidelines."
-header:
-  overlay_color: "#800000"
-  overlay_filter: "0.5"
+classes: [wide, left-aligned]
+hide_hero: True
 ---
 
 {% include_relative general-content.md %}

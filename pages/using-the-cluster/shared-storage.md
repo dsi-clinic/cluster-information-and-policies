@@ -1,8 +1,15 @@
 ---
 title: "Shared Storage Overview"
+layout: single
+nav_order: 2
+parent: Using the Cluster
+category: using-the-cluster
 permalink: /using-the-cluster/storage-overview/
-excerpt: "An overview of the different storage tiers available on the cluster, including home, project, and scratch spaces."
+classes: [wide, left-aligned]
+hide_hero: True
 ---
+
+# Shared Storage Overview
 
 The cluster provides several types of shared storage, each designed for a specific purpose. Understanding the differences between these storage tiers is crucial for managing your data effectively and ensuring the smooth operation of your research workflows.
 

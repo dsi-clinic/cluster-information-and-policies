@@ -109,10 +109,7 @@ header:
   og_image: /assets/images/dsi-logo.webp
   
 footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/dsi-clinic"
+  links: [] 
 
 
 sass:

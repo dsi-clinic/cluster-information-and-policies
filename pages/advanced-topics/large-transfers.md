@@ -1,8 +1,16 @@
 ---
 title: "Best Practices for Large Transfers"
+layout: single
+nav_order: 2
+parent: Advanced Topics
+category: advanced-topics
 permalink: /advanced-topics/large-transfers/
-excerpt: "Recommendations for transferring large datasets, including using tools like Globus and optimizing rsync."
+classes: [wide, left-aligned]
+hide_hero: True
 ---
+
+# Best Practices for Large Transfers
+
 
 Transferring large datasets, especially those in the multi-terabyte range, presents unique challenges. A simple `scp` or `rsync` command might be slow, unreliable over long distances, and can fail midway through, forcing you to start over. This guide outlines best practices and recommended tools for efficiently and reliably moving large amounts of data to and from the cluster.
 

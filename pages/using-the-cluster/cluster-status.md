@@ -1,8 +1,16 @@
 ---
 title: "Cluster Status"
+layout: single
+nav_order: 2
+parent: Using the Cluster
+category: using-the-cluster
 permalink: /using-the-cluster/cluster-status/
-excerpt: "View live usage and status of the DSI cluster."
+classes: [wide, left-aligned]
+hide_hero: True
 ---
+
+# Cluster Status
+
 
 <style>
 .status-tile {

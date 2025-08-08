@@ -1,10 +1,15 @@
 ---
 title: "Change CUDA Version"
+layout: single
+nav_order: 2
+parent: Advanced Topics
+category: advanced-topics
 permalink: /advanced-topics/change-cuda-version/
-excerpt: "How to Change CUDA Versions"
+classes: [wide, left-aligned]
+hide_hero: True
 ---
 
-## Changing CUDA Versions
+# Change CUDA Version
 
 This section contains information on how to use different versions of CUDA on the DSI Cluster. There are a few important concepts to keep in mind before starting:
 

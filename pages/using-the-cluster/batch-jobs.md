@@ -1,8 +1,16 @@
 ---
 title: "Submitting Batch Jobs (Slurm Examples)"
+layout: single
+nav_order: 2
+parent: Using the Cluster
+category: using-the-cluster
 permalink: /using-the-cluster/batch-jobs/
-excerpt: "A guide to writing Slurm submission scripts and managing batch jobs."
+classes: [wide, left-aligned]
+hide_hero: True
 ---
+
+# Submitting Batch Jobs (Slurm Examples)
+
 
 For any task that is computationally intensive or expected to run for more than a few minutes, you should not run it directly on a login node. Instead, you must submit it to the Slurm workload manager as a **batch job**.
 

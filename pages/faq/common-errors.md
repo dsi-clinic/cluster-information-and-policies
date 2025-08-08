@@ -1,8 +1,17 @@
 ---
+title: "Common Error Messages & Resolutions"
 layout: single
-title: Common error messages & resolutions
+nav_order: 2
+parent: FAQ
+category: faq
 permalink: /faq/common-errors/
+classes: [wide, left-aligned]
+hide_hero: True
 ---
+
+# Common Error Messages & Resolutions
+
+
 
 This page lists common error messages you might encounter while using the cluster, along with their causes and solutions.
 

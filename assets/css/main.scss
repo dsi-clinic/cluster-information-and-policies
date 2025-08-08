@@ -427,3 +427,10 @@ body.left-aligned {
   font-weight: 600 !important;
   margin-bottom: 0.5em !important;
 }
+
+.main, .page, .page__content, .page__inner-wrap {
+  max-width: 95vw !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  margin: 0 auto !important;
+}

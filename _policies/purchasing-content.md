@@ -1,4 +1,3 @@
-# Cluster Purchase Guide
 
 This document contains an overview of the policies around (a) purchasing additional equipment for the DSI cluster and (b) the priorities that we can grant on that provisioned hardware.
 

@@ -1,9 +1,15 @@
 ---
+title: "Debugging Jobs & Viewing Logs"
 layout: single
-title: Debugging Jobs & Viewing Logs
+nav_order: 2
+parent: Using the Cluster
+category: using-the-cluster
 permalink: /using-the-cluster/debugging/
-excerpt: "A guide to diagnosing and fixing issues with your Slurm jobs."
+classes: [wide, left-aligned]
+hide_hero: True
 ---
+
+# Debugging Jobs & Viewing Logs
 
 ## Introduction to Debugging
 

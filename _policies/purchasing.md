@@ -1,14 +1,15 @@
 ---
-title: Purchasing Policies
+title: "Purchasing Policies"
 layout: single
+nav_order: 2
+parent: Policies
+category: policies
 permalink: /policies/purchasing/
-excerpt: "Policies for purchasing additional hardware for the DSI cluster and priority access guidelines."
-header:
-  overlay_color: "#800000"
-  overlay_filter: "0.5"
-toc: true
-toc_sticky: true
-toc_label: "Contents"
+classes: [wide, left-aligned]
+hide_hero: True
 ---
+
+
+
 
 {% include_relative purchasing-content.md %}

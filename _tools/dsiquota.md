@@ -1,11 +1,13 @@
 ---
-title: DSI Quota Command
+title: "DSI Quota Command"
 layout: single
+nav_order: 2
+parent: Using the Cluster
+category: using-the-cluster
 permalink: /tools/dsiquota/
-excerpt: "Information on using the dsiquota command to check space usage on the cluster."
-header:
-  overlay_color: "#800000"
-  overlay_filter: "0.5"
+classes: [wide, left-aligned]
+hide_hero: True
 ---
+
 
 {% include_relative dsiquota-content.md %}

@@ -1,13 +1,12 @@
 ---
 title: "Environment management (Conda, venv)"
-# layout: single
-# nav_order: 4
-# parent: Using the Cluster
-# category: using-the-cluster
+layout: single
+nav_order: 2
+parent: Using the Cluster
+category: using-the-cluster
 permalink: /using-the-cluster/environments/
-# classes: [wide, left-aligned]
-# show_hero: false
-excerpt: "Specific Packages and Libraries guide"
+classes: [wide, left-aligned]
+hide_hero: True
 ---
 
 # Environment management (Conda, venv)

@@ -1,8 +1,15 @@
 ---
 title: "Interactive Sessions (JupyterLab)"
+layout: single
+nav_order: 2
+parent: Using the Cluster
+category: using-the-cluster
 permalink: /using-the-cluster/interactive-sessions/
-excerpt: "How to launch and connect to an interactive JupyterLab session on a compute node."
+classes: [wide, left-aligned]
+hide_hero: True
 ---
+
+# Interactive Sessions (JupyterLab)
 
 While batch jobs are ideal for long-running, non-interactive tasks, you will often need direct, interactive access to a compute node for tasks like:
 - Developing and debugging your code.

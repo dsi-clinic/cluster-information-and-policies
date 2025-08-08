@@ -1,8 +1,15 @@
 ---
 title: "Containerized Workflows (Singularity, Docker, podman)"
+layout: single
+nav_order: 2
+parent: Using the Cluster
+category: using-the-cluster
 permalink: /using-the-cluster/containers/
-excerpt: "A guide to using containers for portable and reproducible research workflows."
+classes: [wide, left-aligned]
+hide_hero: True
 ---
+
+# Containerized Workflows (Singularity, Docker, podman)
 
 ## Introduction to Containers
 
