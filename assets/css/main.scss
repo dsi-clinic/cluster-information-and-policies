@@ -16,22 +16,66 @@
   --masthead-height: 60px;
 }
 
+/* ↓↓↓ FONT SIZE TWEAKS ↓↓↓ */
+body {
+  font-size: 0.875rem; // ≈ 14px
+  line-height: 1.6;
+}
+
+p {
+  font-size: 0.9rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 1.1rem;
+}
+h5 {
+  font-size: 1rem;
+}
+h6 {
+  font-size: 0.9rem;
+}
+
+.sidebar__navigation li a {
+  font-size: 0.9rem !important;
+}
+
+.feature-item,
+.archive__item,
+.tile-grid .tile {
+  font-size: 0.9rem;
+}
+
+.site-title {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
 /* UChicago Banner */
 .uchicago-banner {
   background-color: white;
   border-bottom: 1px solid #f2f3f3;
-  margin: var(--masthead-height) auto 0; /* Center the banner on the page */
-  max-width: 770px; /* Set fixed width as requested */
-  height: 125px; /* Set a fixed height for the banner */
-  display: flex; /* Use flexbox for easy centering */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Vertically center the content */
-  padding: 0; /* Reset padding */
+  margin: var(--masthead-height) auto 0;
+  max-width: 770px;
+  height: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 }
 
 .uchicago-banner-content {
-  width: 100%; /* Occupy the full width of the banner (770px) */
-  height: 115px; /* Set fixed height as requested */
+  width: 100%;
+  height: 115px;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -40,13 +84,13 @@
 }
 
 .uchicago-banner-logo {
-  max-width: 100%; /* Fill the content container */
-  max-height: 100%; /* Fill the content container */
-  object-fit: contain; /* Scale logo to fit without distortion */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
   display: block;
 }
 
-/* Fixed masthead with left-aligned title */
+/* Fixed masthead */
 .masthead {
   background-color: var(--uchicago-maroon);
   color: white;
@@ -58,7 +102,7 @@
   z-index: 1030;
   display: flex;
   align-items: center;
-  justify-content: center; /* center the inner-wrap container itself */
+  justify-content: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -68,7 +112,7 @@
   padding: 0 2rem;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* align title to the left */
+  justify-content: flex-start;
 }
 
 .masthead__inner-wrap nav {
@@ -269,9 +313,7 @@ h2 {
   padding-top: 2em;
 }
 
-/* Force left alignment for left-aligned pages - AGGRESSIVE VERSION */
-/* This targets multiple possible containers that might be centering content */
-
+/* Left Alignment Layout */
 .left-aligned .page__inner-wrap {
   max-width: 100% !important;
   margin-left: 0 !important;
@@ -282,7 +324,6 @@ h2 {
   padding: 0 !important;
 }
 
-/* Target all possible centering containers */
 .left-aligned .page,
 .left-aligned .page__inner-wrap,
 .left-aligned .page__content,
@@ -297,20 +338,17 @@ h2 {
   padding-right: 0 !important;
 }
 
-/* Override any flex or grid centering */
 .left-aligned .page__inner-wrap,
 .left-aligned .initial-content {
   justify-content: flex-start !important;
   align-items: flex-start !important;
 }
 
-/* Ensure body doesn't center on left-aligned pages */
 body.left-aligned {
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* Flex container for custom sidebar and main content */
 .content-wrapper {
   display: flex;
   align-items: flex-start;
@@ -328,7 +366,6 @@ body.left-aligned {
   width: auto !important;
 }
 
-/* Debug: Add a visible border to see what's happening */
 .left-aligned .content-wrapper {
   border: 2px solid red !important;
   background-color: rgba(255, 0, 0, 0.1) !important;
@@ -339,11 +376,9 @@ body.left-aligned {
   background-color: rgba(0, 0, 255, 0.1) !important;
 }
 
-/* Styling for the publications page */
-
-/* Style for year headers */
+/* Publications Page */
 .page__content h3 {
-  color: #800000; /* UChicago Maroon */
+  color: #800000;
   font-size: 1.4em;
   font-weight: bold;
   margin-top: 1.5em;
@@ -351,7 +386,6 @@ body.left-aligned {
   padding-bottom: 0.2em;
 }
 
-/* Paper links */
 .page__content a {
   color: #800000;
   text-decoration: none;
@@ -361,7 +395,6 @@ body.left-aligned {
   text-decoration: underline;
 }
 
-/* Author line (citation) */
 .page__content .citation {
   color: #666666;
   font-size: 0.95em;
@@ -369,7 +402,7 @@ body.left-aligned {
   margin-bottom: 0.8em;
 }
 
-/* Masthead */
+/* Masthead Title and Logo */
 .site-title-with-logo {
   display: flex;
   align-items: center;
@@ -382,7 +415,15 @@ body.left-aligned {
   vertical-align: middle;
 }
 
-
 .site-title {
   text-transform: uppercase;
+}
+
+/* Reduce header size inside homepage cards */
+.feature__item h2,
+.feature-item h2,
+.tile h2 {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5em !important;
 }
