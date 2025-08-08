@@ -60,6 +60,9 @@ Yes. In SLURM, this is called OverSubscribe. If a user is not utilizing a resour
 
 ### How do I check how much space I'm using in either a project or home directory? 
 
-<div class="faq-answer">
 Users are allocated limited space on home directories (50GB) and scratch space (50GB per location). To check your current usage, use the `dsiquota` command. See the detailed instructions in the [DSI Quota Tool]({% link _tools/dsiquota.md %}) documentation.
-</div>
+
+
+### How to Get Additional Support?
+
+If you need help beyond the FAQs or documentation, feel free to reach out to the DSI support team. Visit our [Contact Us]({{ '/contact/' | relative_url }}) page for assistance.

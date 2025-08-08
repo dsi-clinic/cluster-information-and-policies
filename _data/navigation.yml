@@ -20,7 +20,7 @@ main:
         url: "/using-the-cluster/environments/"
       - title: "Containerized Workflows"
         url: "/using-the-cluster/containers/"
-      - title: "Checking Job Queue & Utilization"
+      - title: "Cluster Status"
         url: "/using-the-cluster/cluster-status/"
       - title: "Submitting Batch Jobs"
         url: "/using-the-cluster/batch-jobs/"
@@ -31,7 +31,7 @@ main:
       - title: "Shared Storage Overview"
         url: "/using-the-cluster/storage-overview/"
       - title: "Checking Your Usage"
-        url: "/tools/dsiquota/"      
+        url: "/tools/dsiquota/"        
   - title: "Advanced Topics"
     url: "/advanced-topics/"
     children:

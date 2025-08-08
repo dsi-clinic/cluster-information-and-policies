@@ -1,13 +1,15 @@
 ---
-# title: "Environment management (Conda, venv)"
-layout: single
-nav_order: 4
-parent: Using the Cluster
-category: using-the-cluster
+title: "Environment management (Conda, venv)"
+# layout: single
+# nav_order: 4
+# parent: Using the Cluster
+# category: using-the-cluster
 permalink: /using-the-cluster/environments/
-classes: [wide, left-aligned]
-show_hero: false
+# classes: [wide, left-aligned]
+# show_hero: false
+excerpt: "Specific Packages and Libraries guide"
 ---
+
 # Environment management (Conda, venv)
 
 The DSI cluster provides a baseline set of software, but for most research projects, you will need to install specific packages and libraries. To ensure a stable and reproducible environment without interfering with system-wide installations, we require users to manage their own software using environment management tools.
