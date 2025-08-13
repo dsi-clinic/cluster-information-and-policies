@@ -2,6 +2,7 @@
 title: "Quickstart Guide"
 permalink: /quickstart/
 layout: single
+classes: parent-centered
 classes: [wide]
 ---
 

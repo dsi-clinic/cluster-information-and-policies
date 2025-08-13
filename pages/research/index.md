@@ -2,6 +2,7 @@
 layout: single
 title: Affiliated Research
 permalink: /research/
+classes: parent-centered
 ---
 
 This page showcases an evolving list of affiliated research projects that have utilized the UChicago DSI Cluster, highlighting current work that benefits from the cluster’s computing resources.

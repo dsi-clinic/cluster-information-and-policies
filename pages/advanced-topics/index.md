@@ -2,6 +2,7 @@
 title: "Advanced Topics"
 permalink: /advanced-topics/
 layout: single
+classes: parent-centered
 ---
 
 For users who need to perform more specialized tasks, this section provides guides on advanced configurations and best practices for challenging computational workflows.

@@ -3,13 +3,11 @@ title: Cluster Policies
 layout: single
 permalink: /policies/
 collection: policies
-classes: wide
+classes: parent-centered
 header:
   overlay_color: "#800000"
   overlay_filter: "0.5"
 ---
-
-## Cluster Policies
 
 This section contains comprehensive policies governing the use of the DSI cluster. These policies help ensure fair resource allocation, efficient usage, and provide guidelines for adding new hardware to the cluster.
 

@@ -16,18 +16,18 @@
   --uchicago-maroon: #800000;
   --uchicago-grey: #666666;
   --masthead-height: 60px;
+
+  /* Layout constants */
+  --sidebar-width: 260px;    /* your left nav width */
+  --content-max: 1100px;     /* readable centered width for parent pages */
 }
+
+/* Safety against tiny rounding issues from nested calcs */
+html, body { overflow-x: hidden; }
 
 /* ↓↓↓ FONT SIZE TWEAKS ↓↓↓ */
-body {
-  font-size: 0.875rem; // ≈ 14px
-  line-height: 1.6;
-}
-
-p {
-  font-size: 0.9rem;
-}
-
+body { font-size: 0.875rem; line-height: 1.6; }
+p { font-size: 0.9rem; }
 h1 { font-size: 1.75rem; }
 h2 { font-size: 1.5rem; }
 h3 { font-size: 1.25rem; }
@@ -35,20 +35,11 @@ h4 { font-size: 1.1rem; }
 h5 { font-size: 1rem; }
 h6 { font-size: 0.9rem; }
 
-.sidebar__navigation li a {
-  font-size: 0.9rem !important;
-}
+.sidebar__navigation li a { font-size: 0.9rem !important; }
 
-.feature-item,
-.archive__item,
-.tile-grid .tile {
-  font-size: 0.9rem;
-}
+.feature-item, .archive__item, .tile-grid .tile { font-size: 0.9rem; }
 
-.site-title {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-}
+.site-title { font-size: 1.2rem; text-transform: uppercase; }
 
 /* UChicago Banner */
 .uchicago-banner {
@@ -57,418 +48,256 @@ h6 { font-size: 0.9rem; }
   margin: var(--masthead-height) auto 0;
   max-width: 770px;
   height: 125px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
+  display: flex; justify-content: center; align-items: center; padding: 0;
 }
-
 .uchicago-banner-content {
-  width: 100%;
-  height: 115px;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  object-fit: contain;
+  width: 100%; height: 115px; padding: 0;
+  display: flex; justify-content: center; align-items: center; object-fit: contain;
 }
-
-.uchicago-banner-logo {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  display: block;
-}
+.uchicago-banner-logo { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
 
 /* Fixed masthead */
 .masthead {
   background-color: var(--uchicago-maroon);
   color: white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--masthead-height);
-  z-index: 1030;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed; top: 0; left: 0; width: 100%; height: var(--masthead-height);
+  z-index: 1030; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
 }
-
 .masthead__inner-wrap {
-  max-width: 1280px;
-  width: 100%;
-  padding: 0 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  max-width: 1280px; width: 100%; padding: 0 2rem;
+  display: flex; align-items: center; justify-content: flex-start;
 }
+.masthead__inner-wrap nav { background-color: transparent; }
+.masthead__menu-item a { color: white !important; }
+.site-title { color: white !important; font-weight: bold; }
+.greedy-nav { margin: 0 !important; display: flex; align-items: center; justify-content: flex-start; width: 100%; }
+.greedy-nav .site-title { margin: 0; padding: 0; font-weight: bold; font-size: 1.2rem; color: white; display: block; }
 
-.masthead__inner-wrap nav {
-  background-color: transparent;
-}
+/* === Reserve space for masthead and sidebar === */
+.main--with-sidebar { padding-top: var(--masthead-height); }
 
-.masthead__menu-item a {
-  color: white !important;
-}
-
-.site-title {
-  color: white !important;
-  font-weight: bold;
-}
-
-.greedy-nav {
-  margin: 0 !important;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-}
-
-.greedy-nav .site-title {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: white;
-  display: block;
-}
-
-/* Offset content below masthead */
-.main--with-sidebar {
-  margin-left: 260px;
-  padding-top: var(--masthead-height);
+/* Use margin-left to reserve the sidebar’s footprint.
+   (Padding here can make “full-bleed” math trickier.) */
+.initial-content-wrap.main--with-sidebar {
+  margin-left: var(--sidebar-width);
 }
 
 /* Footer */
-.page__footer {
-  background-color: var(--uchicago-maroon) !important;
-}
-
-.page__footer,
-.page__footer-custom span,
-.page__footer a,
-.page__footer-copyright {
-  color: white !important;
-}
-
-.footer-institution {
-  font-weight: bold;
-  font-size: 1.1em;
-  letter-spacing: 0.5px;
-}
+.page__footer { background-color: var(--uchicago-maroon) !important; }
+.page__footer, .page__footer-custom span, .page__footer a, .page__footer-copyright { color: white !important; }
+.footer-institution { font-weight: bold; font-size: 1.1em; letter-spacing: .5px; }
 
 /* Primary Button */
-.btn--primary {
-  background-color: var(--uchicago-maroon) !important;
-}
-
-.site-logo img {
-  max-height: 3rem;
-}
+.btn--primary { background-color: var(--uchicago-maroon) !important; }
+.site-logo img { max-height: 3rem; }
 
 /* Feature Box */
 .feature__item {
-  margin-bottom: 2em;
-  border: 1px solid #f2f3f3;
-  border-radius: 4px;
-  padding: 1em;
+  margin-bottom: 2em; border: 1px solid #f2f3f3; border-radius: 4px; padding: 1em;
 }
-
-.feature__item-teaser img {
-  max-width: 100px;
-  display: block;
-  margin: 0 auto;
-}
-
-.archive__item-body {
-  text-align: center;
-}
+.feature__item-teaser img { max-width: 100px; display: block; margin: 0 auto; }
+.archive__item-body { text-align: center; }
 
 /* Page Hero Overlay */
-.page__hero--overlay {
-  padding: 3em 0;
-}
-
-.page__hero--overlay .wrapper {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 2em;
-  border-radius: 4px;
-}
+.page__hero--overlay { padding: 3em 0; }
+.page__hero--overlay .wrapper { background-color: rgba(0,0,0,.5); padding: 2em; border-radius: 4px; }
 
 /* Archive Item Cards */
 .archive__item {
-  position: relative;
-  margin-bottom: 2em;
-  padding: 1em;
-  border: 1px solid #f2f3f3;
-  border-radius: 4px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
-  transition: box-shadow 0.3s ease;
+  position: relative; margin-bottom: 2em; padding: 1em;
+  border: 1px solid #f2f3f3; border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.125); transition: box-shadow .3s ease;
 }
-
-.archive__item:hover {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-}
-
-.archive__item-title {
-  margin-top: 0;
-  border-bottom: 1px solid #f2f3f3;
-  padding-bottom: 0.5em;
-}
-
-.archive__item-excerpt {
-  margin-top: 1em;
-  font-size: 0.9em;
-}
+.archive__item:hover { box-shadow: 0 3px 6px rgba(0,0,0,.2); }
+.archive__item-title { margin-top: 0; border-bottom: 1px solid #f2f3f3; padding-bottom: .5em; }
+.archive__item-excerpt { margin-top: 1em; font-size: .9em; }
 
 /* Typography */
-h2 {
-  color: var(--uchicago-maroon);
-}
+h2 { color: var(--uchicago-maroon); }
 
 /* Table of Contents */
-.toc {
-  background-color: #f3f3f3;
-  border-radius: 4px;
-}
-
-.toc .nav__title {
-  background-color: var(--uchicago-maroon);
-}
+.toc { background-color: #f3f3f3; border-radius: 4px; }
+.toc .nav__title { background-color: var(--uchicago-maroon); }
 
 /* Back to Top Button */
 .back-to-top {
-  position: fixed;
-  bottom: 2em;
-  right: 2em;
-  text-decoration: none;
-  color: #fff;
-  background-color: var(--uchicago-maroon);
-  padding: 1em;
-  border-radius: 50%;
-  display: none;
-  transition: all 0.3s ease;
-  z-index: 9999;
+  position: fixed; bottom: 2em; right: 2em; text-decoration: none;
+  color: #fff; background-color: var(--uchicago-maroon); padding: 1em; border-radius: 50%;
+  display: none; transition: all .3s ease; z-index: 9999;
 }
-
-.back-to-top:hover {
-  background-color: #600000;
-}
+.back-to-top:hover { background-color: #600000; }
 
 /* Homepage */
-.home-content {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2em;
-}
-
-.home-content h1 {
-  color: var(--uchicago-maroon);
-  margin-bottom: 1em;
-  text-align: center;
-}
-
-.feature-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 2em 0;
-}
-
+.home-content { max-width: 1280px; margin: 0 auto; padding: 2em; }
+.home-content h1 { color: var(--uchicago-maroon); margin-bottom: 1em; text-align: center; }
+.feature-row { display: flex; flex-wrap: wrap; justify-content: space-between; margin: 2em 0; }
 .feature-item {
-  flex: 1;
-  min-width: 250px;
-  margin: 1em;
-  padding: 1.5em;
-  border: 1px solid #f2f3f3;
-  border-radius: 4px;
-  text-align: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+  flex: 1; min-width: 250px; margin: 1em; padding: 1.5em; border: 1px solid #f2f3f3; border-radius: 4px;
+  text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,.1); transition: box-shadow .3s ease;
 }
+.feature-item:hover { box-shadow: 0 3px 6px rgba(0,0,0,.2); }
+.feature-item h2 { margin-top: 0; }
+.home-content-text { margin-top: 3em; border-top: 1px solid #f2f3f3; padding-top: 2em; }
 
-.feature-item:hover {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-}
-
-.feature-item h2 {
-  margin-top: 0;
-}
-
-.home-content-text {
-  margin-top: 3em;
-  border-top: 1px solid #f2f3f3;
-  padding-top: 2em;
-}
-
-/* Left Alignment Layout */
-.left-aligned .page__inner-wrap {
-  max-width: 100% !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-.left-aligned .page__content {
-  padding: 0 !important;
-}
-
-.left-aligned .page,
-.left-aligned .page__inner-wrap,
-.left-aligned .page__content,
-.left-aligned .initial-content,
-.left-aligned .main,
-.left-aligned .wrapper,
-.left-aligned .container {
-  max-width: 100% !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-.left-aligned .page__inner-wrap,
-.left-aligned .initial-content {
-  justify-content: flex-start !important;
-  align-items: flex-start !important;
-}
-
-body.left-aligned {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.content-wrapper {
-  display: flex;
-  align-items: flex-start;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100% !important;
-}
-
-.content-wrapper .main-content {
-  flex: 1;
-  padding-left: 2rem;
-  padding-right: 1rem;
-  max-width: none !important;
-  width: auto !important;
-}
-
-.left-aligned .content-wrapper {
-  border: 2px solid red !important;
-  background-color: rgba(255, 0, 0, 0.1) !important;
-}
-
-.left-aligned .main-content {
-  border: 2px solid blue !important;
-  background-color: rgba(0, 0, 255, 0.1) !important;
-}
-
-/* Publications Page */
-.page__content h3 {
-  color: #800000;
-  font-size: 1.4em;
-  font-weight: bold;
-  margin-top: 1.5em;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 0.2em;
-}
-
-.page__content a {
-  color: #800000;
-  text-decoration: none;
-}
-
-.page__content a:hover {
-  text-decoration: underline;
-}
-
-.page__content .citation {
-  color: #666666;
-  font-size: 0.95em;
-  display: block;
-  margin-bottom: 0.8em;
-}
-
-/* Masthead Title and Logo */
-.site-title-with-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.site-logo {
-  height: 30px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.site-title {
-  text-transform: uppercase;
-}
+/* Masthead Title + Logo */
+.site-title-with-logo { display: flex; align-items: center; gap: .75rem; }
+.site-logo { height: 30px; display: inline-block; vertical-align: middle; }
+.site-title { text-transform: uppercase; }
 
 /* Reduce header size inside homepage cards */
-.feature__item h2,
-.feature-item h2,
-.tile h2 {
-  font-size: 1.1rem !important;
-  font-weight: 600 !important;
-  margin-bottom: 0.5em !important;
+.feature__item h2, .feature-item h2, .tile h2 {
+  font-size: 1.1rem !important; font-weight: 600 !important; margin-bottom: .5em !important;
 }
 
-/* ===================================
-   GLOBAL CENTERING FIX FOR ALL PAGES
-   =================================== */
-.initial-content-wrap.main--with-sidebar .page,
-.initial-content-wrap.main--with-sidebar .archive,
-.initial-content-wrap.main--with-sidebar .page__inner-wrap,
-.initial-content-wrap.main--with-sidebar .page__content {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-}
+/* ===========================
+   PARENT vs CHILD BEHAVIOR
+   =========================== */
 
-.initial-content-wrap.main--with-sidebar .feature__wrapper,
-.initial-content-wrap.main--with-sidebar .tiles {
-  max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
+/* Full-bleed hero from sidebar → right edge (no overflow, no double offset) */
+.initial-content-wrap.main--with-sidebar .page__hero,
+.initial-content-wrap.main--with-sidebar .page__hero--overlay {
+  margin-left: 0 !important;                 /* <-- was var(--sidebar-width) */
+  width: 100% !important;                    /* <-- was calc(100% - var(--sidebar-width)) */
+  max-width: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
-
-/* Ensure general content width stays reasonable */
-.main, .page, .page__content, .page__inner-wrap {
-  max-width: 95vw !important;
-  padding-left: 2rem !important;
-  padding-right: 2rem !important;
-  margin: 0 auto !important;
-}
-
-/* === FINAL OVERRIDE: center content even with sidebar === */
-.main--with-sidebar {
-  margin-left: 0 !important;                /* remove the right shift */
-  padding-top: var(--masthead-height);
-}
-
-.initial-content-wrap .page,
-.initial-content-wrap .archive,
-.initial-content-wrap .page__inner-wrap,
-.initial-content-wrap .page__content {
-  max-width: 1100px;                         /* tune width */
-  margin-left: auto !important;
-  margin-right: auto !important;
+.initial-content-wrap.main--with-sidebar .page__hero .wrapper,
+.initial-content-wrap.main--with-sidebar .page__hero--overlay .wrapper {
+  max-width: none !important;
+  margin: 0 !important;
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
-/* Optional: center feature rows / tiles */
-.initial-content-wrap .feature__wrapper,
-.initial-content-wrap .tiles {
-  max-width: 1024px;
-  margin-left: auto !important;
-  margin-right: auto !important;
+/* CHILD pages (default): left-aligned after the sidebar */
+.initial-content-wrap:not(.parent-centered) .page__inner-wrap,
+.initial-content-wrap:not(.parent-centered) .page__content,
+.initial-content-wrap:not(.parent-centered) .archive {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* PARENT pages: add `classes: parent-centered` in front matter */
+.parent-centered .page__inner-wrap,
+.parent-centered .page__content,
+.parent-centered .archive,
+.parent-centered .feature__wrapper,
+.parent-centered .tiles {
+  max-width: var(--content-max);
+  margin-left: auto;
+  margin-right: auto;
   justify-content: center;
 }
 
+
+/* === Sidebar-aware layout: one place to offset === */
+:root { --sidebar-width: 260px; --content-max: 1100px; }
+
+/* 0) Undo any previous left pushes */
+.main--with-sidebar { margin-left: 0 !important; }      /* old rule in your file */
+.initial-content-wrap { margin-left: 0 !important; }    /* just in case */
+
+/* 1) Reserve sidebar space ONCE on the outer wrapper */
+.initial-content-wrap.main--with-sidebar {
+  padding-left: var(--sidebar-width) !important;
+}
+
+/* 2) Hero should start at 0 inside the wrapper (no double offset) */
+.initial-content-wrap.main--with-sidebar .page__hero,
+.initial-content-wrap.main--with-sidebar .page__hero--overlay {
+  margin-left: 0 !important;
+  width: 100% !important;           /* use 100%, not 100vw */
+  max-width: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.initial-content-wrap.main--with-sidebar .page__hero .wrapper,
+.initial-content-wrap.main--with-sidebar .page__hero--overlay .wrapper {
+  max-width: none !important;
+  margin: 0 !important;
+  padding-left: 2rem; padding-right: 2rem;
+}
+
+/* 3) CHILD pages (default): left-aligned after the sidebar */
+.initial-content-wrap:not(.parent-centered) .page__inner-wrap,
+.initial-content-wrap:not(.parent-centered) .page__content,
+.initial-content-wrap:not(.parent-centered) .archive {
+  max-width: none;
+  margin: 0;
+  padding-left: 2rem; padding-right: 2rem;
+}
+
+/* 4) PARENT pages: add `classes: parent-centered` in front matter */
+.parent-centered .page__inner-wrap,
+.parent-centered .page__content,
+.parent-centered .archive,
+.parent-centered .feature__wrapper,
+.parent-centered .tiles {
+  max-width: var(--content-max);
+  margin-left: auto; margin-right: auto;
+  justify-content: center;
+}
+
+/* 5) Belt-and-suspenders: kill any tiny overflow */
+html, body, .initial-content-wrap { overflow-x: hidden; }
+
+
+/* === Parent-only centering: bulletproof === */
+:root { --content-max: 1100px; } /* adjust if you want wider/narrower */
+
+/* Make sure the sidebar space is reserved once (keep from earlier) */
+.initial-content-wrap.main--with-sidebar { padding-left: var(--sidebar-width); }
+
+/* Full-bleed hero within the wrapper (keep from earlier) */
+.initial-content-wrap.main--with-sidebar .page__hero,
+.initial-content-wrap.main--with-sidebar .page__hero--overlay {
+  margin-left: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.initial-content-wrap.main--with-sidebar .page__hero .wrapper,
+.initial-content-wrap.main--with-sidebar .page__hero--overlay .wrapper {
+  max-width: none !important;
+  margin: 0 !important;
+  padding-left: 2rem; padding-right: 2rem;
+}
+
+/* CHILD pages (default): left-aligned */
+.initial-content-wrap:not(.parent-centered) .page,
+.initial-content-wrap:not(.parent-centered) .page__inner-wrap,
+.initial-content-wrap:not(.parent-centered) .page__content,
+.initial-content-wrap:not(.parent-centered) .archive {
+  max-width: none !important;
+  width: auto !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 2rem; padding-right: 2rem;
+}
+
+/* PARENT pages: force-center the real content containers */
+body.parent-centered .page,
+body.parent-centered .page__inner-wrap,
+body.parent-centered .page__content,
+body.parent-centered .archive,
+body.parent-centered .feature__wrapper,
+body.parent-centered .tiles {
+  width: auto !important;
+  max-width: var(--content-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 2rem;  /* consistent inner gutter */
+  padding-right: 2rem;
+}
+
+/* Safety: kill any stray horizontal overflow */
+html, body, .initial-content-wrap { overflow-x: hidden; }

@@ -2,6 +2,7 @@
 title: "Using the Cluster"
 permalink: /using-the-cluster/
 layout: single
+classes: parent-centered
 ---
 
 This section covers the day-to-day operations on the cluster, from managing your software environments to submitting and monitoring jobs. Explore the topics below to learn how to make the most of the cluster's resources.
