@@ -9,7 +9,9 @@
 @import "sidebar";
 // @import "custom/sidebar";
 
-/* Custom styles */
+/* ===========================
+   Custom styles
+   =========================== */
 :root {
   --uchicago-maroon: #800000;
   --uchicago-grey: #666666;
@@ -26,24 +28,12 @@ p {
   font-size: 0.9rem;
 }
 
-h1 {
-  font-size: 1.75rem;
-}
-h2 {
-  font-size: 1.5rem;
-}
-h3 {
-  font-size: 1.25rem;
-}
-h4 {
-  font-size: 1.1rem;
-}
-h5 {
-  font-size: 1rem;
-}
-h6 {
-  font-size: 0.9rem;
-}
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.1rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.9rem; }
 
 .sidebar__navigation li a {
   font-size: 0.9rem !important;
@@ -428,9 +418,57 @@ body.left-aligned {
   margin-bottom: 0.5em !important;
 }
 
+/* ===================================
+   GLOBAL CENTERING FIX FOR ALL PAGES
+   =================================== */
+.initial-content-wrap.main--with-sidebar .page,
+.initial-content-wrap.main--with-sidebar .archive,
+.initial-content-wrap.main--with-sidebar .page__inner-wrap,
+.initial-content-wrap.main--with-sidebar .page__content {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.initial-content-wrap.main--with-sidebar .feature__wrapper,
+.initial-content-wrap.main--with-sidebar .tiles {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+/* Ensure general content width stays reasonable */
 .main, .page, .page__content, .page__inner-wrap {
   max-width: 95vw !important;
   padding-left: 2rem !important;
   padding-right: 2rem !important;
   margin: 0 auto !important;
 }
+
+/* === FINAL OVERRIDE: center content even with sidebar === */
+.main--with-sidebar {
+  margin-left: 0 !important;                /* remove the right shift */
+  padding-top: var(--masthead-height);
+}
+
+.initial-content-wrap .page,
+.initial-content-wrap .archive,
+.initial-content-wrap .page__inner-wrap,
+.initial-content-wrap .page__content {
+  max-width: 1100px;                         /* tune width */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Optional: center feature rows / tiles */
+.initial-content-wrap .feature__wrapper,
+.initial-content-wrap .tiles {
+  max-width: 1024px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  justify-content: center;
+}
+

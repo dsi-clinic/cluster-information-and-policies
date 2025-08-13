@@ -2,6 +2,7 @@
 title: "Quickstart Guide"
 permalink: /quickstart/
 layout: single
+classes: [wide]
 ---
 
 Welcome to the DSI Cluster! This section provides the essential information you need to get your account set up and connect to the cluster for the first time.
@@ -15,7 +16,8 @@ Follow these guides in order to get started.
   gap: 1.5rem;
   padding: 2rem 0;
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1024px; /* Center the grid on wider screens */
 }
 
 /* Responsive behavior for smaller screens */
