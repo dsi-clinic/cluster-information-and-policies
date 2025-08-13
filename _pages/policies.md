@@ -1,5 +1,5 @@
 ---
-title: Cluster Policies
+title: Policies & Purchasing
 layout: single
 permalink: /policies/
 collection: policies

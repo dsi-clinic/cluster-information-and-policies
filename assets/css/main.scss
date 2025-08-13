@@ -301,3 +301,18 @@ body.parent-centered .tiles {
 
 /* Safety: kill any stray horizontal overflow */
 html, body, .initial-content-wrap { overflow-x: hidden; }
+
+
+/* === Center page title + lead for parent pages only === */
+body.parent-centered .page__title,
+body.parent-centered .page__lead {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Optional: limit max width so it doesn't stretch too far */
+body.parent-centered .page__lead {
+  max-width: 800px;
+}
+

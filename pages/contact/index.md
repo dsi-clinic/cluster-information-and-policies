@@ -2,6 +2,7 @@
 layout: single
 title: Contact us
 permalink: /contact/
+classes: parent-centered
 ---
 
 For technical support, questions about your account, or issues with the cluster, please contact our support team. We are here to help you with any problems you may encounter while using the DSI computing resources.
