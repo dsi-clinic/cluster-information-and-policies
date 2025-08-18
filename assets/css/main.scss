@@ -421,3 +421,61 @@ h1, h2, h3, h4, h5 {
   font-family: 'Crimson Text', serif;
   font-weight: 700;
 }
+
+
+/* =========================
+   Masthead: brand flush left
+   + lighter site title
+   ========================= */
+
+/* 1) Stop centering the masthead */
+.masthead {
+  justify-content: flex-start !important;   /* was center */
+}
+
+/* 2) Pull the masthead content to the left edge */
+.masthead__inner-wrap {
+  max-width: none !important;               /* let it span full width */
+  padding-left: 0.75rem !important;         /* set to 0 for absolutely flush */
+  padding-right: 1rem !important;
+  justify-content: flex-start !important;
+}
+
+/* 3) Make sure the nav row doesn't re-center */
+.greedy-nav {
+  justify-content: flex-start !important;
+}
+
+/* 4) Remove any stray left margin on the logo */
+.site-logo {
+  margin-left: 0 !important;
+}
+
+/* 5) Soften the masthead title weight */
+.greedy-nav .site-title,
+.site-title {
+  font-weight: 600 !important;              /* was bold (700/800) */
+  /* optional: slightly smaller
+  font-size: 1.1rem !important;
+  */
+}
+
+
+/* =========================
+   Masthead tweaks: font size + spacing
+   ========================= */
+
+/* Decrease masthead title font size */
+.greedy-nav .site-title,
+.site-title {
+  font-size: 1rem !important;     /* adjust down from ~1.3rem */
+  font-weight: 600 !important;    /* still lighter than bold */
+  line-height: 1.2;               /* tighter vertical spacing */
+}
+
+/* Reduce gap between logo and text */
+.site-logo {
+  margin-right: 0.01rem !important;  /* was ~0.75rem+ */
+  width: 28px !important;            /* shrink logo size if desired */
+  height: auto !important;
+}
