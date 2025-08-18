@@ -2,9 +2,9 @@
 title: "Troubleshooting & FAQ"
 permalink: /faq/
 layout: single
-toc: true
+toc: false
 toc_label: "Contents"
-toc_sticky: true
+toc_sticky: false
 ---
 
 This section provides answers to frequently asked questions and solutions to common problems. If you're encountering an issue, it's a good place to start.

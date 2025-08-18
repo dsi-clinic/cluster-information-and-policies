@@ -14,7 +14,7 @@
    Custom styles
    =========================== */
 :root {
-  --uchicago-maroon: #800000;
+  --uchicago-maroon: #5a1515;
   --uchicago-grey: #666666;
   --masthead-height: 60px;
 
@@ -478,4 +478,247 @@ h1, h2, h3, h4, h5 {
   margin-right: 0.01rem !important;  /* was ~0.75rem+ */
   width: 28px !important;            /* shrink logo size if desired */
   height: auto !important;
+}
+
+/* =========================
+   Tighten spacing: logo + title
+   ========================= */
+
+/* Ensure logo and title sit snugly */
+.greedy-nav .site-logo,
+.greedy-nav .site-title {
+  margin-right: 0 !important;   /* reset nav default */
+  padding-right: 0 !important;
+}
+
+/* Add a small custom gap (adjust as needed) */
+.site-logo {
+  margin-right: 0.25rem !important; /* ~4px */
+  width: 26px !important;           /* match visual height to text */
+}
+
+/* Ensure they align tightly in flexbox */
+.greedy-nav .site-title {
+  display: flex;
+  align-items: center;
+}
+
+/* =========================
+   Logo + Title Adjustments
+   ========================= */
+
+/* Scale SVG to match text height */
+.site-logo img,
+.site-logo svg {
+  height: 32px !important;   /* increase until it matches text */
+  width: auto !important;
+  vertical-align: middle;
+}
+
+/* Reduce space between logo and title */
+.site-logo {
+  margin-right: 0.25rem !important; /* ~4px gap */
+}
+
+/* Keep title aligned with logo */
+.greedy-nav .site-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem; /* matches uchicago.edu body scaling */
+}
+
+/* Banner Styling */
+.page__hero {
+  background: #777;              /* grey background */
+  padding: 0.5rem 0.5rem;         /* thin height: adjust top/bottom */
+  border-radius: 0 !important;   /* remove curves */
+  margin: 0;                     /* remove extra spacing */
+}
+
+/* Banner title text */
+.page__title {
+  margin: 0;                     /* align text properly */
+  font-size: 1.8rem;              /* adjust text size */
+  line-height: 1.2;               /* tighter spacing */
+}
+
+
+/* =========================
+   THIN, FLAT GREY HERO BAR
+   ========================= */
+
+/* Make the grey bar thin, full-width, with square corners */
+.initial-content-wrap .page__hero,
+.initial-content-wrap .page__hero--overlay {
+  padding-top:  0.6rem !important;      /* ⇦ adjust height here */
+  padding-bottom: 0.6rem !important;
+  min-height: auto !important;
+  border-radius: 0 !important;         /* no curves */
+  box-shadow: none !important;         /* no drop shadow */
+  background: #7a7a7a;                 /* your grey */
+  margin: 0 !important;                /* no extra outer spacing */
+}
+
+/* Remove any extra vertical padding the wrapper might add */
+.initial-content-wrap .page__hero .wrapper,
+.initial-content-wrap .page__hero--overlay .wrapper {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  background: transparent !important;  /* kill overlay background */
+}
+
+/* Title inside the bar: no margins, no text shadow */
+.initial-content-wrap .page__hero .page__title,
+.initial-content-wrap .page__hero--overlay .page__title {
+  margin: 0 !important;
+  line-height: 1.2 !important;
+  text-shadow: none !important;
+}
+
+/* Keep content close to the bar (small gap below) */
+.initial-content-wrap .page__hero + .page,
+.initial-content-wrap .page__hero--overlay + .page {
+  margin-top: 0.9rem !important;       /* tweak to taste */
+}
+
+/* =========================
+   SPACE AROUND HERO BANNER
+   ========================= */
+
+/* space ABOVE the banner */
+.initial-content-wrap .page__hero,
+.initial-content-wrap .page__hero--overlay {
+  margin-top: 1.6rem !important;   /* push it down from the red header */
+  margin-bottom: 1.8rem !important; /* space before content starts */
+}
+
+/* optional: tighten the padding inside the banner itself */
+.initial-content-wrap .page__hero,
+.initial-content-wrap .page__hero--overlay {
+  padding-top: 0.6rem !important;
+  padding-bottom: 0.6rem !important;
+}
+
+/* ======= 1) Reset global page box sizing & margins ======= */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ======= 2) Use a simple 3-row grid on the <body> ======= */
+/* Row 1: masthead (fixed, but we’ll account for its height)
+   Row 2: content (grows to fill)
+   Row 3: footer (auto height and anchored at bottom)
+*/
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* ======= 3) Make sure the main content can actually grow ======= */
+.initial-content,
+#main,
+.initial-content-wrap {
+  min-height: 0 !important;     /* prevents phantom overflow/scroll */
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* ======= 4) Create an in-flow spacer for the FIXED masthead ======= */
+/* Your masthead is position:fixed; it’s not counted in flow height,
+   so add a spacer equal to its height at the top of the content. */
+:root { --masthead-height: 60px; }  /* already in your file; keep it */
+
+.initial-content::before {
+  content: "";
+  display: block;
+  height: var(--masthead-height);
+}
+
+/* ======= 5) Footer: no extra margins; sits in row 3 ======= */
+.page__footer {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* ======= 6) Kill accidental bottom spacing on last child ======= */
+.initial-content-wrap > :last-child {
+  margin-bottom: 0 !important;
+}
+
+.cluster-status-page .page__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers horizontally */
+  text-align: center;  /* ensures text inside is centered */
+}
+
+/* Only the Cluster Status page */
+.cluster-status-page .page__inner-wrap,
+.cluster-status-page .page__content {
+  max-width: 900px;                 /* tune: 800–1000px works well */
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Make sure the main panel is centered */
+.cluster-status-page .page__content > * {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Headings centered too (helps the eye) */
+.cluster-status-page .page__title,
+.cluster-status-page .page__lead {
+  text-align: center !important;
+}
+
+
+
+/* Center the whole Cluster Status page relative to the viewport (not just the post-sidebar canvas) */
+@media (min-width: 1100px) {
+  body.cluster-status-page .page__inner-wrap,
+  body.cluster-status-page .page__content {
+    max-width: 900px;                 /* tweak to taste (800–1000px) */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    position: relative;
+    left: calc(-0.5 * var(--sidebar-width)); /* <-- shift left by half the sidebar */
+  }
+}
+
+/* On smaller screens, do not shift left */
+@media (max-width: 1099px) {
+  body.cluster-status-page .page__inner-wrap,
+  body.cluster-status-page .page__content {
+    left: 0 !important;
+  }
+}
+
+/* Ensure the main panel stays centered inside the inner wrap */
+body.cluster-status-page .page__content > * {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Center headings */
+body.cluster-status-page .page__title,
+body.cluster-status-page .page__lead {
+  text-align: center !important;
+}
+
+
+/* ===========================
+   Custom styles
+   =========================== */
+:root {
+  --uchicago-maroon: #5a1515;
+  --uchicago-grey: #666666;
+  --masthead-height: 60px;
+
+  /* Layout constants */
+  --sidebar-width: 260px;    /* your left nav width */
+  --content-max: 1100px;     /* readable centered width for parent pages */
 }

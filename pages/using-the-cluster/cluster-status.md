@@ -5,7 +5,7 @@ nav_order: 2
 parent: Using the Cluster
 category: using-the-cluster
 permalink: /using-the-cluster/cluster-status/
-classes: [wide, left-aligned]
+classes: [cluster-status-page]
 hide_hero: True
 ---
 
@@ -52,3 +52,6 @@ hide_hero: True
   <p>View real-time usage, job queue activity, and node availability on the DSI Cluster Dashboard.</p>
   <a class="button" href="https://cluster-status.ds.uchicago.edu/status/uchicago-dsi-cluster" target="_blank">View Dashboard</a>
 </div>
+
+
+

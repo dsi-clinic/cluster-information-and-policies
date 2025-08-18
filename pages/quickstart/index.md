@@ -2,7 +2,7 @@
 title: "Quickstart Guide"
 permalink: /quickstart/
 layout: single
-classes: parent-centered
+classes: [parent-centered, push-footer]
 ---
 
 Welcome to the DSI Cluster! This section provides the essential information you need to get your account set up and connect to the cluster for the first time.
