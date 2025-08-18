@@ -7,6 +7,7 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // Main theme partials
 @import "sidebar";
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap');
 // @import "custom/sidebar";
 
 /* ===========================
@@ -407,4 +408,16 @@ body.parent-centered .initial-content-wrap .tiles {
   margin-right: auto !important;
   padding-left: 2rem !important;
   padding-right: 2rem !important;
+}
+
+body {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 16px;   // matches uchicago.edu
+  line-height: 1.6;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Crimson Text', serif;
+  font-weight: 700;
 }
