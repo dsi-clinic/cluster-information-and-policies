@@ -315,4 +315,96 @@ body.parent-centered .page__lead {
 body.parent-centered .page__lead {
   max-width: 800px;
 }
+/* --- Child pages: tighter left gutter + space under banner --- */
 
+/* 1) Move all child-page content closer to the sidebar */
+:root { --child-left-gutter: 0rem; }  /* tweak to taste */
+
+.initial-content-wrap:not(.parent-centered) .page,
+.initial-content-wrap:not(.parent-centered) .page__inner-wrap,
+.initial-content-wrap:not(.parent-centered) .page__content,
+.initial-content-wrap:not(.parent-centered) .archive {
+  /* keep left aligned, but reduce the inner padding */
+  padding-left: var(--child-left-gutter) !important;
+  padding-right: 2rem;      /* keep a comfortable right gutter */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  max-width: none !important;
+}
+
+/* 2) Add a bit of space between the fixed masthead and the first heading */
+.initial-content-wrap:not(.parent-centered) .page__title {
+  margin-top: 1rem;         /* adjust: 0.75rem–1.5rem */
+}
+
+/* In case some pages start with an H1 directly (no .page__title wrapper) */
+.initial-content-wrap:not(.parent-centered) h1:first-child {
+  margin-top: 2rem;
+}
+
+/* ===========================
+   FIX SCOPING: child vs parent
+   =========================== */
+
+/* CHILD pages (when body does NOT have parent-centered) */
+body:not(.parent-centered) .initial-content-wrap .page,
+body:not(.parent-centered) .initial-content-wrap .page__inner-wrap,
+body:not(.parent-centered) .initial-content-wrap .page__content,
+body:not(.parent-centered) .initial-content-wrap .archive {
+  max-width: none !important;
+  width: auto !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: var(--child-left-gutter, 1rem) !important;
+  padding-right: 2rem !important;
+}
+
+/* Add a bit of space under the masthead on CHILD pages */
+body:not(.parent-centered) .initial-content-wrap .page__title,
+body:not(.parent-centered) .initial-content-wrap h1:first-child {
+  margin-top: 1.5rem !important;  /* adjust to taste */
+}
+
+/* PARENT pages: FORCE centering (wins over any earlier rules) */
+body.parent-centered .initial-content-wrap .page,
+body.parent-centered .initial-content-wrap .page__inner-wrap,
+body.parent-centered .initial-content-wrap .page__content,
+body.parent-centered .initial-content-wrap .archive,
+body.parent-centered .initial-content-wrap .feature__wrapper,
+body.parent-centered .initial-content-wrap .tiles {
+  width: auto !important;
+  max-width: var(--content-max, 1100px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+/* Keep hero behavior intact (no double offset, no overflow) */
+body.parent-centered .initial-content-wrap.main--with-sidebar .page__hero,
+body.parent-centered .initial-content-wrap.main--with-sidebar .page__hero--overlay {
+  margin-left: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+
+/* ======================
+   Wider centered parents
+   ====================== */
+body.parent-centered .initial-content-wrap .page,
+body.parent-centered .initial-content-wrap .page__inner-wrap,
+body.parent-centered .initial-content-wrap .page__content,
+body.parent-centered .initial-content-wrap .archive,
+body.parent-centered .initial-content-wrap .feature__wrapper,
+body.parent-centered .initial-content-wrap .tiles {
+  width: auto !important;
+  max-width: 1400px !important;   /* 🔑 was ~1100px, now wider */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
