@@ -23,6 +23,30 @@
   --content-max: 1100px;     /* readable centered width for parent pages */
 }
 
+/* ===========================
+   Phoenix Watermark Background
+   =========================== */
+body::after {
+  content: "";
+  background-image: url('../images/phoenix-watermark.svg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Stays in place on scroll */
+  background-size: 650px; /* Aesthetically large, but not overwhelming */
+  background-position: top -80px right -200px; /* Positioned peeking from the top-right corner */
+  position: fixed; /* Covers the entire viewport */
+  top: 0; left: 0; right: 0; bottom: 0;
+  opacity: 0.035; /* Very faint, adjust to taste */
+  z-index: -1; /* Sits behind all content */
+  pointer-events: none; /* Not interactive */
+}
+
+/* On smaller screens, hide the watermark to avoid clutter */
+@media (max-width: 900px) {
+  body::after {
+    display: none;
+  }
+}
+
 /* Safety against tiny rounding issues from nested calcs */
 html, body { overflow-x: hidden; }
 
@@ -36,7 +60,8 @@ h4 { font-size: 1.1rem; }
 h5 { font-size: 1rem; }
 h6 { font-size: 0.9rem; }
 
-.sidebar__navigation li a { font-size: 0.9rem !important; }
+/* Set a consistent, readable font size for all sidebar links (parent and child) */
+.sidebar__navigation .nav__list a { font-size: 0.95rem !important; }
 
 .feature-item, .archive__item, .tile-grid .tile { font-size: 0.9rem; }
 
@@ -721,4 +746,11 @@ body.cluster-status-page .page__lead {
   /* Layout constants */
   --sidebar-width: 260px;    /* your left nav width */
   --content-max: 1100px;     /* readable centered width for parent pages */
+}
+
+/* Match sidebar child font size to parent */
+.nav-list .nav-list .nav-list-item > a {
+  font-size: 1rem;         /* same as parent, adjust if parent differs */
+  font-weight: bold;       /* optional: match parent weight */
+  color: inherit;          /* keep same color rules */
 }
