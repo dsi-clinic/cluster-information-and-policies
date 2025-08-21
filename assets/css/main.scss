@@ -105,9 +105,10 @@ h6 { font-size: 0.9rem; }
 
 /* Use margin-left to reserve the sidebar’s footprint.
    (Padding here can make “full-bleed” math trickier.) */
-.initial-content-wrap.main--with-sidebar {
-  margin-left: var(--sidebar-width);
-}
+
+
+.page__content > :last-child { margin-bottom: 0 !important; }
+html, body, .initial-content-wrap { overflow-x: hidden; }
 
 /* Footer */
 .page__footer { background-color: var(--uchicago-maroon) !important; }
@@ -631,47 +632,7 @@ html, body {
   padding: 0;
 }
 
-/* ======= 2) Use a simple 3-row grid on the <body> ======= */
-/* Row 1: masthead (fixed, but we’ll account for its height)
-   Row 2: content (grows to fill)
-   Row 3: footer (auto height and anchored at bottom)
-*/
-body {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-}
 
-/* ======= 3) Make sure the main content can actually grow ======= */
-.initial-content,
-#main,
-.initial-content-wrap {
-  min-height: 0 !important;     /* prevents phantom overflow/scroll */
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-/* ======= 4) Create an in-flow spacer for the FIXED masthead ======= */
-/* Your masthead is position:fixed; it’s not counted in flow height,
-   so add a spacer equal to its height at the top of the content. */
-:root { --masthead-height: 60px; }  /* already in your file; keep it */
-
-.initial-content::before {
-  content: "";
-  display: block;
-  height: var(--masthead-height);
-}
-
-/* ======= 5) Footer: no extra margins; sits in row 3 ======= */
-.page__footer {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-/* ======= 6) Kill accidental bottom spacing on last child ======= */
-.initial-content-wrap > :last-child {
-  margin-bottom: 0 !important;
-}
 
 .cluster-status-page .page__content {
   display: flex;
@@ -753,4 +714,38 @@ body.cluster-status-page .page__lead {
   font-size: 1rem;         /* same as parent, adjust if parent differs */
   font-weight: bold;       /* optional: match parent weight */
   color: inherit;          /* keep same color rules */
+}
+
+
+/* =============================================================================
+   Sticky Footer Fix
+   ========================================================================== */
+/*
+ * This solution uses a modern flexbox layout to ensure the footer always "sticks"
+ * to the bottom of the screen on pages with short content, while behaving
+ * normally on pages with long content.
+ */
+
+/* 1. Set up the body as a flex container that spans the full viewport height. */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 2. Make the main content wrapper grow to fill any empty space. `flex: 1` is
+ *    the key instruction that pushes the footer down. */
+.initial-content-wrap {
+  flex: 1 0 auto;
+}
+
+/* 3. Ensure the footer itself does not shrink. */
+.page__footer {
+  flex-shrink: 0;
+}
+
+/* 4. Prevent the last element in the main content from adding extra margin, which
+      can sometimes cause a small, unwanted scrollbar. */
+.page__content > :last-child {
+  margin-bottom: 0 !important;
 }
