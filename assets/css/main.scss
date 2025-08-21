@@ -618,21 +618,6 @@ h1, h2, h3, h4, h5 {
   margin-bottom: 1.8rem !important; /* space before content starts */
 }
 
-/* optional: tighten the padding inside the banner itself */
-.initial-content-wrap .page__hero,
-.initial-content-wrap .page__hero--overlay {
-  padding-top: 0.6rem !important;
-  padding-bottom: 0.6rem !important;
-}
-
-/* ======= 1) Reset global page box sizing & margins ======= */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-
 
 .cluster-status-page .page__content {
   display: flex;

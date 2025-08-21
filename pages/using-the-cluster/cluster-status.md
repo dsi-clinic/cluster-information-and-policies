@@ -19,8 +19,12 @@ hide_hero: True
   padding: 1.5rem;
   background-color: #f9f9f9;
   text-align: center;
-  max-width: 600px;
-  margin: 2rem auto;
+  max-width: 600px; /* Keeps the tile from getting too wide on large screens */
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: aut
+  /* Adds vertical space below the tile, pushing the footer down. 15vh = 15% of the viewport height. Adjust as needed. */
+  margin-bottom: 15vh;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 .status-tile h2 {
@@ -52,6 +56,3 @@ hide_hero: True
   <p>View real-time usage, job queue activity, and node availability on the DSI Cluster Dashboard.</p>
   <a class="button" href="https://cluster-status.ds.uchicago.edu/status/uchicago-dsi-cluster" target="_blank">View Dashboard</a>
 </div>
-
-
-
