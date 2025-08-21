@@ -87,4 +87,10 @@ Thu Apr  3 21:21:21 2025
 | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
 |                                         |                        |               MIG M. |
 |=========================================+========================+======================|
-|   0  NVIDIA A100 80GB PCIe          On  |   000000
+|   0  NVIDIA A100 80GB PCIe          On  |   00000000:E1:00.0 Off |                    0 |
+| N/A   34C    P0             54W /  300W |       1MiB /  81920MiB |      0%      Default |
+```
+
+where the version is in the upper right corner. This is the maximum allowable versions with the drivers and NOT the currently used version.
+
+This is useful information to know, but to get the currently used version, type in `nvcc --version.`
