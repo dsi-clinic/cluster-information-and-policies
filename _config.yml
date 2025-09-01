@@ -24,7 +24,7 @@ minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site structure
 include:
-  - _pages
+  - pages
   - documents
 
 # Collections
@@ -45,13 +45,6 @@ collections:
 
 # Default layouts
 defaults:
-  # _pages
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: false
   # pages
   - scope:
       path: "pages"

@@ -24,7 +24,7 @@ To gain access to the DSI cluster, you must first submit an access request. Plea
 
 1.  Go to the [Cluster Access Request Form](https://example.com/access-request-form).
 2.  Fill out all required fields, including your CNetID and the research group you'll be working with.
-3.  You will be asked to provide your **public SSH key**. For instructions, see the [SSH Keys & VPN Access]({{ site.baseurl }}{% link quickstart/ssh-vpn.md %}) page.
+3.  You will be asked to provide your **public SSH key**. For instructions, see the [SSH Keys & VPN Access]({{ site.baseurl }}{% link pages/quickstart/ssh-vpn.md %}) page.
 4.  Submit the form. You will receive an email confirmation once your request is processed.
 
 <div class="notice--info" markdown="1">
