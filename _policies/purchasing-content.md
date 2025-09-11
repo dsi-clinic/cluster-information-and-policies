@@ -24,10 +24,10 @@ Depending on the current configuration of the cluster there are limitations to w
 
 The minimum investment required to gain priority access to hardware is approximately $100,000. However, the specific hardware specifications fluctuate due to current technological trends and market availability.
 
-As of winter 2024, this investment looks like the following, with a total cost of roughly $115,000:
+As of autumn 2025, this investment looks like the following, with a total cost of roughly $115,000:
 
-* 4x Nvidia H100 80GB GPUs
-* 2x Intel LGA4677 CPUs
+* 4x Nvidia H200 80GB GPUs
+* 2x Intel LGA4677 CPUs or AMD 9000 series
 * 1TB RAM 
 * Misc. server components and cables
     
@@ -35,19 +35,19 @@ For up-to-date information on the minimum required specifications, please contac
 
 ## Current minimum hardware
 
-As of Winter 2024, the following types of GPUs are allowed and not-allowed to be purchased for the cluster. Note that this list is not comprehensive, if there are any questions about particular types of GPUs please contact DSI Techstaff.
+As of autumn 2025, the following types of GPUs are allowed and not-allowed to be purchased for the cluster. Note that this list is not comprehensive, if there are any questions about particular types of GPUs please contact DSI Techstaff.
 
 | Allowable | Not Allowed |
 | --- | --- |
-| - H100<br>- A100<br>- L405S<br>- A40 (Getting a bit long in the tooth) | - 4090 | 
+| - Hx00<br>- Bx00 | - 4090 <br>- L40S <br>- A40 <br>- A100 <br>- RTX GPUs| 
 
 There are a number of different reasons that hardware may not be allowed. We will try to keep this up to date regarding why certain decisions were made
 
-In the case of the 4090, at the time of this writing there are a number of reasons for not putting it in the cluster:
+In the case of the RTX (such as the 4090 and 5090), at the time of this writing there are a number of reasons for not putting it in the cluster:
 1. These are consumer grade cards which NVIDIA's contracts frown on putting in servers (while one of our providers has mentioned they would "play ball", this is not something we want partake in).
 2. Installing them will not be easy and will require adding additional software and complexity into the server to manage them. 
 3. There are a number of unknowns about how they would integrate into our current clusters queue and allocation systems. Since these are consumer grade cards they do expose the same management tools and data as the enterprise grade GPUs. While we believe it is possible to get these working in our current system it would be both time consuming and potentially increase the fragility of the cluster.
-4. Consumer grade cards are not designed for the type of workloads that we do for AI training. The lifespan of the 4090 in particular is known to not be high.
+4. Consumer grade cards are not designed for the type of workloads that we do for AI training. The lifespan of the RTX in particular is known to not be high.
 
 
 
@@ -60,6 +60,8 @@ In the case of the 4090, at the time of this writing there are a number of reaso
 There are a number of different factors that effect the lifecycle of any purchase as well as the associated priority policies.
 
 * Usage Duration: We will continue to operate GPUs in our cluster as long as they do not experience a fatal malfunction. This commitment is in line with our goal to maximize the utility of our resources while ensuring effective support for research needs.
+
+* Five year policy: You can expect five years of support (contingent on warranties, etc.) for enterprise grade hardware purchases. Five years after purchase hardware installed hardware is subject to recall in the case that it is no longer aligned with cluster standards.
 
 * End of Life Policy: The retirement of any GPU model from our cluster will align with NVIDIA's end-of-life policies for that particular model. We will proactively monitor these guidelines to ensure our hardware remains current and supported.
 
@@ -94,7 +96,7 @@ There are a number of different factors that effect the lifecycle of any purchas
 
 * Software issues (such as those related to the OS, server configuration and SLURM) and hardware issues are the responsibility of the system administrators. Debugging code and project level assistance is the responsibility of the person writing and executing the code.
 
-* If there are any critial failures in the cluster, the system administrators will do their best to diagnose and correct any problems. Hardware isn't unbreakable and if something is no longer usable by the cluster it will be removed, or replaced if possible.
+* If there are any critical failures in the cluster, the system administrators will do their best to diagnose and correct any problems. Hardware isn't unbreakable and if something is no longer usable by the cluster it will be removed, or replaced if possible.
 
 ## Additional Questions
 

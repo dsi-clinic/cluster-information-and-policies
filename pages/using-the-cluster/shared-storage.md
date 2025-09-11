@@ -65,3 +65,6 @@ The scratch filesystem is a large, high-performance storage space for temporary 
 5.  **Clean Up Regularly**: Be a good cluster citizen by regularly deleting files you no longer need, especially from the shared `/scratch` space.
 
 By following these guidelines, you can make the most of the cluster's storage resources and contribute to a stable and efficient computing environment for everyone.
+
+## See also
+- [Checking your Usage]({{ '/using-the-cluster/checking-usage/' | relative_url }})

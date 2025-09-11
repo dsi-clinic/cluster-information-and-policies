@@ -27,6 +27,10 @@ This document contains some frequently asked questions about the cluster and its
   * [I am currently limited to eight concurrent jobs (on either CPU or GPU), my jobs are very small. Can I increase the job limit? (AKA The QOS which is applied to everyone is limited to 8 concurrent jobs).](#i-am-currently-limited-to-eight-concurrent-jobs-on-either-cpu-or-gpu-my-jobs-are-very-small-can-i-increase-the-job-limit-aka-the-qos-which-is-applied-to-everyone-is-limited-to-8-concurrent-jobs)
   * [I feel like the cluster isn't working for me. Can we set up any additional configurations to allow for my specific job?](#i-feel-like-the-cluster-isnt-working-for-me-can-we-set-up-any-additional-configurations-to-allow-for-my-specific-job)
   * [There are processes not owned by me running on the GPU that I reserved. Is this expected?](#there-are-processes-not-owned-by-me-running-on-the-gpu-that-i-reserved-is-this-expected)
+  * [How do I check how much space I’m using in either a project or home directory?](#how-do-i-check-how-much-space-i-m-using-in-either-a-project-or-home-directory)
+  * [How to Get Additional Support?](#how-to-get-additional-support)
+  
+
 
 <!-- tocstop -->
 
@@ -73,7 +77,7 @@ Yes. In SLURM, this is called OverSubscribe. If a user is not utilizing a resour
 
 ### How do I check how much space I'm using in either a project or home directory? 
 
-Users are allocated limited space on home directories (50GB) and scratch space (50GB per location). To check your current usage, use the `dsiquota` command. See the detailed instructions in the [DSI Quota Tool]({% link _tools/dsiquota.md %}) documentation.
+Users are allocated limited space on home directories (50GB) and scratch space (50GB per location). To check your current usage, use the `dsiquota` command. See the detailed instructions in the [DSI Quota Tool]({{ '/using-the-cluster/checking-usage/' | relative_url }}) documentation.
 
 
 ### How to Get Additional Support?

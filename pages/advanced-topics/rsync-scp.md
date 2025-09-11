@@ -1,9 +1,14 @@
 ---
-layout: single
 title: "Transferring Data with rsync and scp"
+layout: single
+nav_order: 2
+parent: Advanced Topics
+category: advanced-topics
 permalink: /advanced-topics/rsync-scp/
-excerpt: "A guide with examples for transferring data to and from the cluster using rsync and scp."
+classes: [wide, left-aligned]
+hide_hero: True
 ---
+# Transferring Data with rsync and scp
 
 Securely transferring data to and from the cluster is a fundamental task for any user. The two most common command-line tools for this are `scp` (Secure Copy) and `rsync` (Remote Sync). This guide provides an overview of both tools with practical examples.
 
@@ -28,13 +33,13 @@ The source and destination can be local or remote paths. A remote path is specif
 **1. Transfer a file from your local machine to the cluster's home directory:**
 
 ```bash
-scp /path/to/local/file.txt your_cnetid@cluster.dsi.uchicago.edu:~/
+scp /path/to/local/file.txt your_cnetid@fe01.ds.uchicago.edu:~/
 ```
 
 Transfer a file from the cluster to your local machine:
 
 ```bash
-scp your_cnetid@cluster.dsi.uchicago.edu:/path/to/remote/file.txt /path/to/local/directory/
+scp your_cnetid@fe01.ds.uchicago.edu:/path/to/remote/file.txt /path/to/local/directory/
 ```
 
 #### Using `rsync` (Recommended for large or repeated transfers)
@@ -42,17 +47,17 @@ scp your_cnetid@cluster.dsi.uchicago.edu:/path/to/remote/file.txt /path/to/local
 Transfer a directory from your local machine to the cluster:
 
 ```bash
-rsync -avz /path/to/local/directory/ your_cnetid@cluster.dsi.uchicago.edu:/path/to/remote/directory/
+rsync -avz /path/to/local/directory/ your_cnetid@fe01.ds.uchicago.eduu:/path/to/remote/directory/
 ```
 
 Transfer a directory from the cluster to your local machine:
 
 ```bash
-rsync -avz your_cnetid@cluster.dsi.uchicago.edu:/path/to/remote/directory/ /path/to/local/directory/
+rsync -avz your_cnetid@fe01.ds.uchicago.edu:/path/to/remote/directory/ /path/to/local/directory/
 ```
 
 You can also use the --progress flag to monitor file transfer status:
 
 ```bash
-rsync -avz --progress /path/to/local/ your_cnetid@cluster.dsi.uchicago.edu:/remote/path/
+rsync -avz --progress /path/to/local/ your_cnetid@fe01.ds.uchicago.edu:/remote/path/
 ```

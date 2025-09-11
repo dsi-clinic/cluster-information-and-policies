@@ -20,30 +20,15 @@ If you are looking for compute resources and are more generally affiliated with 
 
 ## Step 2: Requesting Access
 
-To gain access to the DSI cluster, you must first submit an access request. Please follow these steps:
+To gain access to the DSI cluster, you must email the tech staff team directly. Please follow these steps:
 
-1.  Go to the [Cluster Access Request Form](https://example.com/access-request-form).
-2.  Fill out all required fields, including your CNetID and the research group you'll be working with.
-3.  You will be asked to provide your **public SSH key**. For instructions, see the [SSH Keys & VPN Access]({{ site.baseurl }}{% link pages/quickstart/ssh-vpn.md %}) page.
-4.  Submit the form. You will receive an email confirmation once your request is processed.
+1. Send an email to **[techstaff@cs.uchicago.edu](mailto:techstaff@cs.uchicago.edu)**.  
+2. In your email, include:  
+   - Your **CNetID**  
+   - A brief description of your **access affiliation**  
+   - If you are working under a PI, **CC your PI** on the email   
+3. The tech staff will review your request and contact you once your account has been created.  
 
-<div class="notice--info" markdown="1">
-**Note:** Access requests are typically reviewed within 2-3 business days. Please plan accordingly and submit your request well in advance of when you need cluster access.
-</div>
-
-## Step 3: Account Confirmation and Password
-
-Once your access request is approved, you'll receive an email with instructions. While you will use your SSH key to log in, your account also has a password that is used for certain services (like `sudo` if you have permission).
-
-To set or change your password, log in to the cluster and use the `passwd` command:
-```bash
-passwd
-```
-Follow the prompts to set a strong, unique password.
-
-## Step 4: Understanding Permissions
-
-Access to specific directories, software, or resources on the cluster is managed through permissions.
 
 ### Group Permissions
 If you are part of a research group, you will be added to a Unix group that grants access to shared resources, such as a project directory in `/project`. Contact your group lead or the system administrators to be added to the appropriate group.
