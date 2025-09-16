@@ -7,3 +7,7 @@ baseurl: ""  # Empty baseurl for local development
 
 # Disable some production-only features
 livereload: true
+
+# Silence Sass deprecation warnings from theme/vendor dependencies during local dev
+sass:
+  quiet_deps: true

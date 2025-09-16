@@ -9,8 +9,8 @@ main:
     children:
       - title: "Account Creation & Permissions"
         url: "/quickstart/accounts/"
-      - title: "SSH Keys & VPN Access"
-        url: "/quickstart/ssh-vpn/"
+      - title: "Get SSH Access"
+        url: "/quickstart/ssh/"
       - title: "Installing Client Tools"
         url: "/quickstart/client-tools/"
   - title: "Using the Cluster"

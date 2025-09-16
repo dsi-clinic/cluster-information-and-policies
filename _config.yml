@@ -103,7 +103,7 @@ header:
   
 footer:
   links: [] 
-
-
+  
 sass:
   sass_dir: assets/css
+  quiet_deps: true
