@@ -6,6 +6,7 @@ parent: Quickstart
 category: quickstart
 permalink: /quickstart/client-tools/
 classes: [wide, left-aligned]
+hide_hero: True
 ---
 
 The DSI cluster makes use of **environments** to manage software and dependencies. This approach ensures reproducibility and prevents conflicts with system-wide installations.  

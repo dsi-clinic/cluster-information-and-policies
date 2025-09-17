@@ -53,6 +53,5 @@ hide_hero: True
 
 <div class="status-tile">
   <h2>Check Live Cluster Status</h2>
-  <p>View real-time usage, job queue activity, and node availability on the DSI Cluster Dashboard.</p>
   <a class="button" href="https://cluster-status.ds.uchicago.edu/status/uchicago-dsi-cluster" target="_blank">View Dashboard</a>
 </div>

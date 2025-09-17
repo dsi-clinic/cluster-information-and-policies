@@ -46,7 +46,7 @@ The scratch filesystem is a large, high-performance storage space for temporary 
 *   **Purpose**: Intended for temporary files generated during job execution (e.g., intermediate results, large temporary datasets). It provides the best I/O performance, making it ideal for data-intensive computations.
 *   **Quotas**: Scratch space is very large, but it is a shared resource for all users.
 *   **Backups**: **Files on `/scratch` are NOT backed up.** You are responsible for moving any important data from `/scratch` to your `/project` directory.
-*   **Purge Policy**: To ensure space is available for active jobs, files on `/scratch` are subject to a strict purge policy. Files that have not been accessed for a certain period (e.g., 30 days) will be automatically deleted.
+*   **Purge Policy**: To ensure space is available for active jobs, files on `/scratch` are subject to a strict purge policy. Files that have not been accessed for 60 days will be automatically deleted.
 
 ## Summary of Storage Tiers
 
@@ -54,7 +54,7 @@ The scratch filesystem is a large, high-performance storage space for temporary 
 | :--- | :--- | :--- | :--- | :--- |
 | **Home** | `/home/<cnetid>` | Personal files, configs, source code | Yes | No |
 | **Project** | `/project/<group>` | Shared research data, results | Yes | No |
-| **Scratch** | `/scratch/` | Temporary files for active jobs | **No** | Yes (e.g., after 30 days of inactivity) |
+| **Scratch** | `/scratch/` | Temporary files for active jobs | **No** | Yes (after 60 days of inactivity) |
 
 ## Best Practices for Storage Usage
 

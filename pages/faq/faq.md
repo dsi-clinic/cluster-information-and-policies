@@ -1,8 +1,8 @@
 ---
 title: Frequently Asked Questions
 layout: single
-permalink: /faq/
-toc: true
+permalink: /faq/faq/
+# toc: true
 toc_sticky: true
 toc_label: "FAQ Contents"
 header:
@@ -10,11 +10,9 @@ header:
   overlay_filter: "0.5"
 ---
 
-## FAQ
-
 This document contains some frequently asked questions about the cluster and its abilities. This document does not contain support information.
 
-## Table of Contents
+## Questions
 <!-- TOC is auto-generated -->
 
 <!-- toc -->
@@ -28,6 +26,7 @@ This document contains some frequently asked questions about the cluster and its
   * [I feel like the cluster isn't working for me. Can we set up any additional configurations to allow for my specific job?](#i-feel-like-the-cluster-isnt-working-for-me-can-we-set-up-any-additional-configurations-to-allow-for-my-specific-job)
   * [There are processes not owned by me running on the GPU that I reserved. Is this expected?](#there-are-processes-not-owned-by-me-running-on-the-gpu-that-i-reserved-is-this-expected)
   * [How do I check how much space I’m using in either a project or home directory?](#how-do-i-check-how-much-space-i-m-using-in-either-a-project-or-home-directory)
+  * [Can DSI Techstaff create and maintain a shared data resource (e.g., joint hosting of LLMs)?](#can-dsi-techstaff-create-and-maintain-a-shared-data-resource-eg-joint-hosting-of-llms)
   * [How to Get Additional Support?](#how-to-get-additional-support)
   
 
@@ -55,6 +54,11 @@ Please use MiniConda or MicroMamba to create a custom software environment tailo
 
 You may be able to set up X11 forwarding for using software that requires a GUI. This is not the intended use of the cluster and while users are allowed to access X11 forwarding, it is not supported behavior. You can find a brief "How-to" [here](https://github.com/dsi-clinic/the-clinic/blob/main/tutorials/X11.md).
 
+### Can I use a containerized workflow, such as Docker?
+
+Currently, users are not provided root access which prevents the use of Docker. Other container technologies, such as podman and singularity may be useable, but they are neither tested nor formally supported.
+
+
 ### The current time limit on jobs is too low for what I want to do. Can I increase the job time limit? 
 
 No. The current job limit is already quite high at 12 hours (many research groups enforce much lower limits). If you have a job that requires a longer time horizon to complete you need to use check pointing in order to break up your jobs.
@@ -79,6 +83,16 @@ Yes. In SLURM, this is called OverSubscribe. If a user is not utilizing a resour
 
 Users are allocated limited space on home directories (50GB) and scratch space (50GB per location). To check your current usage, use the `dsiquota` command. See the detailed instructions in the [DSI Quota Tool]({{ '/using-the-cluster/checking-usage/' | relative_url }}) documentation.
 
+### Can DSI Techstaff create and maintain a shared data resource (e.g., joint hosting of LLMs)?
+
+No. For several reasons, DSI Techstaff cannot curate and maintain a shared dataset of this kind:
+
+* It requires ongoing curation: deciding which assets are included, handling updates, pruning unused data.
+* The cluster prioritizes data used in active research; it is not a long-term archival or public dataset host.
+* If multiple teams need a common dataset, they should designate a maintainer who will both prune unused data and keep the dataset aligned with active research, and then request a project folder with appropriate permissions.
+* Our current storage infrastructure uses NFS/ZFS, and simultaneous reads of the same files by multiple users can cause slowdowns.
+
+For details, see the policy guidance: [Cluster Storage – FAQ on shared data resources](https://cluster-policy.ds.uchicago.edu/resources/cluster-storage/#can-dsi-techstaff-put-together-a-shared-data-resource-such-as-joint-hosting-of-a-number-of-llms).
 
 ### How to Get Additional Support?
 

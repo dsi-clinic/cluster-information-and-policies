@@ -61,6 +61,10 @@ This section contains comprehensive policies governing the use of the DSI cluste
 - Hardware purchasing and priority access guidelines  
 - Lifecycle policies for cluster resources  
 
+#### Quick notes
+- Account security: Do not share login credentials; violations may result in suspension.
+- Scratch policy: Each user has 50GB on `/net/scratch` and 50GB on `/net/scratch2`. Older files are purged automatically; do not store unique data on scratch.
+
 <div class="tile-grid">
   {% assign sorted_policies = site.policies | sort: 'title' %}
   {% for policy in sorted_policies %}

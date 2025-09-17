@@ -83,3 +83,27 @@ If you are approaching or have exceeded your quota in your `/home` or `/project`
 3.  For project spaces, the Principal Investigator (PI) can request a quota increase by contacting support.
 
 Regularly checking your usage with `dsiquota` helps prevent interruptions to your work and ensures fair use of shared resources.
+
+## Additional CLI Examples
+
+### Project directories
+
+To check space usage assigned to a project:
+
+```bash
+dsiquota --project <PROJECT_NAME>
+# or, if the project is on /net/projects2
+dsiquota --project2 <PROJECT_NAME>
+```
+
+Note: Use `--project` for `/net/projects/...` and `--project2` for `/net/projects2/...`.
+
+### Scratch locations
+
+```bash
+dsiquota --scratch
+
+dsiquota --scratch2
+```
+
+These commands return your current usage and any limits for the scratch locations.

@@ -734,3 +734,25 @@ body {
 .page__content > :last-child {
   margin-bottom: 0 !important;
 }
+
+/* =============================================================================
+   Sticky Footer (wrapper-based)
+   ========================================================================== */
+.initial-content-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.page__footer { margin-top: auto; }
+.page__content > :last-child { margin-bottom: 0 !important; }
+
+/* =============================================================================
+   Anchor offset for fixed masthead (and thin hero bar)
+   ========================================================================== */
+html { scroll-padding-top: calc(var(--masthead-height) + 16px); }
+.page__content h1[id],
+.page__content h2[id],
+.page__content h3[id],
+.page__content h4[id],
+.page__content h5[id],
+.page__content h6[id] { scroll-margin-top: calc(var(--masthead-height) + 16px); }
