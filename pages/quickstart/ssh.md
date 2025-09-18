@@ -9,6 +9,8 @@ classes: [wide, left-aligned]
 hide_hero: True
 ---
 
+# Using the Cluster
+
 Accessing the DSI cluster securely requires the use of **SSH keys**. 
 
 For instructions on generating SSH keys and connecting to the cluster, please see the documentation [here](https://clinic.ds.uchicago.edu/tutorials/ssh_github_cluster.html).

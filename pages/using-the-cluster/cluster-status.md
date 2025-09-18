@@ -9,7 +9,7 @@ classes: [cluster-status-page]
 hide_hero: True
 ---
 
-# Cluster Status
+<!-- ## Cluster Status -->
 
 
 <style>

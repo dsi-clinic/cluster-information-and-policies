@@ -9,6 +9,8 @@ classes: [wide, left-aligned]
 hide_hero: True
 ---
 
+# Getting Access
+
 Users of the DSI cluster must meet one of the following criteria:
 
 1.  Have a DSI-related grant.
