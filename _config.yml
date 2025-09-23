@@ -1,5 +1,5 @@
 # Site settings
-title: UChicago DSI Cluster Information
+title: UCHICAGO DSI CLUSTER INFORMATION
 description: Information and policies for the UChicago Data Science Institute cluster
 url: "https://dsi-clinic.github.io" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -24,8 +24,7 @@ minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site structure
 include:
-  - _pages
-  - documents
+  - pages
 
 # Collections
 collections:
@@ -45,13 +44,16 @@ collections:
 
 # Default layouts
 defaults:
-  # _pages
+  # pages
   - scope:
-      path: "_pages"
+      path: "pages"
       type: pages
     values:
       layout: single
       author_profile: false
+      header:
+        overlay_color: "#800000"
+        overlay_filter: "0.5"
   # _resources
   - scope:
       path: ""
@@ -99,7 +101,8 @@ header:
   og_image: /assets/images/dsi-logo.webp
   
 footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/dsi-clinic"
+  links: [] 
+  
+sass:
+  sass_dir: assets/css
+  quiet_deps: true

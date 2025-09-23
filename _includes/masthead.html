@@ -1,34 +1,23 @@
-{% capture logo_path %}{{ site.logo }}{% endcapture %}
-
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
+      <!-- 
+        Custom masthead with logo and title
+      -->
       <nav id="site-nav" class="greedy-nav">
-        {% unless logo_path == empty %}
-          <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
-        {% endunless %}
-        <span class="site-title">
-          {{ site.masthead_title | default: site.title }}
-          {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
-        </span>
-        <ul class="visible-links">
-          {%- for link in site.data.navigation.main -%}
-            <li class="masthead__menu-item">
-              <a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
-            </li>
-          {%- endfor -%}
-        </ul>
-        {% if site.search == true %}
-        <button class="search__toggle" type="button">
-          <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
-          <i class="fas fa-search"></i>
-        </button>
-        {% endif %}
-        <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
-          <div class="navicon"></div>
-        </button>
-        <ul class="hidden-links hidden"></ul>
+        <div class="site-title-with-logo">
+          <!-- UChicago logo linking to external site -->
+          <a href="https://www.uchicago.edu/" target="_blank" rel="noopener noreferrer">
+            <img src="{{ '/assets/images/UChicago_Phoenix_Solid_1Color_White_RGB.svg' | relative_url }}" alt="UChicago Logo" class="site-logo">
+          </a>
+          <!-- Site title linking to homepage -->
+          <a class="site-title" href="{{ '/' | relative_url }}">
+            {{ site.masthead_title | default: site.title }}
+            {% if site.subtitle %}
+              <span class="site-subtitle">{{ site.subtitle }}</span>
+            {% endif %}
+          </a>
+        </div>
       </nav>
     </div>
   </div>

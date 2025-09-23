@@ -1,0 +1,33 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+// This class will be added to the body tag by Jekyll for pages with `classes: custom-layout`
+.custom-layout {
+  // Override the theme's default centered, max-width container
+  .page {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: flex-start; /* Vertically align sidebar and content to the top */
+}
+
+// Target the sidebar (assumed to be the first element in the wrapper)
+.content-wrapper > :first-child {
+  // --- ADJUSTABLE: Set the width of the sidebar ---
+  flex: 0 0 280px; // Do not grow, do not shrink, set a base width.
+  width: 280px;
+}
+
+.content-wrapper .main-content {
+  flex: 1; /* Allow the main content to grow and fill available space */
+  margin-left: 0; /* Override theme's centering margin */
+  padding-left: 3rem; /* --- ADJUSTABLE: Set the padding between sidebar and content --- */
+}

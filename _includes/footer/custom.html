@@ -1,15 +1,74 @@
 <!-- start custom footer snippets -->
+<style>
+  .page__footer-custom {
+    /* background-color: #7c150b;  */
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .footer-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-logo {
+    height: 100px; /* increased logo size */
+    margin-right: 1rem;
+  }
+
+  .footer-right {
+    text-align: right;
+    font-size: 0.8rem;
+    color: white;
+  }
+
+  .footer-icons {
+    margin-top: 0.2rem;
+  }
+
+  .footer-icons a {
+    color: white;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .footer-icons i {
+    margin-right: 0.3rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .page__footer-custom {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .footer-right {
+      text-align: left;
+      margin-top: 0.5rem;
+    }
+
+    .footer-icons {
+      margin-left: 0;
+    }
+  }
+</style>
+
 <div class="page__footer-custom">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <span class="footer-institution">University of Chicago Data Science Institute</span>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <span class="footer-update">Last updated: {{ site.time | date: '%B %d, %Y' }}</span>
-      </div>
+  <div class="footer-left">
+    <img src="{{ '/assets/images/Reverse University Logo_1Color_White_RGB.svg' | relative_url }}" alt="UChicago Logo" class="footer-logo">
+  </div>
+
+  <div class="footer-right">
+    <div>&copy; {{ site.time | date: '%Y' }} UCHICAGO DSI CLUSTER INFORMATION.</div>
+    <div>Powered by Jekyll & Minimal Mistakes.</div>
+    <div class="footer-icons">
+      <a href="https://github.com/dsi-clinic" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+      <a href="{{ '/feed.xml' | relative_url }}"><i class="fas fa-rss-square"></i> Feed</a>
     </div>
   </div>
 </div>

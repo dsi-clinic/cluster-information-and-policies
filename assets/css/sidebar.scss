@@ -1,0 +1,122 @@
+---
+---
+
+/* Basic Sidebar Styling */
+.sidebar {
+  position: fixed;
+  top: var(--masthead-height);
+  overflow-x: hidden;
+  left: 0;
+  bottom: 0;
+  width: 260px;
+  background-color: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.sidebar-nav {
+  padding: 1rem;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-nav a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  background-color: #f9f9f9;
+  color: #343a40;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-nav a:hover {
+  background-color: #e2e6ea;
+  color: #000;
+}
+
+/* Top-level items bold */
+.sidebar-nav > ul > li > a {
+  font-weight: bold;
+  background-color: #f9f9f9 !important;
+  color: #343a40 !important;
+}
+
+/* Active state - current page only */
+.sidebar-nav li.active > a {
+  background-color: #800000 !important;
+  color: #ffffff !important;
+}
+
+/* Active parent - only when submenu is open but not necessarily active */
+.sidebar-nav li.active-parent > a {
+  background-color: #f9f9f9 !important;
+  color: #343a40 !important;
+}
+
+/* Maintain maroon ONLY on actual active item */
+.sidebar-nav li.active > a::after,
+.sidebar-nav li.active-parent > a::after {
+  color: #ffffff;
+}
+
+/* Hide triangle if not needed */
+.sidebar-nav li.parent > a::after {
+  display: none !important;
+}
+
+/* Sub-menu dropdown */
+.sidebar-nav li ul {
+  padding-left: 0.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.sidebar-nav li.open > ul,
+.sidebar-nav li.active-parent > ul {
+  max-height: 500px;
+  transition: max-height 0.5s ease-in;
+}
+
+/* Submenu items styled like sidebar (no white card) */
+.sidebar-nav li ul a {
+  font-weight: normal;
+  font-size: 1.2em;
+  padding-left: 1.25rem !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: #343a40 !important;
+}
+
+/* Hover for submenu items */
+.sidebar-nav li ul a:hover {
+  background-color: #e2e6ea !important;
+  color: #000 !important;
+}
+
+/* Final override: non-active parent should look neutral */
+.sidebar-nav li.active-parent:not(.active) > a {
+  background-color: #f9f9f9 !important;
+  color: #343a40 !important;
+  box-shadow: none !important;
+  font-weight: bold;
+  outline: none;
+}
+
+.sidebar-nav li.active-parent:not(.active) > a:hover {
+  background-color: #e2e6ea !important;
+  color: #000 !important;
+}

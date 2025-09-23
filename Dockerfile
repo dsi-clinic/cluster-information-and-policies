@@ -1,4 +1,4 @@
-FROM ruby:3.1-buster
+FROM ruby:3.1
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \

@@ -1,23 +1,24 @@
 ---
-title: Change Cuda Version
+title: "Change CUDA Version"
 layout: single
-permalink: /howto/change-cuda-version
-excerpt: "How to Change CUDA Versions"
-header:
-  overlay_color: "#800000"
-  overlay_filter: "0.5"
+nav_order: 2
+parent: Advanced Topics
+category: advanced-topics
+permalink: /advanced-topics/change-cuda-version/
+classes: [wide, left-aligned]
+hide_hero: True
 ---
 
-## Changing CUDA Versions
+# Change CUDA Version
 
 This section contains information on how to use different versions of CUDA on the DSI Cluster. There are a few important concepts to keep in mind before starting:
 
-* While CUDA is installed on the login nodes, the compute nodes should be considered the source of truth for available CUDA versions. 
-* CUDA versions are controlled via environment variables that are generally set using your [`.bashrc` file.](https://www.digitalocean.com/community/tutorials/bashrc-file-in-linux).
+*   While CUDA is installed on the login nodes, the compute nodes should be considered the source of truth for available CUDA versions.
+*   CUDA versions are controlled via environment variables that are generally set using your `.bashrc` file..
 
-The environment variables of interest are: `CUDA_HOME`, `LD_LIBRARY_PATH` and `PATH`. 
+The environment variables of interest are: `CUDA_HOME`, `LD_LIBRARY_PATH` and `PATH`.
 
-If you want to change to a specific version of CUDA you will need to put something like the below into your `.bashrc` file. 
+If you want to change to a specific version of CUDA you will need to put something like the below into your `.bashrc` file.
 
 ```
 cuda_version=12.1
@@ -26,10 +27,8 @@ export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 export PATH=$CUDA_HOME/bin:$PATH
 ```
 
-
-
-| Remember |
-| --- | 
+| Remember                                                                                    |
+| :------------------------------------------------------------------------------------------ |
 | When editing your `.bashrc` file you will need to run `source` on it before the changes take effect |
 
 ### What version am I currently using (bash)?
@@ -63,18 +62,16 @@ print(f"CUDA version: {torch.version.cuda}")
 
 To see which version are available you can run the following command which lists the versions which are available:
 
-```
-ls -d /usr/local/cuda*
-```
+`ls -d /usr/local/cuda*`
 
 Currently this returns:
+
 ```
 /usr/local/cuda     /usr/local/cuda-11.8  /usr/local/cuda-12.1  /usr/local/cuda-12.4
 /usr/local/cuda-11  /usr/local/cuda-12    /usr/local/cuda-12.3
 ```
 
-which means that 11, 11.8, 12, 12.1, 12.3 and 12.4 are all useable on the cluster by changing the environment variables above. 
-
+which means that 11, 11.8, 12, 12.1, 12.3 and 12.4 are all useable on the cluster by changing the environment variables above.
 
 ### `nvidia-smi` shows something different!
 
@@ -94,8 +91,6 @@ Thu Apr  3 21:21:21 2025
 | N/A   34C    P0             54W /  300W |       1MiB /  81920MiB |      0%      Default |
 ```
 
-where the version is in the upper right corner. **This is the maximum allowable versions with the drivers and NOT the currently used version**.
+where the version is in the upper right corner. This is the maximum allowable versions with the drivers and NOT the currently used version.
 
-
-This is useful information to know, but to get the currently used version, type in `nvcc --version`.
-
+This is useful information to know, but to get the currently used version, type in `nvcc --version.`

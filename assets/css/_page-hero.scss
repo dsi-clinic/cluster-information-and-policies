@@ -1,0 +1,32 @@
+/* /assets/css/_page-hero.scss */
+
+.page__hero {
+  position: fixed;
+  top: var(--masthead-height); /* Position below the main masthead */
+  left: 0;
+  width: 100%;
+  height: var(--hero-height);
+  z-index: 1020; /* Below masthead (1030), above content */
+  display: flex;
+  align-items: center; /* Vertically center the content */
+  padding: 0 !important; /* Override theme's default padding */
+  background-color: var(--uchicago-maroon); /* Ensure background color */
+}
+
+/* Adjust the inner wrapper to fit the new fixed bar layout */
+.page__hero--overlay .wrapper {
+  width: 100%;
+  padding: 0 2em; /* Adjust padding for a cleaner look */
+  background: transparent; /* The parent .page__hero has the background now */
+}
+
+/* Ensure title and other text are visible and styled appropriately */
+.page__hero h1.page__title,
+.page__hero p.page__lead {
+  color: white;
+  margin: 0;
+  text-shadow: none; /* Remove shadow as it's on a solid background */
+}
+
+.page__hero h1.page__title { font-size: 1.5em; }
+.page__hero p.page__lead { font-size: 1em; opacity: 0.8; }

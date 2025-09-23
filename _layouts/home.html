@@ -4,39 +4,30 @@ layout: default
 
 <div id="main" role="main">
   <article class="home-content">
-    <h1>UChicago DSI Cluster Information</h1>
+    <h1>UCHICAGO DSI CLUSTER INFORMATION</h1>
     
-    <p>Welcome to the UChicago Data Science Institute Cluster Information website. This site provides information about cluster resources, policies, and tools.</p>
+    <p>Welcome to the UChicago Data Science Institute (DSI) Cluster Information Portal.
+    This site serves as a comprehensive guide to the DSI computing cluster, offering detailed information on available resources, system policies, usage guidelines, and essential tools to support your research computing needs.</p>
     
     <div class="feature-row">
       <div class="feature-item">
-        <h2><a href="{{ '/resources/' | relative_url }}">Cluster Resources</a></h2>
-        <p>Information about the DSI cluster's hardware and capabilities.</p>
-        <a href="{{ '/resources/' | relative_url }}" class="btn btn--primary">Learn more</a>
+        <h2><a href="{{ '/faq/' | relative_url }}">FAQ</a></h2>
+        <p>Find answers to common questions and learn how to get help with the cluster.</p>
+        <a href="{{ '/faq/' | relative_url }}" class="btn btn--primary">Learn more</a>
       </div>
       
       <div class="feature-item">
-        <h2><a href="{{ '/policies/' | relative_url }}">Policies</a></h2>
-        <p>General usage and purchasing policies for the DSI cluster.</p>
-        <a href="{{ '/policies/' | relative_url }}" class="btn btn--primary">Learn more</a>
+        <h2><a href="{{ '/using-the-cluster/cluster-status/' | relative_url }}">Cluster Status</a></h2>
+        <p>Link to the cluster status page.</p>
+        <a class="btn btn--primary" href="https://cluster-status.ds.uchicago.edu/status/uchicago-dsi-cluster" target="_blank">View Dashboard</a>
       </div>
       
       <div class="feature-item">
-        <h2><a href="{{ '/tools/' | relative_url }}">Tools</a></h2>
-        <p>Useful tools and commands for interacting with the DSI cluster.</p>
-        <a href="{{ '/tools/' | relative_url }}" class="btn btn--primary">Learn more</a>
+        <h2><a href="{{ '/quickstart/' | relative_url }}">Quick Start</a></h2>
+        <p>Step-by-step instructions to get you started with the DSI cluster quickly.</p>
+        <a href="{{ '/quickstart/' | relative_url }}" class="btn btn--primary">Get started</a>
       </div>
     </div>
     
-    <div class="home-content-text">
-      <h2>UChicago DSI Cluster</h2>
-      <p>This website contains information regarding the DSI's GPU-based cluster. NOTE: This document does not contain <em>support</em> information or tutorials.</p>
-      <p>For support information please start <a href="https://github.com/dsi-clinic/the-clinic/blob/main/tutorials/slurm.md">here</a>.</p>
-      <p>If the document above does not answer your questions please contact the DSI techstaff either through slack or email.</p>
-      <p>The DSI Cluster is overseen by a faculty cluster oversight committee and managed by the DSI's techstaff.</p>
-      
-      <h3>Cluster Status</h3>
-      <p>You can find current cluster status information <a href="https://cluster-status.ds.uchicago.edu/status/uchicago-dsi-cluster">here</a>. For information on specific monitors and their meaning, look at the <a href="{{ '/resources/monitor-status/' | relative_url }}">monitor status docs</a>.</p>
-    </div>
   </article>
 </div>

@@ -1,10 +1,20 @@
-## FAQ
+---
+title: Frequently Asked Questions
+layout: single
+permalink: /faq/faq/
+# toc: true
+toc_sticky: true
+toc_label: "FAQ Contents"
+header:
+  overlay_color: "#800000"
+  overlay_filter: "0.5"
+---
 
 This document contains some frequently asked questions about the cluster and its abilities. This document does not contain support information.
 
-## Table of Contents
-<!-- do not change TOC, generated from script -->
-<!-- `npx markdown-toc -i FAQ.md` -->
+## Questions
+<!-- TOC is auto-generated -->
+
 <!-- toc -->
 
 - [Questions](#questions)
@@ -15,6 +25,11 @@ This document contains some frequently asked questions about the cluster and its
   * [I am currently limited to eight concurrent jobs (on either CPU or GPU), my jobs are very small. Can I increase the job limit? (AKA The QOS which is applied to everyone is limited to 8 concurrent jobs).](#i-am-currently-limited-to-eight-concurrent-jobs-on-either-cpu-or-gpu-my-jobs-are-very-small-can-i-increase-the-job-limit-aka-the-qos-which-is-applied-to-everyone-is-limited-to-8-concurrent-jobs)
   * [I feel like the cluster isn't working for me. Can we set up any additional configurations to allow for my specific job?](#i-feel-like-the-cluster-isnt-working-for-me-can-we-set-up-any-additional-configurations-to-allow-for-my-specific-job)
   * [There are processes not owned by me running on the GPU that I reserved. Is this expected?](#there-are-processes-not-owned-by-me-running-on-the-gpu-that-i-reserved-is-this-expected)
+  * [How do I check how much space I’m using in either a project or home directory?](#how-do-i-check-how-much-space-i-m-using-in-either-a-project-or-home-directory)
+  * [Can DSI Techstaff create and maintain a shared data resource (e.g., joint hosting of LLMs)?](#can-dsi-techstaff-create-and-maintain-a-shared-data-resource-eg-joint-hosting-of-llms)
+  * [How to Get Additional Support?](#how-to-get-additional-support)
+  
+
 
 <!-- tocstop -->
 
@@ -33,11 +48,16 @@ If you are looking for compute resources and are more generally affiliated with 
 
 ### I want to install additional software.
 
-Please utilize MiniConda or MicroMamba to create a custom software environment tailored to your needs.
+Please use MiniConda or MicroMamba to create a custom software environment tailored to your needs.
 
 ### Is there a way to use the cluster via a GUI?
 
-You maybe able to set up X11 forwarding for using software that requires a GUI. This is not the intended use of the cluster and while users are allowed to access X11 forwarding, it is not supported behavior. You can find a brief "How-to" [here](https://github.com/dsi-clinic/the-clinic/blob/main/tutorials/X11.md).
+You may be able to set up X11 forwarding for using software that requires a GUI. This is not the intended use of the cluster and while users are allowed to access X11 forwarding, it is not supported behavior. You can find a brief "How-to" [here](https://github.com/dsi-clinic/the-clinic/blob/main/tutorials/X11.md).
+
+### Can I use a containerized workflow, such as Docker?
+
+Currently, users are not provided root access which prevents the use of Docker. Other container technologies, such as podman and singularity may be useable, but they are neither tested nor formally supported.
+
 
 ### The current time limit on jobs is too low for what I want to do. Can I increase the job time limit? 
 
@@ -49,10 +69,11 @@ No. The current concurrency limit is set to maximize the cluster's performance g
 
 ### I feel like the cluster isn't working for me. Can we set up any additional configurations to allow for my specific job?
 
-The cluster is designed to efficiently process the most common use cases. We constantly monitor cluster performance and think through ways to increase _overall_ performance. Given our limited resources we do not have the bandwidth to accommodate, implement and monitor additional configurations. If you have a specific use case which is not being efficiently handled by the current configuration there are two options:
+The cluster is designed to efficiently process the most common use cases. We constantly monitor cluster performance and think through ways to increase _overall_ performance. Given our limited resources we do not have the bandwidth to accommodate, implement and monitor additional configurations. If you have a specific use case that is not being efficiently handled by the current configuration there are two options:
 
   1. Use an alternative compute resources (such as [AWS](https://aws.amazon.com/), [GCP](https://cloud.google.com/) or [UChicago's RCC](https://rcc.uchicago.edu/)).
-  2. Purchase specific compute within the guidelines listed [here]({{ site.baseurl }}/policies/purchasing/). For allocated resources we are able to implement alternative QOS policies.
+  2. Purchase specific compute within the guidelines listed [here]({{ '/policies/purchasing/' | relative_url }}). For allocated resources we are able to implement alternative QOS policies.
+
 
 ### There are processes not owned by me running on the GPU that I reserved. Is this expected? 
 
@@ -60,4 +81,19 @@ Yes. In SLURM, this is called OverSubscribe. If a user is not utilizing a resour
 
 ### How do I check how much space I'm using in either a project or home directory? 
 
-Users are only allowed a certain amount of space on different directors. If you would like to see how much space you are using in a specific location, refer to the [`dsiquota` tool]({% link _tools/dsiquota.md %}).
+Users are allocated limited space on home directories (50GB) and scratch space (50GB per location). To check your current usage, use the `dsiquota` command. See the detailed instructions in the [DSI Quota Tool]({{ '/using-the-cluster/checking-usage/' | relative_url }}) documentation.
+
+### Can DSI Techstaff create and maintain a shared data resource (e.g., joint hosting of LLMs)?
+
+No. For several reasons, DSI Techstaff cannot curate and maintain a shared dataset of this kind:
+
+* It requires ongoing curation: deciding which assets are included, handling updates, pruning unused data.
+* The cluster prioritizes data used in active research; it is not a long-term archival or public dataset host.
+* If multiple teams need a common dataset, they should designate a maintainer who will both prune unused data and keep the dataset aligned with active research, and then request a project folder with appropriate permissions.
+* Our current storage infrastructure uses NFS/ZFS, and simultaneous reads of the same files by multiple users can cause slowdowns.
+
+For details, see the policy guidance: [Cluster Storage – FAQ on shared data resources](https://cluster-policy.ds.uchicago.edu/resources/cluster-storage/#can-dsi-techstaff-put-together-a-shared-data-resource-such-as-joint-hosting-of-a-number-of-llms).
+
+### How to Get Additional Support?
+
+If you need help beyond the FAQs or documentation, feel free to reach out to the DSI support team. Visit our [Contact Us]({{ '/contact/' | relative_url }}) page for assistance.
