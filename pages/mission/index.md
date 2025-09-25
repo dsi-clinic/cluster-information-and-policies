@@ -11,7 +11,7 @@ The DSI Cluster supports:
 
 * High-performance _computational_ operations using standard hardware via a common scheduling interface (SLURM) and traditional unix tools and interfaces.
 * This includes large scale data processing on GPUs and CPUs.
-* The cluster support both _private_ partitions purchased under our [purchasing policy](../../_policies/purchasing-content.md) as well as both research and teaching using our general partition.
+* The cluster support both _private_ partitions purchased under our [purchasing policy]({{ "/policies/purchasing/" | relative_url }}) as well as both research and teaching using our general partition.
 
 The cluster does NOT support:
 

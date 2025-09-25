@@ -15,4 +15,4 @@ Accessing the DSI cluster securely requires the use of **SSH keys**.
 
 For instructions on generating SSH keys and connecting to the cluster, please see the documentation [here](https://clinic.ds.uchicago.edu/tutorials/ssh_github_cluster.html).
 
-Note that you must have a DSI Cluster account (information [here](accounts.md)) before you are able to access the cluster.
+Note that you must have a DSI Cluster account (information [here]({{ "/quickstart/accounts/" | relative_url }})) before you are able to access the cluster.

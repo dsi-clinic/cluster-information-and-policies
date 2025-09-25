@@ -92,7 +92,7 @@ No. For several reasons, DSI Techstaff cannot curate and maintain a shared datas
 * If multiple teams need a common dataset, they should designate a maintainer who will both prune unused data and keep the dataset aligned with active research, and then request a project folder with appropriate permissions.
 * Our current storage infrastructure uses NFS/ZFS, and simultaneous reads of the same files by multiple users can cause slowdowns.
 
-For details, see the policy guidance: [Cluster Storage – FAQ on shared data resources](https://cluster-policy.ds.uchicago.edu/resources/cluster-storage/#can-dsi-techstaff-put-together-a-shared-data-resource-such-as-joint-hosting-of-a-number-of-llms).
+For details, see the policy guidance: [Cluster Storage – FAQ on shared data resources]({{ '/resources/cluster-storage/#can-dsi-techstaff-put-together-a-shared-data-resource-such-as-joint-hosting-of-a-number-of-llms' | relative_url }}).
 
 ### How to Get Additional Support?
 
