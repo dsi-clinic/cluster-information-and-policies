@@ -44,4 +44,14 @@ The DSI prioritizes robust filesystems and archival storage with performance and
 
 Please adhere to these guidelines to ensure a positive and secure DSI experience. 
 
+### Oversight
+
+The DSI Cluster is overseen by DSI Techstaff and the DSI’s cluster oversight faculty committee.
+
+### Acceptable Use and Enforcement
+
+Usage of the DSI Cluster is managed by the University’s [Acceptable Use Policy](https://intranet.uchicago.edu/policies/information-technology-policies/acceptable-use-policy/).
+
+The DSI Cluster cannot be used for commercial purposes. All usage must be constrained to educational and research activities.
+
 [^citation]: This document was modified from the [RCC's policy guidelines](https://docs.rcc.uchicago.edu/101/policies/)
