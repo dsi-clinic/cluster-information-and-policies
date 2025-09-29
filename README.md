@@ -2,6 +2,10 @@
 
 This repository contains the Jekyll-based website for information regarding the DSI's GPU-based cluster. The site provides information about cluster resources, policies, and tools.
 
+You can find the web page here: [https://cluster-policy.ds.uchicago.edu/](https://cluster-policy.ds.uchicago.edu/)
+
+**Note that the content of this repo is used to populate that site and is not useful on its own**
+
 ## Development
 
 ### Prerequisites
