@@ -35,7 +35,7 @@ You will then be prompted to select how you would like to use the room. Please c
 
 Once you select **"Basic Presentation"** on the Extron panel, you'll see the following options:
 
-![Basic Presentation Options](/assets/images/room-technology/assembly-rooms/basic-presentation-options.png)
+![Basic Presentation Options](/assets/images/room-technology/assembly-rooms/basic-presentation.png)
 
 ### HDMI Connection
 
