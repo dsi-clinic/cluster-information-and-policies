@@ -20,7 +20,7 @@ Use this option when you just want to **mirror your screen** on the TV.
 - If it doesn't:
   - Click the Control Center icon located in the top bar.
 
-  ![Control Center Access](/assets/images/room-technology/conference-rooms/mac-control-center-bar.png)
+   ![Control Center Access](/assets/images/room-technology/huddle-rooms/mac-control-center-bar.png)
 
   - Select Screen Mirroring.
 
