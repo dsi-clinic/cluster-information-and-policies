@@ -21,7 +21,7 @@ All options allow you to present content on the screens. Choose the one that is 
 To begin, use the Extron touch panel located on the center wall of the room.
 Press "Start" to activate the system.
 
-![Extron Start Screen](/assets/images/room-technology/assembly-rooms/extron-start-screen.png)
+![Extron Start Screen](/assets/images/room-technology/assembly-rooms/Assembly-start-screen.png)
 
 You will then be prompted to select how you would like to use the room. Please consider the following options:
 
@@ -29,7 +29,7 @@ You will then be prompted to select how you would like to use the room. Please c
 - **Lecture Capture**: Choose this if you want to record your presentation locally using the room's built-in recording system.
 - **Zoom Room**: Select this to launch or join a Zoom meeting using the Poly system in the room.
 
-![Room Usage Options](/assets/images/room-technology/assembly-rooms/room-usage-options.png)
+![Room Usage Options](/assets/images/room-technology/assembly-rooms/Assembly-options.png)
 
 ## Option 1: Basic Presentation (HDMI, Apple TV, ShareLink)
 
@@ -61,7 +61,7 @@ Once you select **"Basic Presentation"** on the Extron panel, you'll see the fol
 
 The lecture capture system allows you to record your presentation for later distribution.
 
-![Lecture Capture Interface](/assets/images/room-technology/assembly-rooms/basic-presentation-options.png)
+![Lecture Capture Interface](/assets/images/room-technology/assembly-rooms/lecture-mode.png)
 
 ### Setting Up Lecture Capture
 
@@ -88,8 +88,6 @@ The lecture capture system allows you to record your presentation for later dist
 ## Option 3: Zoom Room
 
 The integrated Zoom Room system provides professional video conferencing capabilities.
-
-![Zoom Room Interface](/assets/images/room-technology/assembly-rooms/sharelink-browser-url.png)
 
 ### Starting a Zoom Meeting
 
@@ -124,8 +122,6 @@ You have several options for sharing content:
 - **Resolution**: Automatically optimized based on content source
 
 ### Audio Controls
-
-![Audio Control Panel](/assets/images/room-technology/assembly-rooms/sharelink-interface.png)
 
 - **Volume**: Use the master volume controls on the touch panel
 - **Microphone**: Room mics can be muted using the touch panel or physical mute buttons
