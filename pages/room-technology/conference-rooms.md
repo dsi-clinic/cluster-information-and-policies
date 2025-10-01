@@ -42,13 +42,9 @@ The Poly system provides the **best experience for video conferencing** and Zoom
 
 1. **Turn on the system**: Use the Poly remote control or press the power button on the main unit.
 
-   ![Poly Remote Control](/assets/images/room-technology/conference-rooms/mac-display-selection.png)
-
 2. **Connect your laptop**:
    - Use the provided USB-C cable to connect your laptop to the Poly system.
    - Your laptop will automatically recognize the Poly as a camera and microphone device.
-
-   ![USB-C Connection](/assets/images/room-technology/conference-rooms/airplay-code-entry.png)
 
 ### Using Poly with Zoom
 
@@ -59,13 +55,9 @@ The Poly system provides the **best experience for video conferencing** and Zoom
    - Set **Microphone** to: "Poly Studio"
    - Set **Speaker** to: "Poly Studio"
 
-   ![Zoom Settings](/assets/images/room-technology/conference-rooms/sharelink-browser.png)
-
 3. **Camera Controls**:
    - The Poly system will automatically track speakers and adjust the camera view.
    - Use the Poly remote to manually adjust camera position if needed.
-
-   ![Camera View Controls](/assets/images/room-technology/conference-rooms/mac-mirroring-status.png)
 
 4. **Screen Sharing**:
    - Share your screen normally through Zoom.
