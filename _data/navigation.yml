@@ -62,6 +62,8 @@ main:
   - title: "Room Technology"
     url: "/room-technology/"
     children:
+      - title: "Room 103"
+        url: "/room-technology/room-103/"
       - title: "Huddle Rooms"
         url: "/room-technology/huddle-rooms/"
       - title: "Conference Rooms"
