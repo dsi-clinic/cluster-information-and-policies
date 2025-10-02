@@ -21,7 +21,7 @@ All options allow you to present content on the screens. Choose the one that is 
 To begin, use the Extron touch panel located on the center wall of the room.
 Press "Start" to activate the system.
 
-![Extron Start Screen](/assets/images/room-technology/assembly-rooms/Assembly-start-screen.png)
+![Extron Start Screen](/assets/images/room-technology/assembly-rooms/Assembly-start-screen.png){: .assembly-room-img}
 
 You will then be prompted to select how you would like to use the room. Please consider the following options:
 
@@ -29,13 +29,13 @@ You will then be prompted to select how you would like to use the room. Please c
 - **Lecture Capture**: Choose this if you want to record your presentation locally using the room's built-in recording system.
 - **Zoom Room**: Select this to launch or join a Zoom meeting using the Poly system in the room.
 
-![Room Usage Options](/assets/images/room-technology/assembly-rooms/Assembly-options.png)
+![Room Usage Options](/assets/images/room-technology/assembly-rooms/Assembly-options.png){: .assembly-room-img}
 
 ## Option 1: Basic Presentation (HDMI, Apple TV, ShareLink)
 
 Once you select **"Basic Presentation"** on the Extron panel, you'll see the following options:
 
-![Basic Presentation Options](/assets/images/room-technology/assembly-rooms/basic-presentation.png)
+![Basic Presentation Options](/assets/images/room-technology/assembly-rooms/basic-presentation.png){: .assembly-room-img}
 
 ### HDMI Connection
 
@@ -61,7 +61,7 @@ Once you select **"Basic Presentation"** on the Extron panel, you'll see the fol
 
 The lecture capture system allows you to record your presentation for later distribution.
 
-![Lecture Capture Interface](/assets/images/room-technology/assembly-rooms/lecture-mode.png)
+![Lecture Capture Interface](/assets/images/room-technology/assembly-rooms/lecture-mode.png){: .assembly-room-img}
 
 ### Setting Up Lecture Capture
 

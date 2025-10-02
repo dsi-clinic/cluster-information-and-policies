@@ -10,7 +10,7 @@ The huddle rooms support three different connection methods: HDMI, Apple TV, and
 
 To begin, use the Extron touch panel located on the table to select your preferred connection method.
 
-![Extron Control Panel](/assets/images/room-technology/huddle-rooms/extron-control-panel.png)
+![Extron Control Panel](/assets/images/room-technology/huddle-rooms/extron-control-panel.png){: .huddle-room-img}
 
 If the Display is set to OFF, press ON on the Extron panel or use the TV remote control on the table to turn it on.
 
@@ -23,15 +23,15 @@ If the Display is set to OFF, press ON on the Extron panel or use the TV remote 
 - If it doesn't:
   - Click the Control Center icon located in the top bar.
 
-  ![Control Center Access](/assets/images/room-technology/huddle-rooms/mac-control-center-bar.png)
+  ![Control Center Access](/assets/images/room-technology/huddle-rooms/mac-control-center-bar.png){: .huddle-room-img}
 
   - Select Screen Mirroring.
 
-  ![Screen Mirroring Option](/assets/images/room-technology/huddle-rooms/mac-screen-mirroring-panel.png)
+  ![Screen Mirroring Option](/assets/images/room-technology/huddle-rooms/mac-screen-mirroring-panel.png){: .huddle-room-img}
 
   - Choose the content you want to display.
 
-  ![Content Selection](/assets/images/room-technology/huddle-rooms/mac-content-selection.png)
+  ![Content Selection](/assets/images/room-technology/huddle-rooms/mac-content-selection.png){: .huddle-room-img}
 
   - Click Start Mirroring.
 
@@ -40,15 +40,15 @@ If the Display is set to OFF, press ON on the Extron panel or use the TV remote 
 - On your device, swipe down from the top-right corner to open Control Center.
 - Tap Screen Mirroring.
 
-![Screen Mirroring Control](/assets/images/room-technology/huddle-rooms/mac-mirroring-options.png)
+![Screen Mirroring Control](/assets/images/room-technology/huddle-rooms/mac-mirroring-options.png){: .huddle-room-img}
 
 - Select the Apple TV from the list of available devices.
 
-![Apple TV Selection](/assets/images/room-technology/huddle-rooms/apple-tv-room-display.png)
+![Apple TV Selection](/assets/images/room-technology/huddle-rooms/apple-tv-room-display.png){: .huddle-room-img}
 
 - Choose the content you want to display.
 
-![Content Display Options](/assets/images/room-technology/huddle-rooms/apple-tv-device-selection.png)
+![Content Display Options](/assets/images/room-technology/huddle-rooms/apple-tv-device-selection.png){: .huddle-room-img}
 
 - Click Start Mirroring.
 

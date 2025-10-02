@@ -20,19 +20,19 @@ Use this option when you just want to **mirror your screen** on the TV.
 - If it doesn't:
   - Click the Control Center icon located in the top bar.
 
-   ![Control Center Access](/assets/images/room-technology/huddle-rooms/mac-control-center-bar.png)
+   ![Control Center Access](/assets/images/room-technology/huddle-rooms/mac-control-center-bar.png){: .conference-room-img}
 
   - Select Screen Mirroring.
 
-  ![Screen Mirroring Option](/assets/images/room-technology/huddle-rooms/mac-screen-mirroring-panel.png)
+  ![Screen Mirroring Option](/assets/images/room-technology/huddle-rooms/mac-screen-mirroring-panel.png){: .conference-room-img}
 
   - Choose the content you want to display.
 
-  ![Content Selection](/assets/images/room-technology/huddle-rooms/mac-content-selection.png)
+  ![Content Selection](/assets/images/room-technology/huddle-rooms/mac-content-selection.png){: .conference-room-img}
 
   - Click Start Mirroring.
 
-  ![Start Mirroring](/assets/images/room-technology/huddle-rooms/mac-mirroring-options.png)
+  ![Start Mirroring](/assets/images/room-technology/huddle-rooms/mac-mirroring-options.png){: .conference-room-img}
 
 ## Option 2: Poly Video System (Recommended for Zoom)
 

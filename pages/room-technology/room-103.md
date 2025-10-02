@@ -14,39 +14,39 @@ You can use this system to **start or join Zoom meetings directly from the room*
 - Join
 - Share
 
-![Poly System Home Screen](/assets/images/room-technology/room-103/image1.png)
+![Poly System Home Screen](/assets/images/room-technology/room-103/image1.png){: .room-103-img}
 
 ## Start a New Meeting
 
 1. Tap "New Meeting" on the TV screen.
 2. Tap the green info icon in the top-left corner to see the meeting details.
 
-![Video Conference Screen](/assets/images/room-technology/room-103/image2.png)
+![Video Conference Screen](/assets/images/room-technology/room-103/image2.png){: .room-103-img}
 
 3. Share the Meeting ID or dial-in with other participants.
 
-![Meeting Details](/assets/images/room-technology/room-103/image3.png)
+![Meeting Details](/assets/images/room-technology/room-103/image3.png){: .room-103-img}
 
 ### Sharing Your Screen
 
 1. Tap "Share" on the TV screen.
 
-![Share Screen Option](/assets/images/room-technology/room-103/image2.png)
+![Share Screen Option](/assets/images/room-technology/room-103/image2.png){: .room-103-img}
 
 2. On your laptop, open Zoom, click Share Screen, and use the info shown.
 
-![Zoom Share Screen Interface](/assets/images/room-technology/room-103/image6.png)
+![Zoom Share Screen Interface](/assets/images/room-technology/room-103/image6.png){: .room-103-img}
 
 3. To end the meeting: tap the red "End" button.
 
-![End Meeting Button](/assets/images/room-technology/room-103/image2.png)
+![End Meeting Button](/assets/images/room-technology/room-103/image2.png){: .room-103-img}
 
 ## Join an Existing Zoom Meeting
 
 1. Tap "Join" on the TV screen.
 2. Enter the Meeting ID using the on-screen keyboard.
 
-![Join Meeting Screen](/assets/images/room-technology/room-103/image7.png)
+![Join Meeting Screen](/assets/images/room-technology/room-103/image7.png){: .room-103-img}
 
 3. Tap Join to connect.
 
@@ -56,11 +56,11 @@ If you want to share your screen without starting or joining a meeting:
 
 1. Tap "Share" on the TV screen.
 
-![Share Only Screen](/assets/images/room-technology/room-103/image8.png)
+![Share Only Screen](/assets/images/room-technology/room-103/image8.png){: .room-103-img}
 
 2. On your laptop, open Zoom and click Share Screen.
 
-![Laptop Zoom Share Interface](/assets/images/room-technology/room-103/image9.png)
+![Laptop Zoom Share Interface](/assets/images/room-technology/room-103/image9.png){: .room-103-img}
 
 3. Use the credentials displayed to connect.
 
