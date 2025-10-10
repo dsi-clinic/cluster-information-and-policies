@@ -16,24 +16,20 @@ This document contains some frequently asked questions about the cluster and its
 <!-- TOC is auto-generated -->
 
 <!-- toc -->
-
 - [Questions](#questions)
-  * [What are the requirements for getting access to this cluster?](#what-are-the-requirements-for-getting-access-to-this-cluster)
-  * [I want to install additional software.](#i-want-to-install-additional-software)
-  * [Is there a way to use the cluster via a GUI?](#is-there-a-way-to-use-the-cluster-via-a-gui)
-  * [The current time limit on jobs is too low for what I want to do. Can I increase the job time limit?](#the-current-time-limit-on-jobs-is-too-low-for-what-i-want-to-do-can-i-increase-the-job-time-limit)
-  * [I am currently limited to eight concurrent jobs (on either CPU or GPU), my jobs are very small. Can I increase the job limit? (AKA The QOS which is applied to everyone is limited to 8 concurrent jobs).](#i-am-currently-limited-to-eight-concurrent-jobs-on-either-cpu-or-gpu-my-jobs-are-very-small-can-i-increase-the-job-limit-aka-the-qos-which-is-applied-to-everyone-is-limited-to-8-concurrent-jobs)
-  * [I feel like the cluster isn't working for me. Can we set up any additional configurations to allow for my specific job?](#i-feel-like-the-cluster-isnt-working-for-me-can-we-set-up-any-additional-configurations-to-allow-for-my-specific-job)
-  * [There are processes not owned by me running on the GPU that I reserved. Is this expected?](#there-are-processes-not-owned-by-me-running-on-the-gpu-that-i-reserved-is-this-expected)
-  * [How do I check how much space I’m using in either a project or home directory?](#how-do-i-check-how-much-space-i-m-using-in-either-a-project-or-home-directory)
-  * [Can DSI Techstaff create and maintain a shared data resource (e.g., joint hosting of LLMs)?](#can-dsi-techstaff-create-and-maintain-a-shared-data-resource-eg-joint-hosting-of-llms)
-  * [How to Get Additional Support?](#how-to-get-additional-support)
-  
-
+  - [What are the requirements for getting access to this cluster?](#what-are-the-requirements-for-getting-access-to-this-cluster)
+  - [I want to install additional software.](#i-want-to-install-additional-software)
+  - [Is there a way to use the cluster via a GUI?](#is-there-a-way-to-use-the-cluster-via-a-gui)
+  - [Can I use a containerized workflow, such as Docker?](#can-i-use-a-containerized-workflow-such-as-docker)
+  - [The current time limit on jobs is too low for what I want to do. Can I increase the job time limit?](#the-current-time-limit-on-jobs-is-too-low-for-what-i-want-to-do-can-i-increase-the-job-time-limit)
+  - [I am currently limited to eight concurrent jobs (on either CPU or GPU), my jobs are very small. Can I increase the job limit? (AKA The QOS which is applied to everyone is limited to 8 concurrent jobs).](#i-am-currently-limited-to-eight-concurrent-jobs-on-either-cpu-or-gpu-my-jobs-are-very-small-can-i-increase-the-job-limit-aka-the-qos-which-is-applied-to-everyone-is-limited-to-8-concurrent-jobs)
+  - [I feel like the cluster isn't working for me. Can we set up any additional configurations to allow for my specific job?](#i-feel-like-the-cluster-isnt-working-for-me-can-we-set-up-any-additional-configurations-to-allow-for-my-specific-job)
+  - [There are processes not owned by me running on the GPU that I reserved. Is this expected?](#there-are-processes-not-owned-by-me-running-on-the-gpu-that-i-reserved-is-this-expected)
+  - [How do I check how much space I'm using in either a project or home directory?](#how-do-i-check-how-much-space-im-using-in-either-a-project-or-home-directory)
+  - [Can DSI Techstaff create and maintain a shared data resource (e.g., joint hosting of LLMs)?](#can-dsi-techstaff-create-and-maintain-a-shared-data-resource-eg-joint-hosting-of-llms)
+  - [How to Get Additional Support?](#how-to-get-additional-support)
 
 <!-- tocstop -->
-
-## Questions
 
 ### What are the requirements for getting access to this cluster?
 
