@@ -26,14 +26,14 @@ As of September 2025, the following table summarizes the DSI cluster resources. 
 
 The cluster is organized into a series of nodes and storage servers. Storage servers have a mix of different drives and types. 
 
-Nodes are broken into series (denoted by their name):
+<!-- Nodes are broken into series (denoted by their name):
 - The `g` series has a 200GB SSD locally
 - The `h` series has a 200GB SSD locally
 - The `j` series has a 400GB SSD locally
 - The `k` series has a 1TB SSD locally
 - The `i` series has 400GB SSD locally
 - The `m` series has 500GB SSD locally
-- The `n` series has a 10TB SSD locally
+- The `n` series has a 10TB SSD locally -->
 
 Note that not all nodes are available on all SLURM partitions and queues. 
 
