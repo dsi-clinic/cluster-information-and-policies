@@ -75,9 +75,11 @@ The cluster is designed to efficiently process the most common use cases. We con
 
 Yes. In SLURM, this is called OverSubscribe. If a user is not utilizing a resource (GPU, CPU, or MEM) completely, then SLURM will assign jobs to the portion of your allocation that is unused.
 
-### How do I check how much space I'm using in either a project or home directory? 
+### How do I check how much space I'm using in either a project or home directory?
 
-Users are allocated limited space on home directories (50GB) and scratch space (50GB per location). To check your current usage, use the `dsiquota` command. See the detailed instructions in the [DSI Quota Tool]({{ '/using-the-cluster/checking-usage/' | relative_url }}) documentation.
+Users are allocated storage quotas on home directories (50GB), project directories (default 500GB), and scratch space (50GB per location). To check your current usage, use the `dsiquota` command. See the detailed instructions in the [DSI Quota Tool]({{ '/using-the-cluster/checking-usage/' | relative_url }}) documentation.
+
+For complete information on storage quotas, limits, and how to request additional space, see the [Storage Allocation Policy]({{ '/policies/general/#storage-allocation-policy' | relative_url }}).
 
 ### Can DSI Techstaff create and maintain a shared data resource (e.g., joint hosting of LLMs)?
 

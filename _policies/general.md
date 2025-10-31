@@ -42,6 +42,21 @@ General-purpose DSI systems should not be used to store, process, transmit, or a
 
 The DSI prioritizes robust filesystems and archival storage with performance and reliability. Backup services are limited. The purpose of the DSI Cluster is _not_ for long-term data storage and the expectation should be that data should be moved off of the cluster once a research project is complete. The exception to this is when storage is purchased, in which case, the storage will fall under the purchase policy guidelines.
 
+#### Storage Allocation Policy
+
+The cluster provides different storage quotas for each storage tier:
+
+* **Home Directories**: Each user receives **50GB** of storage in their home directory (`/home/<cnetid>`). This quota is inflexible and cannot be increased.
+
+* **Project Directories**: The default allocation for project directories (`/project/<group>`) is **500GB**. Principal Investigators may request a different initial allocation when the project is created based on their research needs.
+  * Maximum allocation without investment: **10TB per project**
+  * Faculty members may request up to **3 project directories**
+  * Allocations beyond 10TB require investment in additional storage. Contact DSI Techstaff to discuss options and pricing.
+
+* **Scratch Space**: Each user starts with **50GB** on `/net/scratch` and **50GB** on `/net/scratch2`. Users may request additional scratch space as needed for active computational work.
+
+For information on checking your current storage usage, see the [Checking Your Usage]({{ '/using-the-cluster/checking-usage/' | relative_url }}) page.
+
 Please adhere to these guidelines to ensure a positive and secure DSI experience. 
 
 ### Oversight

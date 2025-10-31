@@ -26,7 +26,7 @@ There are three main storage tiers available to users on the cluster:
 Your home directory is your personal space on the cluster. It is located at `/home/your_cnetid`.
 
 *   **Purpose**: Intended for storing personal configuration files (e.g., `.bashrc`, `.vimrc`), small scripts, and source code.
-*   **Quotas**: Home directories have a relatively small storage quota. They are not designed for large datasets or computational output.
+*   **Quotas**: Home directories have a 50GB storage quota (inflexible). They are not designed for large datasets or computational output. See the [Storage Allocation Policy]({{ '/policies/general/#storage-allocation-policy' | relative_url }}) for details.
 *   **Backups**: This storage is backed up regularly.
 *   **Performance**: Not optimized for high-performance I/O required by parallel jobs. **You should not run jobs from your home directory.**
 
@@ -35,7 +35,7 @@ Your home directory is your personal space on the cluster. It is located at `/ho
 Project directories are the primary location for shared research data.
 
 *   **Purpose**: Designed for storing datasets, software installations, and results that need to be shared among members of a research group. This is the main workspace for your research data.
-*   **Quotas**: Project spaces have much larger quotas than home directories, suitable for large-scale data.
+*   **Quotas**: Project spaces default to 500GB, with a maximum of 10TB without investment. Faculty may request up to 3 project directories. See the [Storage Allocation Policy]({{ '/policies/general/#storage-allocation-policy' | relative_url }}) for complete details.
 *   **Backups**: This storage is also backed up regularly, ensuring your important research data is protected.
 *   **Performance**: Offers good performance for a wide range of computational tasks.
 
@@ -44,7 +44,7 @@ Project directories are the primary location for shared research data.
 The scratch filesystem is a large, high-performance storage space for temporary data.
 
 *   **Purpose**: Intended for temporary files generated during job execution (e.g., intermediate results, large temporary datasets). It provides the best I/O performance, making it ideal for data-intensive computations.
-*   **Quotas**: Scratch space is very large, but it is a shared resource for all users.
+*   **Quotas**: Each user starts with 50GB on `/net/scratch` and 50GB on `/net/scratch2`. Additional scratch space can be requested for active computational work. See the [Storage Allocation Policy]({{ '/policies/general/#storage-allocation-policy' | relative_url }}) for details.
 *   **Backups**: **Files on `/scratch` are NOT backed up.** You are responsible for moving any important data from `/scratch` to your `/project` directory.
 *   **Purge Policy**: To ensure space is available for active jobs, files on `/scratch` are subject to a strict purge policy. Files that have not been accessed for 60 days will be automatically deleted.
 

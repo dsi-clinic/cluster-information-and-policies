@@ -70,5 +70,7 @@ main:
         url: "/room-technology/conference-rooms/"
       - title: "Assembly Rooms"
         url: "/room-technology/assembly-rooms/"
+  - title: "Meet Us"
+    url: "/user-group-meetings/"
   - title: "Contact"
     url: "/contact/"
