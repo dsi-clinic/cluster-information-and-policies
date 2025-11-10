@@ -48,6 +48,8 @@ The scratch filesystem is a large, high-performance storage space for temporary 
 *   **Backups**: **Files on `/scratch` are NOT backed up.** You are responsible for moving any important data from `/scratch` to your `/project` directory.
 *   **Purge Policy**: To ensure space is available for active jobs, files on `/scratch` are subject to a strict purge policy. Files that have not been accessed for 60 days will be automatically deleted.
 
+> Need per-node NVMe or SSD space? Request the `local` GRES described in the [Node-local Storage guide]({{ '/using-the-cluster/node-local-storage/' | relative_url }}).
+
 ## Summary of Storage Tiers
 
 | Tier | Path | Purpose | Backups | Purge Policy |

@@ -117,6 +117,16 @@ html, body, .initial-content-wrap { overflow-x: hidden; }
 
 /* Primary Button */
 .btn--primary { background-color: var(--uchicago-maroon) !important; }
+.btn--light-outline {
+  background: transparent !important;
+  border: 2px solid var(--uchicago-maroon) !important;
+  color: var(--uchicago-maroon) !important;
+}
+.btn--light-outline:hover,
+.btn--light-outline:focus {
+  background: var(--uchicago-maroon) !important;
+  color: #fff !important;
+}
 .site-logo img { max-height: 3rem; }
 
 /* Feature Box */
@@ -618,69 +628,6 @@ h1, h2, h3, h4, h5 {
   margin-bottom: 1.8rem !important; /* space before content starts */
 }
 
-
-.cluster-status-page .page__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* centers horizontally */
-  text-align: center;  /* ensures text inside is centered */
-}
-
-/* Only the Cluster Status page */
-.cluster-status-page .page__inner-wrap,
-.cluster-status-page .page__content {
-  max-width: 900px;                 /* tune: 800–1000px works well */
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* Make sure the main panel is centered */
-.cluster-status-page .page__content > * {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* Headings centered too (helps the eye) */
-.cluster-status-page .page__title,
-.cluster-status-page .page__lead {
-  text-align: center !important;
-}
-
-
-
-/* Center the whole Cluster Status page relative to the viewport (not just the post-sidebar canvas) */
-@media (min-width: 1100px) {
-  body.cluster-status-page .page__inner-wrap,
-  body.cluster-status-page .page__content {
-    max-width: 900px;                 /* tweak to taste (800–1000px) */
-    margin-left: auto !important;
-    margin-right: auto !important;
-    position: relative;
-    left: calc(-0.5 * var(--sidebar-width)); /* <-- shift left by half the sidebar */
-  }
-}
-
-/* On smaller screens, do not shift left */
-@media (max-width: 1099px) {
-  body.cluster-status-page .page__inner-wrap,
-  body.cluster-status-page .page__content {
-    left: 0 !important;
-  }
-}
-
-/* Ensure the main panel stays centered inside the inner wrap */
-body.cluster-status-page .page__content > * {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* Center headings */
-body.cluster-status-page .page__title,
-body.cluster-status-page .page__lead {
-  text-align: center !important;
-}
-
-
 /* ===========================
    Custom styles
    =========================== */
@@ -699,6 +646,13 @@ body.cluster-status-page .page__lead {
   font-size: 1rem;         /* same as parent, adjust if parent differs */
   font-weight: bold;       /* optional: match parent weight */
   color: inherit;          /* keep same color rules */
+}
+
+.dashboard-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0 2rem;
 }
 
 

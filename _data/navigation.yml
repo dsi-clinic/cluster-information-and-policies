@@ -20,6 +20,8 @@ main:
     children:
       - title: "Cluster Status"
         url: "/using-the-cluster/cluster-status/"
+      - title: "Node-local Storage"
+        url: "/using-the-cluster/node-local-storage/"
       - title: "Environment Management"
         url: "/using-the-cluster/environments/"
       # - title: "Submitting Batch Jobs"

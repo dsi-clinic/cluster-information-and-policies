@@ -9,49 +9,27 @@ classes: [cluster-status-page]
 hide_hero: True
 ---
 
-<!-- ## Cluster Status -->
+Stay on top of the cluster’s health with two complementary dashboards.
 
+## Dashboards at a glance
 
-<style>
-.status-tile {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 1.5rem;
-  background-color: #f9f9f9;
-  text-align: center;
-  max-width: 600px; /* Keeps the tile from getting too wide on large screens */
-  margin-top: 2rem;
-  margin-left: auto;
-  margin-right: aut
-  /* Adds vertical space below the tile, pushing the footer down. 15vh = 15% of the viewport height. Adjust as needed. */
-  margin-bottom: 15vh;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-.status-tile h2 {
-  margin-top: 0;
-  font-size: 1.5rem;
-  color: #800000;
-}
-.status-tile p {
-  font-size: 1rem;
-  color: #333;
-}
-.status-tile a.button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  background-color: #800000;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
-.status-tile a.button:hover {
-  background-color: #a00000;
-}
-</style>
+* **Simple status (`cluster-status.ds.uchicago.edu`)**: a lightweight view that tells you if the scheduler, login nodes, and key services are up.
+* **Grafana metrics (`graf.ds.uchicago.edu`)**: detailed node-by-node charts for GPU/CPU usage, job pressure, historical utilization, and more.
 
-<div class="status-tile">
-  <h2>Check Live Cluster Status</h2>
-  <a class="button" href="https://cluster-status.ds.uchicago.edu/status/uchicago-dsi-cluster" target="_blank">View Dashboard</a>
+Both update in real time and are public, so you can keep them open on any device while a job runs.
+
+<div class="dashboard-links">
+  <a class="btn btn--primary" href="https://cluster-status.ds.uchicago.edu/status/uchicago-dsi-cluster" target="_blank" rel="noopener">Simple status dashboard</a>
+  <a class="btn btn--light-outline" href="https://graf.ds.uchicago.edu" target="_blank" rel="noopener">Grafana metrics</a>
 </div>
+
+## When to use each
+
+- **Quick yes/no**: Check the simple status page before filing a ticket or starting a workshop. It answers “is the cluster generally healthy?” in a single glance.
+- **Deep dive**: Use Grafana while debugging hung jobs, capacity questions, or GPU contention. You can drill into specific nodes, partitions, or GRES devices to see if what you’re experiencing matches cluster-wide activity.
+
+## Tips for incident triage
+
+1. Keep the simple status page open in a browser tab; it auto-refreshes and is mobile-friendly.
+2. Bookmark favorite Grafana dashboards (GPU saturation, node availability, Lustre/NFS throughput) so you can jump straight to the metrics that matter for your workflow.
+3. When reporting an issue, include timestamps and screenshots/links from either dashboard—this helps staff correlate your report with backend logs.
