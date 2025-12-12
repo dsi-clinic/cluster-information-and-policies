@@ -20,6 +20,8 @@ main:
     children:
       - title: "Cluster Status"
         url: "/using-the-cluster/cluster-status/"
+      - title: "Scheduled Maintenance"
+        url: "/using-the-cluster/scheduled-maintenance/"
       - title: "Node-local Storage"
         url: "/using-the-cluster/node-local-storage/"
       - title: "Environment Management"
