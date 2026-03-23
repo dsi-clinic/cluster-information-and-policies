@@ -18,7 +18,7 @@ gem 'coderay', '1.1.1'
 
 # Additional dependencies that were missing
 gem 'webrick', '~> 1.8.1'  # Required for Ruby 3.0+
-gem 'faraday', '~> 2.7.10'
+gem 'faraday', '~> 2.14.1'
 gem 'faraday-retry', '~> 2.2'
 
 # Missing gems from error message
@@ -27,4 +27,5 @@ gem 'eventmachine', '~> 1.2.7'
 gem 'http_parser.rb', '~> 0.8.0'
 gem 'strscan', '~> 3.1.0'
 gem 'ffi', '~> 1.15.5'
+gem 'rexml', '>= 3.4.2'
 gem 'sass-embedded', '~>1.75.0'
