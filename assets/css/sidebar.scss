@@ -193,18 +193,8 @@
   }
 
   .sidebar-toggle .hamburger-icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 20px;
-    height: 16px;
-  }
-
-  .sidebar-toggle .hamburger-icon span {
     display: block;
-    height: 2px;
-    width: 100%;
-    background-color: #fff;
-    border-radius: 1px;
+    width: 22px;
+    height: 18px;
   }
 }
