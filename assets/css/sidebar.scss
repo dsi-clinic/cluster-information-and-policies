@@ -120,3 +120,91 @@
   background-color: #e2e6ea !important;
   color: #000 !important;
 }
+
+/* ===========================
+   Mobile: close button
+   =========================== */
+.sidebar-close {
+  display: none;
+}
+
+/* ===========================
+   Mobile: hide sidebar, show toggle
+   =========================== */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-260px);
+    transition: transform 0.3s ease;
+  }
+  .sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-close {
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #666;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+  }
+  .sidebar-close:hover {
+    color: #000;
+  }
+}
+
+/* Overlay behind open sidebar */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+.sidebar-overlay.is-visible {
+  display: block;
+}
+
+/* ===========================
+   Hamburger toggle button
+   =========================== */
+.sidebar-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    margin-right: 0.5rem;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .sidebar-toggle .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20px;
+    height: 16px;
+  }
+
+  .sidebar-toggle .hamburger-icon span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 1px;
+  }
+}

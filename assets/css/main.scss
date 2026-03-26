@@ -47,6 +47,8 @@ body::after {
   }
 }
 
+/* Mobile overrides are at the bottom of this file */
+
 /* Safety against tiny rounding issues from nested calcs */
 html, body { overflow-x: hidden; }
 
@@ -765,4 +767,34 @@ html { scroll-padding-top: calc(var(--masthead-height) + 16px); }
   border: 2px solid #ddd;
   border-radius: 4px;
   padding: 5px;
+}
+
+/* ===========================
+   Mobile overrides — MUST be last to win specificity
+   =========================== */
+@media (max-width: 768px) {
+  /* Kill sidebar padding on the main wrapper */
+  .initial-content-wrap.main--with-sidebar {
+    padding-left: 0 !important;
+  }
+
+  /* Kill sidebar-based padding on all child-page content containers */
+  body:not(.parent-centered) .initial-content-wrap .page,
+  body:not(.parent-centered) .initial-content-wrap .page__inner-wrap,
+  body:not(.parent-centered) .initial-content-wrap .page__content,
+  body:not(.parent-centered) .initial-content-wrap .archive {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Kill sidebar-based padding on all parent-page content containers */
+  body.parent-centered .initial-content-wrap .page,
+  body.parent-centered .initial-content-wrap .page__inner-wrap,
+  body.parent-centered .initial-content-wrap .page__content,
+  body.parent-centered .initial-content-wrap .archive,
+  body.parent-centered .initial-content-wrap .feature__wrapper,
+  body.parent-centered .initial-content-wrap .tiles {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }

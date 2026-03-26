@@ -2,7 +2,8 @@
   Renders the hierarchical navigation sidebar.
   Reads data from _data/navigation.yml
 {%- endcomment -%}
-<div class="sidebar">
+<div class="sidebar" id="sidebar">
+  <button class="sidebar-close" id="sidebar-close" aria-label="Close navigation">&times;</button>
   <nav class="sidebar-nav">
     <ul>
       {%- for item in site.data.navigation.main -%}
