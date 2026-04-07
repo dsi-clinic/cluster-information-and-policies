@@ -16,7 +16,7 @@ This document defines the DSI HPC cluster's approach to identifying vulnerabilit
 
 DSI Techstaff shall maintain awareness of vulnerabilities that could affect cluster infrastructure. Vulnerability information shall be gathered from:
 
-- **Vendor advisories** -- security bulletins from OS vendors (Rocky Linux / RHEL), NVIDIA (GPU drivers, CUDA), SLURM, and other software in use on the cluster
+- **Vendor advisories** -- security bulletins from OS vendors (Ubuntu / Canonical), NVIDIA (GPU drivers, CUDA), SLURM, and other software in use on the cluster
 - **CVE databases** -- NIST National Vulnerability Database (NVD) and MITRE CVE
 - **UChicago IT Security** -- advisories distributed by central IT security staff
 - **Mailing lists and feeds** -- relevant security mailing lists (e.g., oss-security, vendor-specific lists)
@@ -27,7 +27,7 @@ DSI Techstaff shall review new vulnerability disclosures at least monthly and as
 
 Vulnerabilities in cluster systems shall be identified through a combination of automated and manual methods:
 
-- **Automated scanning** -- OS-level vulnerability scanners (e.g., `dnf updateinfo`, OpenSCAP, or equivalent) shall be run against cluster nodes at least quarterly
+- **Automated scanning** -- OS-level vulnerability scanners (e.g., `apt list --upgradable`, OpenSCAP, or equivalent) shall be run against cluster nodes at least quarterly
 - **Package auditing** -- installed packages shall be compared against known-vulnerable versions at least quarterly
 - **Manual review** -- DSI Techstaff shall review configurations of critical services (SSH, SLURM, NFS/storage, firewall rules) at least annually for misconfigurations or deviations from security baselines
 - **Penetration testing** -- UChicago IT Security performs network-level scans of university systems; DSI Techstaff shall cooperate with any such assessments and remediate findings
@@ -147,7 +147,7 @@ Software obtained from community repositories (e.g., EPEL, conda-forge, PyPI) is
 | **What** | Review new vulnerability disclosures for applicability to cluster components |
 | **Who** | DSI Techstaff |
 | **When** | Monthly, within the first two weeks of each month |
-| **How** | 1. Check vendor security advisories (Rocky Linux, NVIDIA, SLURM) for new bulletins since last review. 2. Review NVD/CVE entries for software in the cluster software inventory. 3. Review any advisories forwarded by UChicago IT Security. 4. For each applicable vulnerability, classify severity per the table above and create a remediation ticket. 5. Record review completion in the review log below. |
+| **How** | 1. Check vendor security advisories (Ubuntu/Canonical, NVIDIA, SLURM) for new bulletins since last review. 2. Review NVD/CVE entries for software in the cluster software inventory. 3. Review any advisories forwarded by UChicago IT Security. 4. For each applicable vulnerability, classify severity per the table above and create a remediation ticket. 5. Record review completion in the review log below. |
 
 ### Quarterly Vulnerability Scan
 
@@ -156,7 +156,7 @@ Software obtained from community repositories (e.g., EPEL, conda-forge, PyPI) is
 | **What** | Run automated vulnerability scans against cluster nodes |
 | **Who** | DSI Techstaff |
 | **When** | Quarterly, aligned with the start of each academic quarter |
-| **How** | 1. Run `dnf updateinfo list security` (or equivalent) on representative nodes from each role (login, compute, storage). 2. Run OpenSCAP or equivalent configuration compliance scan if available. 3. Review results and classify findings by severity. 4. Create remediation tickets for any new findings. 5. Document scan results and retain for at least one year. |
+| **How** | 1. Run `apt list --upgradable` and review Ubuntu Security Notices (USNs) on representative nodes from each role (login, compute, storage). 2. Run OpenSCAP or equivalent configuration compliance scan if available. 3. Review results and classify findings by severity. 4. Create remediation tickets for any new findings. 5. Document scan results and retain for at least one year. |
 
 ### Annual Risk Assessment
 

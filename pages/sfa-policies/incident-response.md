@@ -6,6 +6,8 @@ classes: [wide, left-aligned]
 hide_hero: True
 ---
 
+# Incident Response Plan
+
 ## 1. Policy Statement
 
 The University of Chicago Data Science Institute (DSI) maintains a formal incident response capability to detect, analyze, contain, eradicate, and recover from cybersecurity incidents affecting the DSI HPC cluster (29 nodes, 2,720 cores, 140 GPUs, 1.5 PB storage). This plan ensures that:

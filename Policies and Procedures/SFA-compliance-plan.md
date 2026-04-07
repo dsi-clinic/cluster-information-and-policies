@@ -11,6 +11,7 @@
 
 | Date | Action |
 |------|--------|
+| 2026-04-06 | **Plan executed.** All 12 consolidated policy/procedure documents created as Jekyll pages at `/sfa-policies/`. Compliance action items checklist created at `/sfa-policies/compliance-actions/`. CS department policies incorporated. All 71 controls addressed. Pages are live but not linked from main navigation (draft status). Duplicate CSVs removed. |
 | 2026-04-01 | Downloaded all 15 CS security policy documents from Google Docs for review. Added per-policy evaluation checklist to plan (see "CS Policy Evaluation Queue" section). Policies will be added to the Jekyll site individually after approval. Open question #2 partially resolved — docs are now accessible for review. |
 | 2026-03-31 | Initial plan created. |
 
