@@ -110,6 +110,8 @@ hide_hero: True
 }
 </style>
 
+<div style="margin-top: 2rem;"></div>
+
 This section contains draft policies and procedures developed to support the University of Chicago's Security Framework Assessment (SFA) for the DSI HPC Cluster, targeting NIST CSF 2.0 Tier 2 (Risk Informed) compliance.
 
 <div class="draft-banner">
