@@ -1,0 +1,18 @@
+Security Training for Personnel Policy
+Purpose
+The purpose of this policy is to establish guidelines for providing security training to personnel within the unit. This policy outlines the standards and procedures for ensuring that personnel receive appropriate security training based on their roles and responsibilities.
+Scope
+This policy applies to all personnel within the unit, including faculty, staff, students, and third-party service providers.
+Policy Statement
+1. The unit must provide security training to all personnel based on their roles and responsibilities.
+2. The security training must cover topics such as information security policies and procedures, access controls, incident response, and data protection.
+3. The unit must establish procedures for ensuring that personnel receive the appropriate security training.
+4. The unit must ensure that all personnel are aware of their security responsibilities and how to perform their job duties securely.
+5. The unit must identify the security training requirements for personnel based on their roles and responsibilities.
+6. The unit must provide training that is specific to the roles and responsibilities of each individual.
+7. The security training must cover topics such as information security policies and procedures, access controls, incident response, and data protection.
+8. The unit must ensure that personnel receive the appropriate security training on a regular basis. This includes initial training for new personnel and ongoing training for existing personnel.
+9. The unit must maintain records of all security training provided to personnel.
+10. The unit must ensure that all personnel are aware of their security responsibilities and how to perform their job duties securely.
+Conclusion
+Requiring members of our unit to take security training appropriate to their roles and responsibilities is a critical aspect of our cybersecurity program. By establishing policies, standards, and procedures for providing security training, the unit can ensure that personnel receive appropriate training on the topics necessary to perform their job duties securely. This helps to prevent security incidents caused by human error or lack of awareness, thereby enhancing our cybersecurity posture.

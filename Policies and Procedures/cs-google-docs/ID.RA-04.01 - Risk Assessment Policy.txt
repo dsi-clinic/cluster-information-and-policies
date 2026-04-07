@@ -1,0 +1,13 @@
+Risk Assessment Policy
+Purpose
+The purpose of this policy is to establish guidelines for assessing the risk associated with the unit's functions. This policy outlines the standards and procedures for assessing risk to ensure the confidentiality, integrity, and availability of data and systems.
+Scope
+This policy applies to all personnel within the unit, including faculty, staff, students, and third-party service providers who have access to or manage data and systems.
+Policy Statement
+1. The unit must establish a process for assessing the risk associated with its functions, including risks to data and systems.
+2. The process must be based on the risks associated with the unit's data and systems and must be aligned with industry best practices and applicable laws and regulations.
+3. The unit must designate a risk assessment manager who is responsible for overseeing the risk assessment process.
+4. The risk assessment manager must ensure that appropriate measures are taken to protect the confidentiality, integrity, and availability of data and systems based on the risks associated with each area of the unit's operations.
+5. The unit must establish procedures for assessing risk, including conducting regular risk assessments.
+6. The unit must ensure that appropriate controls and measures are in place to address identified risks.
+7. The unit must ensure that all personnel who have access to or manage data and systems are aware of the risk assessment process and their responsibilities for maintaining the confidentiality, integrity, and availability of data and systems.

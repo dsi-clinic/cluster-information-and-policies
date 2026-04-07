@@ -1,0 +1,31 @@
+Policy:
+Title: Security Training for Personnel with Administrative Responsibilities Policy
+Purpose: The purpose of this policy is to establish guidelines for providing security training to personnel with administrative responsibilities for or access to systems. This policy outlines the standards and procedures for ensuring that personnel are aware of their security responsibilities and how to perform their job duties securely.
+Scope: This policy applies to all personnel within the unit who have administrative responsibilities for or access to systems.
+Policy statement:
+1. The unit must provide security training to personnel with administrative responsibilities for or access to systems.
+2. The training must be specific to the roles and responsibilities of each individual.
+3. The training must be based on industry best practices and applicable laws and regulations.
+4. The unit must establish procedures for ensuring that personnel receive the appropriate security training.
+Standard:
+Title: Security Training for Personnel with Administrative Responsibilities Standard
+Purpose: The purpose of this standard is to provide a set of guidelines for providing security training to personnel with administrative responsibilities for or access to systems. This standard defines the requirements for ensuring that personnel are aware of their security responsibilities and how to perform their job duties securely.
+Scope: This standard applies to all personnel within the unit who have administrative responsibilities for or access to systems.
+Standard statement:
+5. The unit must provide security training to personnel with administrative responsibilities for or access to systems.
+6. The training must be specific to the roles and responsibilities of each individual.
+7. The training must be based on industry best practices and applicable laws and regulations.
+8. The unit must establish procedures for ensuring that personnel receive the appropriate security training.
+Procedure:
+Title: Security Training for Personnel with Administrative Responsibilities Procedure
+Purpose: The purpose of this procedure is to provide a set of guidelines for providing security training to personnel with administrative responsibilities for or access to systems. This procedure outlines the steps for ensuring that personnel are aware of their security responsibilities and how to perform their job duties securely.
+Scope: This procedure applies to all personnel within the unit who have administrative responsibilities for or access to systems.
+Procedure statement:
+9. The unit must identify the security training requirements for personnel with administrative responsibilities for or access to systems.
+10. The unit must provide training that is specific to the roles and responsibilities of each individual.
+11. The training must cover topics such as information security policies and procedures, access controls, incident response, and data protection.
+12. The unit must ensure that personnel receive the appropriate security training on a regular basis. This includes initial training for new personnel and ongoing training for existing personnel.
+13. The unit must maintain records of all security training provided to personnel with administrative responsibilities for or access to systems.
+14. The unit must ensure that all personnel who have administrative responsibilities for or access to systems are aware of their security responsibilities and how to perform their job duties securely.
+Conclusion:
+Providing security training to personnel with administrative responsibilities for or access to systems is a critical aspect of our cybersecurity program. By establishing policies, standards, and procedures for providing security training, the unit can ensure that personnel are aware of their security responsibilities and how to perform their job duties securely. This helps to prevent security incidents caused by human error or lack of awareness, thereby enhancing our cybersecurity posture.
