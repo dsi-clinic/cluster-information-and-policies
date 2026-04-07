@@ -1,0 +1,58 @@
+Area,Code,Description
+Asset Inventories & Diagrams,1.1,"Create and maintain a network architecture diagram showing all zones, data flows, and firewall boundaries (CRITICAL -- Tier 2 gate)"
+Asset Inventories & Diagrams,1.2,"Create a hardware inventory spreadsheet/database with per-node details (hostname, role, CPU, GPU, RAM, storage, rack location, purchase date, warranty status)"
+Asset Inventories & Diagrams,1.3,"Create a software inventory tracking OS versions, SLURM version, CUDA versions, and driver versions per node"
+Asset Inventories & Diagrams,1.4,"Create a third-party services inventory (cloud services, external tools, vendor software)"
+Access Management,2.1,Establish a periodic access review process (at least annual) -- review all active accounts against current PI approvals
+Access Management,2.2,Define and document an SSH key rotation policy and communicate to users
+Access Management,2.3,Document the account deprovisioning procedure (what happens when someone leaves)
+Access Management,2.4,Create a physical access log or audit trail for the server room
+Access Management,2.5,Document the SLURM partition/QOS access control scheme
+Incident Response,3.1,"Create an escalation contact list (DSI Techstaff -> Faculty Committee -> UChicago IT Security -> CISO) with names, roles, phone numbers, emails"
+Incident Response,3.2,Develop incident notification templates (email/Slack templates for different severity levels)
+Incident Response,3.3,"Create an incident log/tracking system (spreadsheet, ticketing system, etc.)"
+Incident Response,3.4,Conduct a tabletop exercise to test the incident response plan
+Incident Response,3.5,Establish a relationship/communication channel with UChicago IT Security for incident coordination
+Risk Management,4.1,Designate a risk assessment manager (DSI Techstaff lead or faculty committee member)
+Risk Management,4.2,"Create a risk register to track identified risks, their ratings, and response status"
+Risk Management,4.3,"Subscribe to relevant vulnerability feeds (NVIDIA security bulletins, Ubuntu USNs, SLURM advisories)"
+Risk Management,4.4,Conduct an initial risk assessment of the cluster
+Risk Management,4.5,Establish a change management log for tracking system changes
+Risk Management,4.6,Define a vulnerability disclosure process (how external researchers report issues)
+Data Protection,5.1,"Document the current backup system configuration (frequency, retention, what's covered)"
+Data Protection,5.2,Schedule and document quarterly backup restoration tests
+Data Protection,5.3,Create a data classification guide for users (what data can/cannot go on the cluster)
+Data Protection,5.4,Document encryption status for all storage tiers (at-rest and in-transit)
+Monitoring & Detection,6.1,Document all current monitoring tools and their coverage
+Monitoring & Detection,6.2,Set up or document centralized log collection (syslog server)
+Monitoring & Detection,6.3,Define log retention periods and verify they're being met
+Monitoring & Detection,6.4,Create monitoring alert thresholds and notification procedures
+Monitoring & Detection,6.5,Document the integration (or plan for integration) with UChicago central SIEM
+Platform Security,7.1,Document the standard node configuration baseline
+Platform Security,7.2,Implement or document configuration drift detection
+Platform Security,7.3,Create a patch management calendar and tracking log
+Platform Security,7.4,Document the software module system and how unauthorized software is prevented
+Platform Security,7.5,"Verify and document log generation on all nodes (syslog, auth, SLURM)"
+Training,8.1,Develop or adopt a cybersecurity awareness training program for cluster users
+Training,8.2,Develop specialized security training for DSI Techstaff
+Training,8.3,Create a training records tracking system
+Training,8.4,Schedule first annual security training session
+Training,8.5,Create onboarding security training materials for new users
+Infrastructure & Resilience,9.1,Document UPS and power redundancy for the server room
+Infrastructure & Resilience,9.2,Document cooling and environmental controls
+Infrastructure & Resilience,9.3,Verify and document fire suppression systems
+Infrastructure & Resilience,9.4,Create a capacity planning model (current utilization vs. growth projections)
+Infrastructure & Resilience,9.5,"Document SLURM resilience features (job requeue, node failover)"
+Recovery,10.1,Define RTO (Recovery Time Objective) and RPO (Recovery Point Objective) for each system component
+Recovery,10.2,Document the node rebuild procedure (bare metal to production)
+Recovery,10.3,Document SLURM database backup and restore procedure
+Recovery,10.4,Test and document user data restoration procedures
+Recovery,10.5,Create recovery communication templates
+Recovery,10.6,Designate a recovery communication team
+Continuous Improvement,11.1,Create an improvement tracking log/system
+Continuous Improvement,11.2,Schedule an annual security policy review (all SFA policies)
+Continuous Improvement,11.3,Plan for a post-SFA assessment lessons-learned session
+Continuous Improvement,11.4,Establish a feedback mechanism for security improvement suggestions
+Governance,12.1,Schedule regular (quarterly) security review meetings with the faculty oversight committee
+Governance,12.2,Assign ownership for each policy document (who is responsible for keeping it current)
+Governance,12.3,Establish a document review/approval workflow
