@@ -1,0 +1,27 @@
+Communication of Recovery Activities
+I. Purpose
+The purpose of this policy is to outline the policies, standards, and procedures for effective communication of recovery activities in the context of technology services to unit stakeholders and other leadership within the Computer Science (CS) Department. This policy aims to ensure timely, accurate, and consistent information dissemination during and after an incident that impacts the department's technology services.
+II. Scope
+This policy applies to all faculty, staff, students, and other stakeholders within the CS Department who are involved in or impacted by the recovery activities of technology services.
+III. Policies
+1. Designated Communication Team: The department shall establish a designated Communication Team responsible for coordinating all communication efforts related to recovery activities. The team will include representatives from the IT support staff, faculty, and departmental leadership.
+2. Communication Channels: The department shall establish and maintain appropriate communication channels to disseminate information about recovery activities. These channels may include, but are not limited to, email, departmental websites, social media platforms, and phone trees.
+3. Communication Frequency: The Communication Team shall provide regular updates on the progress of recovery activities to all relevant stakeholders. The frequency of updates will depend on the severity and duration of the incident.
+4. Stakeholder Inclusion: The Communication Team shall ensure that all relevant stakeholders, including faculty, staff, students, and other university leadership, are kept informed of recovery activities and progress.
+5. Confidentiality: The Communication Team shall maintain the confidentiality of sensitive information related to recovery activities and shall only disclose such information to authorized stakeholders on a need-to-know basis.
+IV. Standards
+6. Accuracy: All information shared regarding recovery activities must be accurate and up-to-date. The Communication Team is responsible for verifying the information before dissemination.
+7. Timeliness: The Communication Team should provide updates as soon as new information becomes available or as deemed necessary by the situation.
+8. Clarity: All communication should be clear, concise, and easy to understand by the target audience. The use of technical jargon should be minimized, and explanations should be provided when necessary.
+9. Consistency: The Communication Team should maintain a consistent message across all communication channels, ensuring that all stakeholders receive the same information.
+V. Procedures
+10. Upon identifying a technology incident that requires recovery activities, the IT support staff shall notify the Communication Team.
+11. The Communication Team will gather relevant information about the incident, assess its impact, and determine the appropriate communication channels and frequency for providing updates.
+12. The Communication Team shall draft an initial communication to inform stakeholders of the incident, its impact, and the department's response.
+13. The Communication Team will share the initial communication with the departmental leadership for approval.
+14. Once approved, the Communication Team shall disseminate the initial communication through the established channels.
+15. The Communication Team will continue to provide updates on the progress of recovery activities, following the established frequency and communication channels.
+16. Upon completion of the recovery activities, the Communication Team will provide a final update, summarizing the incident, the department's response, and any lessons learned or improvements to be made.
+17. The Communication Team will archive all communications related to the incident for future reference and analysis.
+VI. Review and Maintenance
+This policy shall be reviewed and updated annually or as needed to ensure its continued effectiveness in supporting the communication of recovery activities within the CS Department. Changes to the policy must be approved by the departmental leadership.

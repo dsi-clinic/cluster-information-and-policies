@@ -1,0 +1,26 @@
+Physical Security Monitoring Policies and Procedures for Cyber Security Threat Detection
+Purpose
+These policies and procedures establish guidelines for monitoring the physical spaces managed by the Computer Science Department to detect and prevent potential cyber security threats. These guidelines protect the department's assets, staff, and students and the integrity of its research and academic activities.
+Scope
+These policies and procedures apply to all personnel, students, and visitors within the Computer Science Department, including faculty, staff, contractors, and temporary employees. The guidelines encompass all physical spaces, including classrooms, laboratories, offices, and shared areas.
+Policies
+A. Access Control
+* The department shall establish and maintain appropriate access control measures to restrict entry to authorized individuals only.
+* Access control systems may include, but are not limited to, key cards, biometric readers, and PIN entry systems.
+* Access rights shall be reviewed periodically and adjusted based on role changes or security concerns.
+B. Surveillance
+* The department shall install and maintain surveillance cameras in key areas to monitor and record activities in physical spaces.
+* Surveillance footage shall be retained for a predetermined period, following applicable university policies and legal requirements.
+* Access to surveillance footage shall be restricted to authorized personnel only.
+C. Visitor Management
+* All visitors to the department's facilities must sign in upon arrival and be escorted by an authorized individual.
+* Visitors may be required to present valid identification and obtain a visitor's pass.
+D. Asset Management
+* All electronic devices must be inventoried, including computers, laptops, servers, and networking equipment.
+* Department-owned devices must be securely stored when not in use.
+* Unauthorized devices must not be connected to the department's network or used within department facilities.
+E. Reporting and Incident Response
+* Personnel must immediately report any suspicious activities, unauthorized access, or potential security threats to the department administrator or the University's IT Security office.
+* The department shall establish an incident response plan outlining the procedures for responding to and investigating potential security threats.
+Compliance
+Failure to comply with these policies and procedures may result in disciplinary action, up to and including termination of employment, dismissal from the university, or legal action. The department shall provide training and resources to ensure all personnel know and understand these policies and procedures.

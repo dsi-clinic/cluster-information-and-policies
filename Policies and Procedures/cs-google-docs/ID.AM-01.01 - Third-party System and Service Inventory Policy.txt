@@ -1,0 +1,15 @@
+Third-party System and Service Inventory Policy
+Purpose
+ This policy aims to ensure the maintenance of an inventory of third-party systems and services in the CS Department of the University. This policy outlines the standards and procedures for inventory management to ensure the security, availability, and performance of third-party systems and services.
+Scope
+This policy applies to all CS Department personnel, including faculty, staff, students, and third-party service providers with access to or managing third-party systems and services.
+Policy Statement
+1. The CS Department must keep an inventory of all third-party systems and services used in its operations.
+2. The inventory must be accurate, up-to-date, and complete, including information such as system name, version, vendor, location, purpose, and criticality level.
+3. The CS Department must perform periodic inventory reviews to ensure that it is accurate and current.
+4. Any changes or updates to the inventory must be documented and communicated to relevant stakeholders.
+5. The CS Department must ensure that third-party systems and services are evaluated for security, availability, and performance before they are added to the inventory.
+6. The CS Department must ensure that all third-party systems and services in the inventory comply with relevant University policies and standards.
+7. The CS Department must ensure that all third-party service providers comply with relevant contractual obligations and service-level agreements.
+8. The CS Department must ensure that all third-party systems and services in the inventory are adequately documented and supported, and that relevant documentation is accessible to authorized personnel.
+9. The CS Department must ensure that appropriate measures are taken to protect the confidentiality, integrity, and availability of all data processed, stored, or transmitted by third-party systems and services.

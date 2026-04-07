@@ -1,0 +1,13 @@
+Threat Identification and Documentation
+Purpose
+The purpose of this policy is to establish guidelines for the identification and documentation of possible threats to the unit's functions. This policy outlines the standards and procedures for identifying and documenting threats to ensure the confidentiality, integrity, and availability of data and systems.
+Scope
+This policy applies to all personnel within the unit, including faculty, staff, students, and third-party service providers who have access to or manage data and systems.
+Policy Statement
+1. The unit must establish a process for identifying and documenting possible threats to its functions, including threats to data and systems.
+2. The process must be based on the risks and threats associated with the unit's data and systems and must be aligned with industry best practices and applicable laws and regulations.
+3. The unit must designate a threat identification and documentation manager who is responsible for overseeing the identification and documentation of threats.
+4. The threat identification and documentation manager must ensure that appropriate measures are taken to protect the confidentiality, integrity, and availability of data and systems based on the risks and threats associated with each area of the unit's operations.
+5. The unit must establish procedures for identifying and documenting threats, including conducting regular threat assessments.
+6. The unit must ensure that appropriate controls and measures are in place to address identified threats.
+7. The unit must ensure that all personnel who have access to or manage data and systems are aware of the threat identification and documentation process and their responsibilities for maintaining the confidentiality, integrity, and availability of data and systems.

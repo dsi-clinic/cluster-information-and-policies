@@ -1,0 +1,51 @@
+Cyber Security Incident Mitigation Policy
+Introduction
+The purpose of this policy is to establish standards, procedures, and guidelines for mitigating cybersecurity incidents within the Computer Science Department to prevent recurrence. This policy aims to protect the department's critical information assets, infrastructure, and privacy of staff and students.
+Scope
+This policy applies to all staff, faculty, students, contractors, and third-party vendors within the CS Department who access, use, or manage departmental IT resources, including hardware, software, and data.
+Roles and Responsibilities 
+Department Chair
+Overall responsibility for the implementation and enforcement of this policy.
+Director of Techstaff
+Manage and coordinate the IT security efforts within the department.
+Faculty and Staff
+Adhere to and promote this policy and related guidelines.
+Incident Response Plan 
+The CS Department shall develop and maintain a comprehensive Incident Response Plan (IRP) that outlines the procedures to identify, respond to, and recover from cybersecurity incidents. The IRP should include the following key elements:
+* IIncident identification and reporting: Define the process for identifying and reporting cybersecurity incidents.
+* Incident classification: Establish a system for categorizing incidents based on their impact and severity.
+* Incident response team: Identify and train an incident response team responsible for handling incidents.
+* Incident response procedures: Outline the steps for responding to incidents, including containment, eradication, and recovery.
+* Post-incident analysis: Conduct a thorough analysis of incidents to identify root causes and implement preventive measures.
+Security Awareness Training 
+All faculty, staff, and students must complete a mandatory security awareness training program at least annually. The training should cover topics such as:
+* Password management 
+* Phishing and social engineering 
+* Safe browsing habits 
+* Data protection and privacy 
+* Reporting cybersecurity incidents
+Vulnerability Management 
+The IT Manager shall establish a vulnerability management program to identify, assess, and remediate vulnerabilities in departmental IT systems. This program should include:
+* Regular vulnerability scanning of departmental IT assets.
+* Timely patching and updating of software and hardware.
+* Conducting penetration testing periodically to assess the effectiveness of security controls.
+Network Security 
+The CS Department shall implement network security measures to protect departmental IT assets, such as:
+* Firewall and intrusion prevention systems (IPS) deployment.
+* Network segmentation and isolation of sensitive systems.
+* Regular monitoring and review of network logs for suspicious activity.
+* Implementation of secure remote access solutions, such as VPNs.
+Access Control
+The CS Department shall enforce strict access control measures to limit access to departmental IT resources based on the principle of least privilege. Access control measures include:
+* Regular review and update of user access rights.
+* Strong authentication methods, such as multi-factor authentication (MFA).
+* Prompt termination of access for users who no longer require it.
+Data Backup and Recovery 
+The IT Manager shall establish a data backup and recovery plan to ensure the availability and integrity of departmental data. This plan should include:
+* Regular backups of critical data stored off-site or on a secure cloud service.
+* Periodic testing of data recovery processes.
+* A disaster recovery plan outlining the steps to restore normal operations after a cybersecurity incident.
+Policy Compliance
+Failure to comply with this policy may result in disciplinary action, up to and including termination of employment or expulsion for students. The CS Department reserves the right to conduct periodic audits to ensure compliance with this policy.
+Policy Review 
+This policy shall be reviewed and updated annually or as needed to address changes in technology, regulatory requirements, or the department's risk environment.

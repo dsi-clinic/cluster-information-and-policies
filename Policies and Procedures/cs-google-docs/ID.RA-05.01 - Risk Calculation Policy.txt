@@ -1,0 +1,14 @@
+Risk Calculation Policy
+Purpose
+The purpose of this policy is to establish guidelines for calculating risks based on known threats, vulnerabilities, and their presumed impacts and likelihoods. This policy outlines the standards and procedures for calculating risks to ensure the confidentiality, integrity, and availability of data and systems.
+Scope
+This policy applies to all personnel within the unit, including faculty, staff, students, and third-party service providers who have access to or manage data and systems.
+Policy Statement
+1. The unit must establish a process for calculating risks based on known threats, vulnerabilities, and their presumed impacts and likelihoods.
+2. The process must be based on the risks associated with the unit's data and systems and must be aligned with industry best practices and applicable laws and regulations.
+3. The unit must designate a risk calculation manager who is responsible for overseeing the risk calculation process.
+4. The risk calculation manager must ensure that appropriate measures are taken to protect the confidentiality, integrity, and availability of data and systems based on the risks associated with each area of the unit's operations.
+5. The unit must establish procedures for calculating risks, including identifying and assessing threats and vulnerabilities, determining the potential impacts of these threats and vulnerabilities, and estimating the likelihood of their occurrence.
+6. The unit must ensure that appropriate controls and measures are in place to address identified risks.
+7. The unit must ensure that all personnel who have access to or manage data and systems are aware of the risk calculation process and their responsibilities for maintaining the confidentiality, integrity, and availability of data and systems.
+8. stems.

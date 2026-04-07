@@ -1,0 +1,21 @@
+Title: Quarantine Policies, Standards, and Procedures for Impacted Systems in the Event of a Cyber Security Incident
+I. Purpose The purpose of this document is to establish policies, standards, and procedures for the Computer Science (CS) Department of a large university to effectively quarantine impacted systems in the event of a cyber security incident.
+II. Scope These policies, standards, and procedures apply to all CS department faculty, staff, students, and any other individuals utilizing the department's computing resources.
+III. Policy The CS department is committed to ensuring the integrity, confidentiality, and availability of its computing resources. In the event of a cyber security incident, the department will take appropriate measures to quarantine impacted systems and mitigate the risks associated with the incident.
+IV. Standards
+1. Incident Reporting All users of the CS department's computing resources are responsible for reporting any suspected cyber security incidents to the designated IT Security Officer (ITSO) immediately upon detection.
+2. Incident Response Team The department shall establish an Incident Response Team (IRT), composed of IT professionals and relevant stakeholders, responsible for coordinating the response to cyber security incidents.
+3. Incident Classification The ITSO, in collaboration with the IRT, shall classify incidents according to their severity and potential impact on the department's operations and resources.
+4. Communication Protocol The IRT shall establish a communication protocol to be followed during an incident, including notifying relevant stakeholders, preserving evidence, and documenting the incident response.
+V. Procedures
+5. Quarantine Procedure
+a. Identification and Isolation Upon receiving a report of a suspected cyber security incident, the ITSO shall work with the IRT to identify and isolate affected systems. This may involve disconnecting systems from the network, disabling network access, or shutting down systems.
+b. Investigation and Assessment The IRT shall perform an investigation to assess the nature and extent of the incident. This may include reviewing logs, running security scans, and interviewing users.
+c. Communication The IRT shall follow the established communication protocol to inform relevant stakeholders, including department faculty, staff, and students, about the incident and any necessary actions to be taken.
+d. Containment The IRT shall implement appropriate measures to contain the incident and prevent further spread. This may include applying patches, updating security software, or changing passwords.
+e. Recovery The IRT shall develop and execute a plan to restore impacted systems to normal operation, including validating the integrity of data and applications and ensuring that all security measures are in place.
+f. Post-Incident Review After the incident has been resolved, the IRT shall conduct a post-incident review to identify any lessons learned and implement improvements to the department's cyber security policies, standards, and procedures.
+6. Training and Awareness The CS department shall provide regular training and awareness programs for all users of its computing resources, covering topics such as cyber security best practices, incident reporting, and the department's incident response procedures.
+7. Continuous Improvement The CS department shall continuously review and update its policies, standards, and procedures related to cyber security incidents to ensure their effectiveness in protecting the department's computing resources.
+VI. Enforcement Failure to comply with these policies, standards, and procedures may result in disciplinary action, up to and including termination of employment, suspension or expulsion from the university, and legal action, as appropriate.
+VII. Review and Update These policies, standards, and procedures shall be reviewed and updated annually or as needed by the ITSO and IRT, with approval from the CS department head.
