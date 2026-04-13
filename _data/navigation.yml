@@ -61,6 +61,8 @@ main:
         url: "/policies/general/"
       - title: "Hardware Purchasing Guidelines"
         url: "/policies/purchasing/"
+      - title: "Affiliated Faculty Accounts"
+        url: "/policies/affiliated-faculty/"
       - title: "Techstaff SLA"
         url: "/policies/techstaff-sla/"
   - title: "Room Technology"
