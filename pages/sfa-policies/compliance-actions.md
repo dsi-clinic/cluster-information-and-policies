@@ -123,12 +123,12 @@ Items are organized by category. Each category notes the relevant NIST CSF 2.0 f
 <h3 class="category-header">10. Recovery</h3>
 <p class="controls-note">Supports: RC.RP (Incident Recovery Plan Execution), RC.CO (Recovery Communication)</p>
 
-- [ ] **10.1** Define RTO (Recovery Time Objective) and RPO (Recovery Point Objective) for each system component
-- [ ] **10.2** Document the node rebuild procedure (bare metal to production)
-- [ ] **10.3** Document SLURM database backup and restore procedure
+- [x] **10.1** Define RTO (Recovery Time Objective) and RPO (Recovery Point Objective) for each system component
+- [x] **10.2** Document the node rebuild procedure (bare metal to production)
+- [x] **10.3** Document SLURM database backup and restore procedure
 - [ ] **10.4** Test and document user data restoration procedures
-- [ ] **10.5** Create recovery communication templates
-- [ ] **10.6** Designate a recovery communication team
+- [x] **10.5** Create recovery communication templates
+- [x] **10.6** Designate a recovery communication team
 
 <h3 class="category-header">11. Continuous Improvement</h3>
 <p class="controls-note">Supports: ID.IM (Improvement), ID.IM-01 through ID.IM-04</p>

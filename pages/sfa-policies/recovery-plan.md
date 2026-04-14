@@ -55,19 +55,17 @@ Recovery status and activities shall be communicated to affected stakeholders th
 - **Accuracy** -- All external communications are reviewed for accuracy before distribution. Speculative information is avoided.
 - **Archiving** -- Recovery communications are archived with incident records.
 
-### Recovery Time and Recovery Point Objectives
+### Recovery Time Objective (RTO)
 
-The following targets guide recovery planning. These are objectives, not guarantees, and actual recovery times depend on the nature and scope of the disruption.
+The DSI cluster's recovery time objective is **immediate recovery within business hours**. If a system failure or incident occurs during business hours, Techstaff will begin recovery immediately. If a failure occurs outside of business hours, recovery will begin at the start of the next business day.
 
-| System | Recovery Time Objective (RTO) | Recovery Point Objective (RPO) | Notes |
-|:-------|:------------------------------|:-------------------------------|:------|
-| Login nodes | 4 hours | N/A (stateless) | Rebuild from configuration management |
-| SLURM controller | 4 hours | 24 hours (database backup) | SLURM database backed up daily |
-| `/home` storage | 24 hours | 24 hours | Restored from daily backups |
-| `/project` storage | 48 hours | 24 hours | Restored from daily backups; larger volume |
-| `/scratch` storage | 24 hours | N/A (not backed up) | Scratch data is not recoverable; users notified |
-| Compute nodes | 8 hours per node | N/A (stateless) | Rebuild from configuration management |
-| Monitoring services | 24 hours | N/A | Lower priority; rebuild from configuration |
+Business hours are Monday through Friday, 9:00 AM -- 5:00 PM Central Time, excluding university holidays.
+
+### Recovery Point Objective (RPO)
+
+The DSI cluster is not designed for long-term data storage. Cluster storage is intended for ephemeral data used in active experiments and research workflows. Users should not rely on the cluster as their sole copy of any data.
+
+For details on what data is backed up and how often, see the [Shared Storage](/using-the-cluster/shared-storage/) documentation and the [Storage Allocation Policy](/policies/general/#storage-allocation-policy).
 
 ---
 
@@ -145,11 +143,68 @@ The following targets guide recovery planning. These are objectives, not guarant
 | **When** | At recovery activation, at regular intervals during recovery, and at recovery closure |
 | **How** | 1. At recovery activation: notify affected users via email and Slack of the disruption, expected impact, and estimated recovery timeline. Update the cluster status page. 2. During recovery: provide updates at least every 24 hours and at significant milestones. Use Slack, email, and the cluster status page. 3. At recovery closure: notify users that services are restored, summarize any lasting impact (e.g., data loss on `/scratch`), and provide guidance for resuming work. 4. For significant incidents: notify the faculty committee and UChicago central IT. 5. All communications are reviewed for accuracy before distribution and archived with incident records. |
 
+### Recovery Communication Team
+
+The following roles are responsible for recovery communication:
+
+| Role | Responsibility |
+|:-----|:---------------|
+| **Techstaff Lead** | Primary recovery coordinator. Directs recovery activities, approves all external communications, and serves as the single point of contact for the faculty committee. |
+| **On-duty Techstaff Member** | Backup recovery coordinator if the Techstaff lead is unavailable. Executes recovery procedures and drafts status updates. |
+| **Faculty Committee Chair** | Notified of all significant incidents. Approves communications to DSI leadership and external stakeholders when required. |
+
+If the Techstaff lead is unavailable, the on-duty Techstaff member assumes recovery coordination and notifies the faculty committee chair.
+
+### Recovery Communication Templates
+
+The following templates are used to ensure consistent, timely communication during recovery. All communications are posted to the **#dsi-cluster-information** Slack channel and sent via email to affected users from **techstaff@cs.uchicago.edu**.
+
+#### Outage Notification (sent at recovery activation)
+
+> **Subject: DSI Cluster -- Service Disruption**
+>
+> The DSI HPC cluster is currently experiencing a service disruption affecting [login nodes / compute nodes / storage / describe affected systems]. We are actively investigating and working to restore service.
+>
+> **Impact:** [Describe what users cannot do -- e.g., "Users are unable to submit new jobs" or "Access to /project storage is unavailable"]
+>
+> **Estimated recovery:** [Within business hours today / By end of next business day / Under investigation]
+>
+> We will provide updates as the situation develops. If you have running jobs that may be affected, please do not resubmit until we confirm service is restored.
+
+#### In-Progress Update (sent at least every 24 hours during active recovery)
+
+> **Subject: DSI Cluster -- Recovery Update**
+>
+> Update on the ongoing service disruption affecting [systems]:
+>
+> **Current status:** [Describe progress -- e.g., "Login nodes have been restored. Compute node recovery is in progress."]
+>
+> **Remaining work:** [What still needs to be done]
+>
+> **Expected completion:** [Updated estimate]
+>
+> We will continue to provide updates. Thank you for your patience.
+
+#### Recovery Complete (sent when service is fully restored)
+
+> **Subject: DSI Cluster -- Service Restored**
+>
+> The DSI HPC cluster has been fully restored to normal operation as of [date/time].
+>
+> **Summary:** [Brief description of what happened and what was affected]
+>
+> **Data impact:** [e.g., "No data was lost" or "Scratch storage was reset -- files on /scratch are no longer available" or "Some jobs running at the time of the disruption were terminated and will need to be resubmitted"]
+>
+> **Action required:** [e.g., "No action required" or "Please verify your /project data" or "Please resubmit any jobs that were running at the time of the disruption"]
+>
+> If you experience any issues, please contact techstaff@cs.uchicago.edu.
+
 ### Review Log
 
 | Date | Reviewer | Summary of Changes |
 |:-----|:---------|:-------------------|
 | 2026-04-06 | DSI Techstaff | Initial version |
+| 2026-04-14 | DSI Techstaff | Updated RTO/RPO to reflect "immediate within business hours" policy. Added recovery communication team roles. Added communication templates. Linked RPO to shared storage documentation. |
 
 ---
 
