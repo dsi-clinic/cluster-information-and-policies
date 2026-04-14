@@ -33,13 +33,7 @@ This document contains some frequently asked questions about the cluster and its
 
 ### What are the requirements for getting access to this cluster?
 
-Users of the DSI have to meet one of the following criteria:
-
-1. Have a DSI-related grant.
-2. Be in the DSI or a DSI affiliated faculty (with some exceptions).
-3. Be a student with written approval by a DSI faculty mentor.
-
-If you are looking for compute resources and are more generally affiliated with the University we recommend contacting [RCC](https://rcc.uchicago.edu/).
+For information on how to get access, visit the [Getting Access](/quickstart/accounts/) page.
 
 
 ### I want to install additional software.
