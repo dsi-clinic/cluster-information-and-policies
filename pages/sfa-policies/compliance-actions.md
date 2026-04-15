@@ -114,11 +114,11 @@ Items are organized by category. Each category notes the relevant NIST CSF 2.0 f
 <h3 class="category-header">9. Infrastructure & Resilience</h3>
 <p class="controls-note">Supports: PR.IR (Technology Infrastructure Resilience), PR.IR-01 through PR.IR-04</p>
 
-- [ ] **9.1** Document UPS and power redundancy for the server room
-- [ ] **9.2** Document cooling and environmental controls
-- [ ] **9.3** Verify and document fire suppression systems
-- [ ] **9.4** Create a capacity planning model (current utilization vs. growth projections)
-- [ ] **9.5** Document SLURM resilience features (job requeue, node failover)
+- [x] **9.1** Document UPS and power redundancy for the server room
+- [x] **9.2** Document cooling and environmental controls
+- [x] **9.3** Verify and document fire suppression systems
+- [x] **9.4** Create a capacity planning model (current utilization vs. growth projections)
+- [x] **9.5** Document SLURM resilience features (job requeue, node failover)
 
 <h3 class="category-header">10. Recovery</h3>
 <p class="controls-note">Supports: RC.RP (Incident Recovery Plan Execution), RC.CO (Recovery Communication)</p>

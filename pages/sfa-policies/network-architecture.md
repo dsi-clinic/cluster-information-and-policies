@@ -26,7 +26,7 @@ The cluster network shall be logically organized into distinct zones based on fu
 
 *[Network Architecture Diagram]*
 
-*The diagram should depict the four zones below, their interconnections, the UChicago campus network boundary, the firewall, and the primary data flow path from external users through SSH to login nodes, through SLURM to compute nodes, and to/from shared storage. Include interface speeds (1 Gbps external, 10 Gbps internal) and the three login node hostnames.*
+*The diagram should depict the four zones below, their interconnections, the UChicago campus network boundary, the firewall, and the primary data flow path from external users through SSH to login nodes, through SLURM to compute nodes, and to/from shared storage. For current network speeds, see [Cluster Information](/faq/cluster-information/#cluster-networking-and-topology).*
 
 ### Zone 1: Access Zone (Login Nodes)
 
@@ -48,7 +48,7 @@ The Management Zone hosts infrastructure services that are not directly accessib
 - **Configuration management** -- maintains consistent OS, driver, and software state across all nodes
 - **Monitoring and logging** -- collects system metrics and logs from all nodes
 
-Management services communicate with all other zones over the internal 10 Gbps network. User access to management services is restricted to the DSI Techstaff team.
+Management services communicate with all other zones over the [internal network](/faq/cluster-information/#cluster-networking-and-topology). User access to management services is restricted to the DSI Techstaff team.
 
 ### Zone 3: Computing Zone (Compute Nodes)
 
@@ -59,7 +59,7 @@ The Computing Zone contains the 29 GPU and CPU compute nodes (2,720 cores, 140 G
 - Read and write data to shared storage in the Data Storage Zone
 - Are not directly accessible from outside the cluster; users reach them only through SLURM job allocations originating from the login nodes
 
-All inter-node communication runs over the internal 10 Gbps network.
+All inter-node communication runs over the [internal network](/faq/cluster-information/#cluster-networking-and-topology).
 
 ### Zone 4: Data Storage Zone
 
@@ -71,20 +71,20 @@ The Data Storage Zone provides 1.5 PB of shared storage across three tiers:
 | Project | `/project` | 500 GB per group (up to 10 TB) | Yes | Shared research data, results |
 | Scratch | `/scratch` | 50 GB per user per volume | No | Temporary job I/O (60-day purge) |
 
-Storage servers are connected to compute and login nodes over the internal 10 Gbps network. Storage is not directly accessible from outside the cluster.
+Storage servers are connected to compute and login nodes over the [internal network](/faq/cluster-information/#cluster-networking-and-topology). Storage is not directly accessible from outside the cluster.
 
 ### External Connectivity
 
-- **Uplink:** 1 Gbps connection to the UChicago campus network (upgrade anticipated July 2026)
+- **Uplink:** See [Cluster Information](/faq/cluster-information/#cluster-networking-and-topology) for current external connection speed
 - **Firewall:** UChicago central IT manages the perimeter firewall. Inbound access is restricted to SSH on the login nodes.
-- **Physical security:** The cluster resides in a UChicago-managed data center with controlled physical access.
+- **Physical security:** The cluster resides in the Hinds data center, a UChicago-managed facility with controlled physical access.
 
 ### Primary Data Flow
 
 1. **User** connects via SSH through the campus network and firewall to a **login node** (Access Zone)
 2. User submits a job via SLURM on the login node
 3. The **SLURM controller** (Management Zone) schedules the job on one or more **compute nodes** (Computing Zone)
-4. Compute nodes read input data from and write output data to **shared storage** (Data Storage Zone) over the 10 Gbps internal network
+4. Compute nodes read input data from and write output data to **shared storage** (Data Storage Zone) over the [internal network](/faq/cluster-information/#cluster-networking-and-topology)
 5. User retrieves results from shared storage via the login node
 
 ---

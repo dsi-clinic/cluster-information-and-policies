@@ -44,7 +44,7 @@ All access to the DSI Cluster is mediated through University of Chicago CNetID c
 
 ### 6. Physical Access Management (PR.AA-06.01)
 
-**Policy:** Physical access to organizational assets is managed, monitored, and enforced commensurate with risk. The DSI Cluster is housed in a secured server room within the University of Chicago Data Science Institute building. Physical access is restricted to authorized DSI Techstaff. Building access is controlled by UChicago campus card systems.
+**Policy:** Physical access to organizational assets is managed, monitored, and enforced commensurate with risk. The DSI Cluster is housed in the Hinds data center, a UChicago-managed facility. Physical access is restricted to authorized DSI Techstaff. Building access is controlled by UChicago campus card systems.
 
 ---
 
@@ -96,10 +96,10 @@ All access to the DSI Cluster is mediated through University of Chicago CNetID c
 
 ### Physical Access Management
 
-1. The DSI Cluster hardware is located in a secured server room within the UChicago Data Science Institute building.
-2. Physical access to the server room is restricted to DSI Techstaff with authorized card access.
-3. Building access is managed by UChicago Facilities and controlled by campus ID card readers.
-4. Visitors to the server room must be escorted by authorized Techstaff.
+1. The DSI Cluster hardware is located in the Hinds data center, a UChicago-managed facility.
+2. Physical access to the data center is restricted to DSI Techstaff with authorized card access.
+3. Building access is managed by the Hinds data center operations team and controlled by campus ID card readers.
+4. Visitors to the data center must be escorted by authorized Techstaff.
 5. Hardware additions, removals, or physical maintenance are performed only by DSI Techstaff.
 
 ### Periodic Access Reviews
@@ -132,7 +132,7 @@ All access to the DSI Cluster is mediated through University of Chicago CNetID c
 | PR.AA-03.01  | Authentication                      | SSH public key authentication required; password login disabled |
 | PR.AA-04.01  | Identity assertion protection       | Private keys user-controlled; authorized_keys file permissions enforced |
 | PR.AA-05.01  | Access permissions & least privilege| No root/sudo, no Docker, SLURM QOS limits, storage quotas, POSIX permissions |
-| PR.AA-06.01  | Physical access management          | Secured server room, card-controlled building access, Techstaff-only physical access |
+| PR.AA-06.01  | Physical access management          | Hinds data center, card-controlled building access, Techstaff-only physical access |
 
 ---
 

@@ -37,12 +37,12 @@ The cluster is organized into a series of nodes and storage servers. Storage ser
 
 Note that not all nodes are available on all SLURM partitions and queues. 
 
-The cluster has a 1Gb/s line to the internet (with a potential upgrade date of July 2026).
+The cluster has a 10 Gbps line to the internet.
 
-The network between nodes and storage servers runs at 10 Gbps.
+The network between nodes and storage servers runs at 100 Gbps.
 
 ## Space Availability and Server Room
 
-The server room is power-constrained. While each rack can hold 8 nodes physically, power typically supports 4 nodes per rack. With 8 open racks, we anticipate capacity for approximately 24 additional nodes (24 + 29 = 53 total), hardware-dependent.
+The DSI cluster is housed in the Hinds data center, a UChicago-managed facility. Available rack space and power capacity are managed by the Hinds data center operations team, and our allocation is contingent on the university's overall use of that space. The server room is power-constrained, which limits the density of GPU nodes per rack and is the primary limiting factor for cluster growth.
 
 

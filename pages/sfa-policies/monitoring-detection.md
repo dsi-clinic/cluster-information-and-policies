@@ -26,8 +26,8 @@ Networks and network services shall be monitored for potentially adverse events 
 
 The physical environment of the cluster shall be monitored for potentially adverse events.
 
-- **Data center access.** The cluster resides in a UChicago-managed data center with controlled physical access, including badge-based entry, surveillance cameras, and visitor management procedures administered by UChicago Facilities.
-- **Environmental controls.** Temperature, humidity, and power conditions in the data center are monitored by UChicago Facilities. DSI Techstaff shall confirm with Facilities at least annually that environmental monitoring and alerting are operational for the cluster's location.
+- **Data center access.** The cluster resides in the Hinds data center, a UChicago-managed facility with controlled physical access, including badge-based entry, surveillance cameras, and visitor management procedures administered by the Hinds data center operations team.
+- **Environmental controls.** Temperature, humidity, and power conditions in the data center are monitored by the Hinds data center operations team. DSI Techstaff shall confirm with Hinds data center management at least annually that environmental monitoring and alerting are operational for the cluster's location.
 - **Asset tracking.** DSI Techstaff shall maintain an inventory of all physical cluster assets (nodes, switches, storage devices) and verify physical presence during scheduled maintenance windows.
 
 #### DE.CM-03: Personnel Activity Monitoring
@@ -186,7 +186,7 @@ Adverse events shall be declared as incidents when they meet defined criteria.
 | Control ID | Control Name | How Addressed |
 |:-----------|:-------------|:--------------|
 | DE.CM-01.01 | Networks and network services are monitored to find potentially adverse events | Network monitoring policy requires campus IDS/IPS coverage of cluster subnets, internal traffic monitoring, and automated alerting. Annual review procedure verifies coverage. |
-| DE.CM-02.01 | The physical environment is monitored to find potentially adverse events | Physical security relies on UChicago-managed data center controls (badge access, surveillance, environmental monitoring). Annual verification with Facilities and asset tracking during maintenance windows. |
+| DE.CM-02.01 | The physical environment is monitored to find potentially adverse events | Physical security relies on Hinds data center controls (badge access, surveillance, environmental monitoring). Annual verification with Hinds data center management and asset tracking during maintenance windows. |
 | DE.CM-03.01 | Personnel activity and technology usage are monitored to find potentially adverse events | SSH authentication logging, SLURM job accounting, sudo logging, and login node process monitoring provide comprehensive personnel activity visibility. Monthly review procedures defined. |
 | DE.CM-06.01 | External service provider activities and services are monitored to find potentially adverse events | Policy requires coordination with UChicago central IT on security services, package integrity verification, and monitoring requirements for any external integrations. |
 | DE.CM-09.01 | Computing hardware, software, runtime environments, and their data are monitored to find potentially adverse events | System health monitoring (CPU, GPU, memory, disk), centralized syslog collection, configuration drift detection, and storage monitoring procedures cover all computing resources. |
