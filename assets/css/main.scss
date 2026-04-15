@@ -167,6 +167,80 @@ h2 { color: var(--uchicago-maroon); }
 }
 .back-to-top:hover { background-color: #600000; }
 
+/* Homepage announcement banner — prominent branded callout */
+.announcement-banner {
+  max-width: 1280px;
+  margin: 1.5em auto 0.5em;
+  background: linear-gradient(135deg, var(--uchicago-maroon) 0%, #7a1d1d 100%);
+  color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(90, 21, 21, 0.25);
+  overflow: hidden;
+  position: relative;
+}
+.announcement-banner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 6px;
+  background: #f2c45a;                     /* gold accent stripe */
+}
+.announcement-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.5rem 2rem 1.5rem 2.25rem;
+  flex-wrap: wrap;
+}
+.announcement-banner__text { flex: 1 1 320px; }
+.announcement-banner__eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f2c45a;
+  margin-bottom: 0.35em;
+}
+.announcement-banner__title {
+  color: #fff !important;                  /* override site default h2 color */
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.3;
+  font-family: 'Crimson Text', serif;
+}
+.announcement-banner__body {
+  margin: 0.45em 0 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+.announcement-banner__cta {
+  display: inline-block;
+  flex-shrink: 0;
+  background: #fff;
+  color: var(--uchicago-maroon) !important;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 4px;
+  text-decoration: none !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+.announcement-banner__cta:hover,
+.announcement-banner__cta:focus {
+  background: #f2c45a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px) {
+  .announcement-banner__inner { padding: 1.25rem 1.5rem 1.25rem 1.75rem; gap: 1rem; }
+  .announcement-banner__title { font-size: 1.15rem; }
+  .announcement-banner__cta { width: 100%; text-align: center; }
+}
+
 /* Homepage */
 .home-content { max-width: 1280px; margin: 0 auto; padding: 2em; }
 .home-content h1 { color: var(--uchicago-maroon); margin-bottom: 1em; text-align: center; }
