@@ -38,10 +38,10 @@ DSI Techstaff shall verify that environmental conditions appear normal during ro
 
 The cluster shall employ resilience mechanisms to minimize the impact of hardware failures and service disruptions:
 
-- **Redundant storage** -- The `/home` and `/project` storage tiers are backed up. Storage systems use redundant configurations (e.g., RAID) to tolerate disk failures without data loss.
+- **Redundant storage** -- The `/home` and `/project` storage tiers are [backed up](/using-the-cluster/storage-overview/). Storage systems use redundant configurations (e.g., RAID) to tolerate disk failures without data loss.
 - **SLURM job resilience** -- SLURM is configured to requeue jobs affected by node failures when possible, minimizing lost compute time for users.
 - **Node failover** -- The loss of individual compute nodes does not affect the overall cluster. SLURM automatically removes failed nodes from the scheduling pool and redistributes workloads to healthy nodes.
-- **Login node redundancy** -- Three login nodes (fe01.ds, fe02.ds, fe03.ds) provide redundant user access points. The loss of one login node does not prevent cluster access.
+- **Login node redundancy** -- [Three login nodes](/faq/cluster-information/#cluster-networking-and-topology) provide redundant user access points. The loss of one login node does not prevent cluster access.
 - **Service recovery** -- Critical services (SLURM controller, storage servers, monitoring) have documented recovery procedures to restore service after failures.
 
 ### Capacity Planning and Monitoring (PR.IR-04)
