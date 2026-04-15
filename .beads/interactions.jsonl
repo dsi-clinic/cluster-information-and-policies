@@ -1,0 +1,1 @@
+{"id":"int-cfe87ed2","kind":"field_change","created_at":"2026-04-15T13:38:17.151396Z","actor":"NickRoss","issue_id":"cluster-information-and-policies-7t1","extra":{"field":"status","new_value":"closed","old_value":"in_progress","reason":"Added Technical Details section to infrastructure-resilience.md, checked off 9.1-9.5, updated Hinds data center references across 7 files"}}

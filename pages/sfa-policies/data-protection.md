@@ -44,7 +44,7 @@ Users are responsible for ensuring that no restricted data is placed on the clus
 Data transmitted to, from, and within the cluster shall be protected against unauthorized interception:
 
 - **External access** -- all user access to the cluster is via SSH, which provides encryption of data in transit. No unencrypted remote access protocols (telnet, FTP, rsh) are enabled on cluster systems.
-- **Internal transfers** -- data transfers between cluster nodes (compute-to-storage, login-to-storage) occur over the internal 10 Gbps network, which is not routable from outside the cluster. While internal traffic is not encrypted at the network layer, physical and logical network isolation provides protection.
+- **Internal transfers** -- data transfers between cluster nodes (compute-to-storage, login-to-storage) occur over the [internal network](/faq/cluster-information/#cluster-networking-and-topology), which is not routable from outside the cluster. While internal traffic is not encrypted at the network layer, physical and logical network isolation provides protection.
 - **Data transfers to external systems** -- users are encouraged to use encrypted transfer methods (SCP, SFTP, rsync over SSH) when moving data between the cluster and external systems. Unencrypted transfer tools should be avoided.
 
 ### Data at Rest (PR.DS-01)
@@ -52,7 +52,7 @@ Data transmitted to, from, and within the cluster shall be protected against una
 Data stored on the cluster is protected through the following controls:
 
 - **Access controls** -- POSIX file permissions govern access to all files. Home directories are readable only by the owning user by default. Project directories use group-based permissions managed by DSI Techstaff.
-- **Physical security** -- cluster storage systems reside in a UChicago-managed data center with controlled physical access.
+- **Physical security** -- cluster storage systems reside in the Hinds data center, a UChicago-managed facility with controlled physical access.
 - **No full-disk encryption** -- the cluster does not employ encryption at rest for its shared storage systems. This is appropriate for the non-restricted data classification. The primary protections for data at rest are access controls and physical security. Restricted data requiring encryption at rest must use the Secure Data Enclave.
 
 ### Data in Use (PR.DS-02)

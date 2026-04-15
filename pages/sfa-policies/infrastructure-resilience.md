@@ -19,20 +19,20 @@ The DSI HPC cluster network shall be protected through layered security controls
 - **Perimeter firewall** -- UChicago central IT manages the perimeter firewall between the campus network and the cluster. Inbound access is restricted to SSH (port 22) on login nodes only.
 - **Network segmentation** -- The cluster is organized into distinct network zones (Access, Management, Computing, and Data Storage) as described in the [Network Architecture](/sfa-policies/network-architecture/) document. Traffic between zones is controlled and restricted to necessary protocols.
 - **Compute node isolation** -- Compute nodes are not directly accessible from outside the cluster. Users reach compute resources only through SLURM job allocations originating from login nodes.
-- **Internal network** -- All inter-node communication runs over a dedicated internal 10 Gbps network that is not routable from the campus network or internet.
+- **Internal network** -- All inter-node communication runs over a dedicated [internal network](/faq/cluster-information/#cluster-networking-and-topology) that is not routable from the campus network or internet.
 
 DSI Techstaff shall coordinate with UChicago central IT on firewall rule changes and review network protection controls annually.
 
 ### Environmental Protection (PR.IR-02)
 
-The physical infrastructure supporting the DSI HPC cluster shall be protected against environmental threats. The cluster resides in a UChicago-managed data center in the Data Science Institute building, where environmental protections are primarily the responsibility of UChicago Facilities and central IT:
+The physical infrastructure supporting the DSI HPC cluster shall be protected against environmental threats. The cluster resides in the **Hinds data center**, a UChicago-managed facility, where all physical infrastructure is the responsibility of the Hinds data center operations team:
 
 - **Power** -- The data center is served by building power with uninterruptible power supply (UPS) systems to handle brief power interruptions.
 - **Cooling** -- The data center maintains climate-controlled cooling appropriate for high-density computing equipment.
-- **Fire suppression** -- The data center is equipped with fire detection and suppression systems managed by UChicago Facilities.
-- **Physical access** -- Physical access to the data center is controlled by UChicago Facilities through card-access and building security.
+- **Fire suppression** -- The data center is equipped with fire detection and suppression systems managed by the Hinds data center.
+- **Physical access** -- Physical access to the data center is controlled through card-access and building security managed by the Hinds data center.
 
-DSI Techstaff shall verify that environmental protections are functioning during routine data center visits and report any concerns to UChicago Facilities promptly.
+DSI Techstaff shall verify that environmental conditions appear normal during routine data center visits and report any concerns to Hinds data center management promptly.
 
 ### Resilience Mechanisms (PR.IR-03)
 
@@ -82,7 +82,7 @@ DSI Techstaff shall monitor cluster resource utilization and plan capacity to me
 | **What** | Verify that data center environmental protections are operational |
 | **Who** | DSI Techstaff |
 | **When** | During routine data center visits (at least quarterly) |
-| **How** | During physical visits to the data center, Techstaff performs a visual check of power systems (UPS indicators), cooling systems (temperature readings), and general physical conditions. Any anomalies (unusual temperatures, warning lights, physical damage) are reported to UChicago Facilities via a facilities work order. Observations are noted in the Techstaff operational log. |
+| **How** | During physical visits to the data center, Techstaff performs a visual check of power systems (UPS indicators), cooling systems (temperature readings), and general physical conditions. Any anomalies (unusual temperatures, warning lights, physical damage) are reported to Hinds data center management. Observations are noted in the Techstaff operational log. |
 
 ### Storage Health and Backup Verification
 
@@ -120,10 +120,56 @@ DSI Techstaff shall monitor cluster resource utilization and plan capacity to me
 | **When** | Annually, aligned with budget planning cycle |
 | **How** | Techstaff compiles utilization data (average and peak GPU/CPU usage, storage growth rates, queue wait times) and prepares a capacity summary. The summary includes current utilization, growth trends, and projections for the next 12 months. This is presented to the faculty committee to inform decisions about hardware procurement, storage expansion, or policy changes (e.g., quota adjustments). |
 
+---
+
+## Technical Details
+
+### Physical Infrastructure
+
+The DSI HPC cluster is housed in the **Hinds data center**, which is managed by UChicago. All physical infrastructure — power, cooling, fire suppression, and physical access — is the responsibility of the Hinds data center operations team. DSI does not manage any physical infrastructure directly.
+
+DSI Techstaff verifies that environmental conditions appear normal during routine data center visits (at least quarterly) and reports any concerns to Hinds data center management.
+
+#### Power and UPS (Action Item 9.1)
+
+- Power, UPS, and generator systems are provided and managed by the Hinds data center.
+- DSI does not manage or have detailed specifications for these systems; they are maintained by the data center operations team in accordance with UChicago facility standards.
+- The data center is **power-constrained**, which limits the density of GPU nodes per rack and is the primary limiting factor for cluster growth. Available space and power are contingent on the university's overall use of the Hinds data center. See [Space Availability and Server Room](/faq/cluster-information/#space-availability-and-server-room) for current details.
+
+#### Cooling and Environmental Controls (Action Item 9.2)
+
+- Cooling and environmental control systems are provided and managed by the Hinds data center.
+- The data center is climate-controlled for high-density GPU computing equipment.
+- DSI Techstaff monitors ambient conditions during quarterly visits and reports any anomalies to Hinds data center management.
+
+#### Fire Suppression (Action Item 9.3)
+
+- Fire detection and suppression systems are provided, managed, and inspected by the Hinds data center in accordance with applicable fire codes and university safety standards.
+- DSI does not manage these systems. DSI Techstaff visually confirms that fire suppression equipment appears operational (no warning indicators, no visible damage) during quarterly data center visits.
+
+### Capacity Planning Model (Action Item 9.4)
+
+DSI Techstaff maintains a capacity planning model to project when additional resources will be needed and to inform procurement decisions.
+
+**Current inventory:** See the [Current Cluster Information](/faq/cluster-information/) page for up-to-date node counts, GPU inventory, and storage totals.
+
+**Physical constraints:** The cluster's physical footprint in the Hinds data center is contingent on the university's overall use of that facility. Power capacity is the primary constraint on cluster growth, limiting the density of GPU nodes per rack.
+
+**Annual review:** The capacity planning model is reviewed and updated annually as part of the capacity planning review procedure (see Procedures section above). Growth projections and procurement recommendations are presented to the faculty oversight committee.
+
+### SLURM Resilience and Cluster Purpose (Action Item 9.5)
+
+The DSI HPC cluster is designed for **ephemeral data storage and computational experiments**. Users should treat the cluster as a platform for running experiments, not as long-term or archival storage. In the event of an operational failure, data loss may occur on local and scratch storage.
+
+DSI Techstaff strives to restore cluster services as quickly as possible following any disruption. SLURM provides built-in resilience features — including job requeue capabilities, automatic draining of failed nodes, and workload redistribution across healthy nodes — that help minimize the impact of hardware failures on running jobs. Multiple login nodes provide redundant user access points so that no single node failure prevents cluster access.
+
+For recovery procedures and backup details, see the [Recovery Plan](/sfa-policies/recovery-plan/).
+
 ### Review Log
 
 | Date | Reviewer | Summary of Changes |
 |:-----|:---------|:-------------------|
+| 2026-04-14 | DSI Techstaff | Added Technical Details section (physical infrastructure, capacity planning, SLURM resilience) |
 | 2026-04-06 | DSI Techstaff | Initial version |
 
 ---
@@ -133,6 +179,6 @@ DSI Techstaff shall monitor cluster resource utilization and plan capacity to me
 | Control ID | Control Name | How Addressed |
 |:-----------|:-------------|:--------------|
 | PR.IR-01.01 | Networks and environments are protected from unauthorized logical access and usage | Perimeter firewall managed by UChicago central IT restricts inbound access to SSH on login nodes. Network segmentation isolates compute, management, and storage zones. Compute nodes are not directly accessible externally. Annual firewall and segmentation reviews are conducted. |
-| PR.IR-02.01 | The organization's technology assets are protected from environmental threats | Cluster resides in UChicago-managed data center with UPS power, climate-controlled cooling, fire suppression, and card-access physical security. Techstaff verifies environmental controls during routine data center visits. |
+| PR.IR-02.01 | The organization's technology assets are protected from environmental threats | Cluster resides in the Hinds data center (UChicago-managed) with UPS power, climate-controlled cooling, fire suppression, and card-access physical security. All physical infrastructure is managed by the Hinds data center operations team. Techstaff verifies environmental conditions during routine data center visits. |
 | PR.IR-03.01 | Mechanisms are implemented to achieve resilience requirements in normal and adverse situations | Redundant storage with backups, SLURM job requeue on node failure, automatic node draining, three redundant login nodes, and documented service recovery procedures provide resilience across the cluster. |
 | PR.IR-04.01 | Adequate resource capacity to ensure availability is maintained | Continuous monitoring of CPU/GPU utilization, memory, storage capacity, and SLURM queue metrics. Automated alerting at capacity thresholds. Annual capacity planning review with faculty committee to inform procurement decisions. |
