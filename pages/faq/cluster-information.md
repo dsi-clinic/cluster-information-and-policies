@@ -35,11 +35,13 @@ The cluster is organized into a series of nodes and storage servers. Storage ser
 - The `m` series has 500GB SSD locally
 - The `n` series has a 10TB SSD locally -->
 
-Note that not all nodes are available on all SLURM partitions and queues. 
+Users connect to the cluster via three login (frontend) nodes: **fe01.ds**, **fe02.ds**, and **fe03.ds**. These provide redundant access — if one is unavailable, users can connect to either of the others.
+
+Note that not all nodes are available on all SLURM partitions and queues.
 
 The cluster has a 10 Gbps line to the internet.
 
-The network between nodes and storage servers runs at 100 Gbps.
+The network between nodes and storage servers runs at 100 Gbps. This internal network is not routable from the campus network or internet.
 
 ## Space Availability and Server Room
 

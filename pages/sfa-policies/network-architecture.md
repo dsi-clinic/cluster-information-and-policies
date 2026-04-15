@@ -30,11 +30,7 @@ The cluster network shall be logically organized into distinct zones based on fu
 
 ### Zone 1: Access Zone (Login Nodes)
 
-The Access Zone is the only entry point for external users. Users connect from the UChicago campus network (or VPN) via SSH to one of three login/frontend nodes:
-
-- **fe01.ds** -- frontend login node
-- **fe02.ds** -- frontend login node
-- **fe03.ds** -- frontend login node
+The Access Zone is the only entry point for external users. Users connect from the UChicago campus network (or VPN) via SSH to one of the [login/frontend nodes](/faq/cluster-information/#cluster-networking-and-topology).
 
 Users authenticate with CNetID credentials and SSH keys. The login nodes are used for interactive session setup, job submission, file management, and lightweight development tasks. No compute jobs run directly on these nodes.
 
@@ -52,7 +48,7 @@ Management services communicate with all other zones over the [internal network]
 
 ### Zone 3: Computing Zone (Compute Nodes)
 
-The Computing Zone contains the 29 GPU and CPU compute nodes (2,720 cores, 140 GPUs total). These nodes:
+The Computing Zone contains the cluster's GPU and CPU compute nodes (see [Current Cluster Information](/faq/cluster-information/) for current counts). These nodes:
 
 - Receive job assignments from the SLURM controller in the Management Zone
 - Execute user workloads within SLURM-managed resource allocations
@@ -63,13 +59,7 @@ All inter-node communication runs over the [internal network](/faq/cluster-infor
 
 ### Zone 4: Data Storage Zone
 
-The Data Storage Zone provides 1.5 PB of shared storage across three tiers:
-
-| Tier | Mount Point | Default Quota | Backed Up | Purpose |
-|:-----|:------------|:--------------|:----------|:--------|
-| Home | `/home` | 50 GB per user | Yes | Personal configs, scripts, source code |
-| Project | `/project` | 500 GB per group (up to 10 TB) | Yes | Shared research data, results |
-| Scratch | `/scratch` | 50 GB per user per volume | No | Temporary job I/O (60-day purge) |
+The Data Storage Zone provides shared storage across three tiers (`/home`, `/project`, and `/scratch`). For storage tier details, quotas, and backup status, see the [Shared Storage Overview](/using-the-cluster/storage-overview/) and [Storage Allocation Policy](/policies/general/#storage-allocation-policy).
 
 Storage servers are connected to compute and login nodes over the [internal network](/faq/cluster-information/#cluster-networking-and-topology). Storage is not directly accessible from outside the cluster.
 

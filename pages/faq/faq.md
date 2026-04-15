@@ -46,7 +46,7 @@ You may be able to set up X11 forwarding for using software that requires a GUI.
 
 ### Can I use a containerized workflow, such as Docker?
 
-Currently, users are not provided root access which prevents the use of Docker. Other container technologies, such as podman and singularity may be useable, but they are neither tested nor formally supported.
+Docker is not available on the cluster because it requires root-equivalent privileges, which would compromise system security. Other container technologies, such as Apptainer (Singularity) and Podman, may be usable as rootless alternatives, but they are neither tested nor formally supported.
 
 
 ### The current time limit on jobs is too low for what I want to do. Can I increase the job time limit? 

@@ -148,14 +148,14 @@ Items are organized by category. Each category notes the relevant NIST CSF 2.0 f
 <h3 class="category-header">13. Documentation Deduplication</h3>
 <p class="controls-note">Supports: All categories — SFA policy documents should link to authoritative user-facing pages rather than duplicating operational details</p>
 
-SFA policy documents currently duplicate content that should live in user-facing pages. Each item below requires creating or expanding a non-SFA page as the single source of truth, then updating SFA docs to link to it.
+SFA policy documents should not be the source of truth for operational details. Each item below ensures SFA docs link to user-facing pages instead of duplicating content.
 
-- [ ] **13.1** Cluster resource specs (node count, GPUs, storage) — SFA docs restate numbers from [Cluster Information](/faq/cluster-information/); replace with links (affects: access-management, network-architecture, incident-response)
-- [ ] **13.2** Internal network description (speeds, non-routable) — SFA docs restate details from [Cluster Information](/faq/cluster-information/); replace with links (affects: infrastructure-resilience, data-protection, network-architecture)
-- [ ] **13.3** Hinds data center / physical infrastructure — expand [Cluster Information](/faq/cluster-information/#space-availability-and-server-room) as authoritative source; SFA docs link there (affects: infrastructure-resilience, access-management, data-protection, network-architecture, monitoring-detection)
-- [ ] **13.4** Storage tier table (Home/Project/Scratch with quotas, backup, purpose) — create or expand a user-facing storage page; SFA docs link there (affects: data-protection, network-architecture)
-- [ ] **13.5** Login node names (fe01, fe02, fe03) — add to [Cluster Information](/faq/cluster-information/) networking section; SFA docs link there (affects: network-architecture, infrastructure-resilience)
-- [ ] **13.6** Docker/container restriction and rationale — create or expand a user-facing container policy page; SFA docs link there (affects: platform-security, data-protection, access-management)
-- [ ] **13.7** Backup policy and data classification — create or expand a user-facing backup/data page; SFA docs link there (affects: data-protection, infrastructure-resilience, recovery-plan)
-- [ ] **13.8** Restricted data policy (HIPAA, FERPA, CUI, Secure Data Enclave) — create or expand a user-facing data classification/acceptable use page; SFA docs link there (affects: data-protection)
-- [ ] **13.9** Ephemeral data storage / cluster purpose statement — add to [Cluster Information](/faq/cluster-information/) or general policies; SFA docs link there (affects: infrastructure-resilience, recovery-plan)
+- [x] **13.1** Cluster resource specs (node count, GPUs, storage) — SFA docs link to [Cluster Information](/faq/cluster-information/) (affects: access-management, network-architecture, incident-response)
+- [x] **13.2** Internal network description (speeds, non-routable) — SFA docs link to [Cluster Information](/faq/cluster-information/) (affects: infrastructure-resilience, data-protection, network-architecture)
+- [x] **13.3** Hinds data center / physical infrastructure — [Cluster Information](/faq/cluster-information/#space-availability-and-server-room) is authoritative source; SFA docs link there (affects: infrastructure-resilience, access-management, data-protection, network-architecture, monitoring-detection)
+- [x] **13.4** Storage tier table (Home/Project/Scratch with quotas, backup, purpose) — SFA docs link to [Shared Storage Overview](/using-the-cluster/storage-overview/) and [Storage Allocation Policy](/policies/general/#storage-allocation-policy) (affects: data-protection, network-architecture)
+- [x] **13.5** Login node names (fe01, fe02, fe03) — added to [Cluster Information](/faq/cluster-information/) networking section; SFA docs link there (affects: network-architecture, infrastructure-resilience)
+- [x] **13.6** Docker/container restriction and rationale — [FAQ](/faq/faq/#can-i-use-a-containerized-workflow-such-as-docker) is authoritative source; SFA docs link there (affects: platform-security, data-protection, access-management)
+- [x] **13.7** Backup policy and data classification — SFA docs link to [Shared Storage Overview](/using-the-cluster/storage-overview/) (affects: data-protection, infrastructure-resilience, recovery-plan)
+- [x] **13.8** Restricted data policy — SFA docs link to [General Policies](/policies/general/#restricted-research-data) (affects: data-protection)
+- [x] **13.9** Ephemeral data storage / cluster purpose statement — documented in [General Policies](/policies/general/#data-integrity-and-retention); SFA docs link there (affects: infrastructure-resilience, recovery-plan)

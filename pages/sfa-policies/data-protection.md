@@ -12,15 +12,9 @@ This document defines the DSI HPC cluster's policies and procedures for protecti
 
 ## Context
 
-The DSI cluster is an open research computing environment. General-purpose cluster systems are **not authorized for restricted research data** (e.g., HIPAA, FERPA, CUI, export-controlled data). Researchers with restricted data requirements should use the university's Secure Data Enclave. The data protection controls described here are appropriate for the non-restricted research data that the cluster is designed to handle.
+The DSI cluster is an open research computing environment. General-purpose cluster systems are **not authorized for [restricted research data](/policies/general/#restricted-research-data)**. The data protection controls described here are appropriate for the non-restricted research data that the cluster is designed to handle.
 
-The cluster provides 1.5 PB of shared storage across three tiers:
-
-| Tier | Mount Point | Default Quota | Backed Up | Purpose |
-|:-----|:------------|:--------------|:----------|:--------|
-| Home | `/home` | 50 GB per user | Yes | Personal configs, scripts, source code |
-| Project | `/project` | 500 GB per group (up to 10 TB) | Yes | Shared research data, results |
-| Scratch | `/scratch` | 50 GB per user per volume | No | Temporary job I/O (60-day purge) |
+The cluster provides shared storage across three tiers (`/home`, `/project`, and `/scratch`). For storage tier details, quotas, and backup status, see the [Shared Storage Overview](/using-the-cluster/storage-overview/) and [Storage Allocation Policy](/policies/general/#storage-allocation-policy).
 
 ---
 
@@ -28,16 +22,14 @@ The cluster provides 1.5 PB of shared storage across three tiers:
 
 ### Data Classification (PR.DS-01, PR.DS-02)
 
-All data on the DSI cluster is classified as **non-restricted research data**. This classification is enforced by policy: restricted data is prohibited on general-purpose cluster systems. Users who need to work with restricted data must use the Secure Data Enclave.
+All data on the DSI cluster is classified as **non-restricted research data**. This classification is enforced by the [restricted research data policy](/policies/general/#restricted-research-data).
 
-Within the non-restricted category, data on the cluster falls into two handling classes:
+Within the non-restricted category, data falls into two handling classes based on storage tier:
 
-| Handling Class | Storage Tiers | Characteristics |
-|:---------------|:--------------|:----------------|
-| **Persistent research data** | `/home`, `/project` | Backed up, subject to quotas, retained until user or group removal or explicit deletion |
-| **Transient computational data** | `/scratch` | Not backed up, subject to 60-day purge, intended for temporary job I/O only |
+- **Persistent research data** (`/home`, `/project`) -- backed up, subject to quotas, retained until user or group removal or explicit deletion.
+- **Transient computational data** (`/scratch`) -- not backed up, subject to 60-day purge, intended for temporary job I/O only.
 
-Users are responsible for ensuring that no restricted data is placed on the cluster. The [general cluster policies]({{ '/policies/general/' | relative_url }}) document this requirement.
+For full details, see the [Shared Storage Overview](/using-the-cluster/storage-overview/).
 
 ### Data in Transit (PR.DS-01)
 
@@ -61,15 +53,13 @@ Data being actively processed on compute nodes is protected through:
 
 - **SLURM resource isolation** -- jobs run within SLURM-managed allocations. Users can only access compute nodes to which they have an active job allocation.
 - **Process isolation** -- standard Linux process isolation prevents users from accessing other users' running processes or memory.
-- **No Docker** -- Docker containers are not permitted on the cluster due to the privilege escalation risks they present. Container workloads must use rootless alternatives (e.g., Apptainer/Singularity) that do not require elevated privileges.
-- **No restricted data in memory** -- because restricted data is prohibited on the cluster, there is no requirement for specialized in-memory encryption (e.g., SGX, SEV). Standard process isolation is sufficient.
+- **No Docker** -- [Docker is not available](/faq/faq/#can-i-use-a-containerized-workflow-such-as-docker) due to the privilege escalation risks it presents.
+- **No restricted data in memory** -- because [restricted data is prohibited](/policies/general/#restricted-research-data) on the cluster, there is no requirement for specialized in-memory encryption (e.g., SGX, SEV). Standard process isolation is sufficient.
 
 ### Backup and Recovery (PR.DS-11)
 
-Backups protect persistent research data against accidental deletion, corruption, and storage system failure:
+Backups protect persistent research data against accidental deletion, corruption, and storage system failure. For details on which tiers are backed up, see the [Shared Storage Overview](/using-the-cluster/storage-overview/).
 
-- **Backed-up tiers** -- `/home` and `/project` are backed up regularly. Backup schedules and retention periods are managed by DSI Techstaff based on storage system capabilities and capacity.
-- **Not backed up** -- `/scratch` is explicitly not backed up. Users are responsible for copying important results from `/scratch` to `/project` before the 60-day purge window expires.
 - **Backup storage** -- backup copies are stored on separate storage systems from the primary data to protect against single points of failure.
 - **Backup integrity** -- DSI Techstaff shall periodically verify that backup jobs complete successfully and that backed-up data can be restored.
 

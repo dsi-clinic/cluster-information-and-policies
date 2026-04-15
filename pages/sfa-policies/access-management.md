@@ -8,7 +8,7 @@ hide_hero: True
 
 # Access Management Policy and Procedure
 
-This document establishes the access management policies and procedures for the DSI HPC Cluster (29 nodes, 2720 cores, 140 GPUs, 1.5 PB storage) at the University of Chicago Data Science Institute. It addresses identity management, authentication, authorization, physical access, and access review in compliance with NIST CSF 2.0 Tier 2 (Risk Informed) requirements.
+This document establishes the access management policies and procedures for the [DSI HPC Cluster](/faq/cluster-information/) at the University of Chicago Data Science Institute. It addresses identity management, authentication, authorization, physical access, and access review in compliance with NIST CSF 2.0 Tier 2 (Risk Informed) requirements.
 
 All access to the DSI Cluster is mediated through University of Chicago CNetID credentials, SSH key authentication, and SLURM job scheduling. DSI Techstaff administers cluster-level accounts; UChicago central IT manages the underlying identity infrastructure.
 
@@ -37,7 +37,7 @@ All access to the DSI Cluster is mediated through University of Chicago CNetID c
 **Policy:** Access permissions, entitlements, and authorizations are defined and managed following the principles of least privilege and separation of duties. Users receive only the access required for their approved research activities. Specifically:
 
 - Users do not receive root or sudo access.
-- Docker is not available to users due to the elevated privileges it requires.
+- [Docker is not available](/faq/faq/#can-i-use-a-containerized-workflow-such-as-docker) to users due to the elevated privileges it requires.
 - SLURM partitions, QOS limits, and storage quotas enforce resource boundaries.
 - Home directories are private to the individual user. Project directories are scoped to the PI's research group.
 - Users cannot modify system configurations, scheduling policies, or other users' data.
@@ -87,11 +87,8 @@ All access to the DSI Cluster is mediated through University of Chicago CNetID c
 1. **Default user permissions:** Standard POSIX user account. No sudo access. No ability to install system-wide packages.
 2. **Software installation:** Users install software in their own environment using tools like MiniConda or MicroMamba.
 3. **SLURM resource limits:** All users are subject to default QOS limits (maximum 8 concurrent jobs, 12-hour job time limit). Changes to QOS require Techstaff review and cluster committee approval.
-4. **Storage quotas:** Enforced per the [Storage Allocation Policy]({{ '/policies/general/#storage-allocation-policy' | relative_url }}):
-   - Home: 50 GB (non-negotiable)
-   - Project: 500 GB default, up to 10 TB on request
-   - Scratch: 50 GB per scratch filesystem, expandable on request
-5. **Container restrictions:** Docker is not available. Alternative container runtimes (Podman, Singularity) may be available but are not formally supported.
+4. **Storage quotas:** Enforced per the [Storage Allocation Policy]({{ '/policies/general/#storage-allocation-policy' | relative_url }}). See [Shared Storage Overview](/using-the-cluster/storage-overview/) for tier details.
+5. **Container restrictions:** [Docker is not available](/faq/faq/#can-i-use-a-containerized-workflow-such-as-docker). Alternative container runtimes may be available but are not formally supported.
 6. **Separation of duties:** DSI Techstaff manages system administration. The DSI cluster oversight faculty committee governs policy decisions. Users operate only within their assigned accounts and resource allocations.
 
 ### Physical Access Management
