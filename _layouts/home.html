@@ -3,15 +3,15 @@ layout: default
 ---
 
 <div id="main" role="main">
-  <aside class="announcement-banner" role="region" aria-label="Upcoming event">
+  <aside class="announcement-banner" role="region" aria-label="Scheduling change announcement">
     <div class="announcement-banner__inner">
       <div class="announcement-banner__text">
-        <span class="announcement-banner__eyebrow">Upcoming Event</span>
-        <h2 class="announcement-banner__title">DSI Cluster Office Hours &mdash; Thursday, April&nbsp;23, 1&ndash;2&nbsp;PM</h2>
-        <p class="announcement-banner__body">Drop in with questions, get setup help, or learn more about using the cluster.</p>
+        <span class="announcement-banner__eyebrow">Scheduling Change</span>
+        <h2 class="announcement-banner__title">New Job Scheduling System &mdash; Thursday, May&nbsp;7, 2026</h2>
+        <p class="announcement-banner__body">The cluster is moving to a 3-tier QoS system (<code>general</code>, <code>protected</code>, <code>interactive</code>). Jobs submitted without a tier run on <code>general</code> and are now <strong>preemptable</strong> &mdash; Slurm will warn you 5 minutes before killing and auto-requeue. Use <code>--qos=protected</code> for short guaranteed runs or <code>--qos=interactive</code> for development.</p>
       </div>
-      <a class="announcement-banner__cta" href="https://forms.gle/eAYwNMiDsTWfQ8AJ9" target="_blank" rel="noopener">
-        Register &rarr;
+      <a class="announcement-banner__cta" href="{{ '/policies/scheduling/' | relative_url }}">
+        Learn more &rarr;
       </a>
     </div>
   </aside>

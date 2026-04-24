@@ -11,8 +11,269 @@ hide_hero: True
 
 # Submitting Batch Jobs (Slurm Examples)
 
+> **Heads up — this guide describes the job submission system that takes effect Thursday, May 7, 2026.** Before that date, jobs run under the existing default QoS (8 concurrent jobs, 12-hour wall time, no preemption). See the [FAQ]({{ '/faq/faq/' | relative_url }}) for the current behavior. The full scheduling rules live on the [Job Scheduling Policy]({{ '/policies/scheduling/' | relative_url }}) page.
 
-For any task that is computationally intensive or expected to run for more than a few minutes, you should not run it directly on a login node. Instead, you must submit it to the Slurm workload manager as a **batch job**.
+For any task that is computationally intensive or expected to run for more than a few minutes, you should not run it directly on a login node. Instead, submit it to the Slurm workload manager as a **batch job**.
 
-### This page is coming soon.
-We're working on content for this section, and it will be available here shortly. Please check back later. 
+## Basic Batch Job
+
+Create a script (e.g., `train.sh`):
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=my_training
+#SBATCH --partition=general
+#SBATCH --gres=gpu:1
+#SBATCH --time=12:00:00
+#SBATCH --output=logs/%x_%j.out
+#SBATCH --error=logs/%x_%j.err
+
+# Activate your environment
+source activate myenv
+
+# Run your code
+python train.py
+```
+
+Submit it:
+
+```bash
+sbatch train.sh
+```
+
+## Choosing a QoS Tier
+
+Every job runs under a QoS tier that determines its scheduling priority, preemption behavior, and fairshare cost. Add `--qos=<tier>` to your submission.
+
+| Tier | Flag | Fairshare Cost | Preemptable? | Max Jobs | Best For |
+|------|------|----------------|--------------|----------|----------|
+| `general` | `--qos=general` (or omit) | 1x | Yes | 24 | Sweeps, training, batch work |
+| `protected` | `--qos=protected` | 4x | No | 1 | Learning, short guaranteed jobs |
+| `interactive` | `--qos=interactive` | 8x | No | 1 | Live development, debugging |
+
+If you do not specify `--qos`, your job defaults to `general`. For the full tier specification — including fairshare math, wall-time limits, and the preemption hierarchy — see the [Job Scheduling Policy]({{ '/policies/scheduling/' | relative_url }}).
+
+**DenyOnLimit on `protected` and `interactive`:** If you try to submit a second `protected` job (or a second `interactive` session) while one is already running, the request is **immediately rejected** with an error — it will not queue silently. The rejection is normal behavior, not a bug. Wait for the first job to finish, or submit to `general` instead.
+
+### Examples
+
+```bash
+# Standard batch job (general tier, preemptable, cheap)
+sbatch --qos=general train.sh
+
+# Non-preemptable job (protected tier, 4x fairshare cost, 2h max)
+sbatch --qos=protected --time=02:00:00 train.sh
+
+# You can also set QoS inside the script:
+#SBATCH --qos=protected
+```
+
+## Job Arrays for Hyperparameter Sweeps
+
+If you are running many similar jobs (parameter sweeps, cross-validation folds, etc.), use a **job array** instead of submitting individual jobs. Arrays are more efficient for Slurm to manage and respect the per-user job limits cleanly.
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=sweep
+#SBATCH --partition=general
+#SBATCH --qos=general
+#SBATCH --gres=gpu:1
+#SBATCH --time=04:00:00
+#SBATCH --array=0-99%20
+#SBATCH --output=logs/sweep_%A_%a.out
+
+# Each task gets a unique SLURM_ARRAY_TASK_ID (0-99)
+python train.py --config configs/sweep_${SLURM_ARRAY_TASK_ID}.yaml
+```
+
+Submit:
+
+```bash
+sbatch sweep.sh
+```
+
+The `%20` in `--array=0-99%20` limits the sweep to **20 concurrent tasks**. This is important — without a throttle, a 100-task array could consume your entire job limit and flood the queue.
+
+**Recommended throttle values:**
+- Small, short jobs: `%20` to `%30`
+- GPU-intensive jobs: `%5` to `%10`
+- Start conservatively and increase if the cluster has capacity
+
+## Handling Preemption
+
+Jobs on the `general` tier can be **preempted** — interrupted and requeued — when an `interactive` job needs the resources. This will only happen to jobs that have already been running for at least 5 minutes. Preemption works as follows:
+
+1. Slurm sends your job a **SIGUSR1** signal
+2. Your job has **5 minutes** (grace period) to save a checkpoint
+3. After the grace period, the job is killed and **automatically requeued**
+4. When resources become available, the job restarts from the beginning of the script
+
+### The Checkpoint Contract
+
+To handle preemption gracefully, submit your job with these flags:
+
+```bash
+#SBATCH --signal=B:USR1@300
+#SBATCH --requeue
+```
+
+- `--signal=B:USR1@300` — sends SIGUSR1 to the batch script 300 seconds (5 minutes) before the wall-time limit (and also at preemption time)
+- `--requeue` — allows the job to be requeued after preemption
+
+### Wrapper Script
+
+Here is a complete wrapper script that handles preemption with checkpoint/restart:
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=preemptable_train
+#SBATCH --partition=general
+#SBATCH --qos=general
+#SBATCH --gres=gpu:1
+#SBATCH --time=12:00:00
+#SBATCH --signal=B:USR1@300
+#SBATCH --requeue
+#SBATCH --output=logs/%x_%j.out
+
+set -euo pipefail
+
+CKPT_DIR="/project/${SLURM_JOB_ACCOUNT}/checkpoints/${USER}/${SLURM_JOB_NAME}"
+mkdir -p "$CKPT_DIR"
+
+# Signal handler: forward signal to child, wait, exit 99 to requeue
+on_preempt() {
+    echo "[$(date)] Preemption signal received. Forwarding to training..."
+    kill -USR1 "$child_pid" 2>/dev/null || true
+    wait "$child_pid" || true
+    echo "[$(date)] Exiting with code 99 to trigger requeue."
+    exit 99
+}
+trap on_preempt USR1 TERM
+
+# Check for existing checkpoint
+latest_ckpt=$(ls -1t "$CKPT_DIR"/*.pt 2>/dev/null | head -n1 || true)
+
+if [ -n "${latest_ckpt:-}" ]; then
+    echo "[$(date)] Resuming from checkpoint: $latest_ckpt (restart #${SLURM_RESTART_COUNT:-0})"
+    python train.py --resume "$latest_ckpt" --ckpt-dir "$CKPT_DIR" &
+else
+    echo "[$(date)] Starting fresh training run"
+    python train.py --ckpt-dir "$CKPT_DIR" &
+fi
+child_pid=$!
+
+wait "$child_pid"
+```
+
+> **About the checkpoint directory.** The wrapper writes to `/project/$SLURM_JOB_ACCOUNT/checkpoints/$USER/$SLURM_JOB_NAME`. Confirm that path is writable by your account before relying on it — if `/project/<your-account>/` does not exist or is read-only for you, the `mkdir -p` will fail and the job will abort immediately. Substitute a path under `/project/` or `/scratch/` that you own. Running `touch /project/$SLURM_JOB_ACCOUNT/checkpoints/test && rm /project/$SLURM_JOB_ACCOUNT/checkpoints/test` on a login node is a quick way to check.
+
+### PyTorch Checkpoint Example
+
+In your training script, handle SIGUSR1 to save a checkpoint:
+
+```python
+import signal
+import sys
+import torch
+
+should_checkpoint = False
+
+def handle_preempt(signum, frame):
+    global should_checkpoint
+    print(f"Received signal {signum}, will checkpoint at next opportunity...")
+    should_checkpoint = True
+
+signal.signal(signal.SIGUSR1, handle_preempt)
+
+# Training loop
+for epoch in range(start_epoch, max_epochs):
+    for batch in dataloader:
+        loss = train_step(model, batch)
+
+        if should_checkpoint:
+            torch.save({
+                'epoch': epoch,
+                'model_state_dict': model.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+                'loss': loss,
+            }, f'{ckpt_dir}/checkpoint_epoch{epoch}.pt')
+            print("Checkpoint saved. Exiting for requeue.")
+            sys.exit(99)
+```
+
+To resume from a checkpoint:
+
+```python
+if args.resume:
+    checkpoint = torch.load(args.resume)
+    model.load_state_dict(checkpoint['model_state_dict'])
+    optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+    start_epoch = checkpoint['epoch']
+```
+
+### What Preemption Looks Like for an Overnight Job
+
+The 5-minute warning is a signal to your job, not to you — you do not need to be awake for it. Here is what actually happens if you submit a 12-hour training run at 6pm and go home:
+
+1. **6:00pm** — `sbatch train.sh` submitted. Job ID 12345 starts on a GPU node.
+2. **11:47pm** — an `interactive` job requests a GPU; the scheduler picks your job for preemption.
+3. **11:47pm** — Slurm sends `SIGUSR1` to your batch script. Your trap handler (see wrapper script above) forwards it to the training process. PyTorch catches it, sets `should_checkpoint = True`, finishes the current step, writes a checkpoint to `$CKPT_DIR`, and exits with code 99.
+4. **11:52pm** — 5 minutes elapse. If the job has already exited cleanly it is requeued immediately. If it is still running, Slurm sends `SIGKILL` and requeues it.
+5. **Sometime overnight** — a GPU frees up. Slurm restarts job 12345 (same job ID, `SLURM_RESTART_COUNT` increments). The wrapper script finds the checkpoint in `$CKPT_DIR` and resumes from it.
+6. **Morning** — you check `sacct -j 12345` and see the restart history in `logs/my_training_12345.out`.
+
+**The 5-minute warning is a deadline for your code, not for you.** As long as your job implements the checkpoint contract, preemption is automatic and requires no human intervention. A job that does not implement checkpointing will simply restart from epoch 0 — correct, but wasteful.
+
+**Key recommendations for overnight and long-running jobs:**
+
+- **Always** set `--signal=B:USR1@300` and `--requeue`. Without both, a preempted job has no warning and will not be requeued.
+- **Checkpoint at a cadence your code can actually meet in 5 minutes.** If a single training step takes 4 minutes, you need to checkpoint per-step. For typical step times (seconds), checkpointing every N steps or at each `should_checkpoint` flag check is sufficient.
+- **Write checkpoints atomically** — save to `checkpoint.pt.tmp` and `mv` into place — so a `SIGKILL` mid-write cannot corrupt the previous checkpoint.
+- **Log to `logs/%x_%j.out`** (the `%j` is the job ID, which is preserved across requeues), so a single log file captures all restart attempts.
+- **If preemption would be catastrophic** (e.g., a rare reproducibility run, or you need guaranteed wall-clock completion), use `--qos=protected` instead. The 2-hour limit and 4x fairshare cost are the tradeoff.
+- **Test your signal handler during the day** before relying on it overnight. You can simulate preemption with `scancel --signal=USR1 --batch <jobid>`, which sends SIGUSR1 to the batch step without killing the job. Confirm that a checkpoint appears in `$CKPT_DIR` and that the job exits with code 99.
+
+### What If I Don't Implement Checkpointing?
+
+Jobs without checkpointing will simply **restart from the beginning** when requeued. This is fine for short jobs (< 1 hour), but for multi-hour or overnight training runs you will lose all progress each time the job is preempted. Implementing checkpointing is strongly recommended for any job that runs for more than an hour or is submitted to run overnight.
+
+## Useful Commands
+
+```bash
+# Check your job status
+squeue -u $USER
+
+# Check job status with QoS and priority info
+squeue -u $USER -O jobid,name,partition,qos,state,timelimit,priority
+
+# Cancel a job
+scancel <jobid>
+
+# Cancel all your jobs
+scancel -u $USER
+
+# Check your fairshare standing
+sshare -u $USER
+
+# View detailed job info
+scontrol show job <jobid>
+
+# View past job accounting
+sacct -j <jobid> --format=JobID,QOS,State,Elapsed,MaxRSS
+```
+
+## Quick Reference
+
+```bash
+# Standard batch job (cheapest, preemptable)
+sbatch --qos=general --partition=general --gres=gpu:1 --time=12:00:00 train.sh
+
+# Non-preemptable job (4x cost, guaranteed completion, 2h max)
+sbatch --qos=protected --partition=general --gres=gpu:1 --time=02:00:00 train.sh
+
+# Sweep with throttle
+sbatch --qos=general --array=0-99%20 sweep.sh
+
+# Preemption-safe job
+sbatch --qos=general --signal=B:USR1@300 --requeue train_with_ckpt.sh
+```

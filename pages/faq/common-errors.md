@@ -17,17 +17,62 @@ This page lists common error messages you might encounter while using the cluste
 
 ### Error: `sbatch: error: (QOSMaxJobsPerUserLimit)` or `(JobArrayLimit)`
 
-**Cause:** You have submitted a job that would cause you to exceed your limit of concurrently running jobs (the default is 8). This limit is in place to ensure fair usage of the cluster for all users.
+**Cause:** You have submitted a job that would cause you to exceed the concurrent-job limit for your QoS tier.
 
-**Resolution:** You cannot increase your concurrent job limit. You should wait for some of your currently running jobs to finish before submitting new ones. If you have many small, short tasks, consider using a job array with a limited number of concurrent tasks. For example, `sbatch --array=1-100%10 ...` will run a 100-task array, but only 10 tasks will run at any given time.
+- **Before May 7, 2026:** the limit is 8 jobs per user (the default QoS).
+- **Starting May 7, 2026:** the limit depends on the tier — 24 on `general`, 1 on `protected`, 1 on `interactive`.
+
+**Resolution:** Wait for some of your currently running jobs to finish. If you have many small, short tasks, use a job array with a concurrency throttle: `sbatch --array=1-100%10 ...` runs a 100-task array with only 10 tasks running at once. See the [batch jobs guide]({{ '/using-the-cluster/batch-jobs/#job-arrays-for-hyperparameter-sweeps' | relative_url }}).
+
+---
+
+### Error: `sbatch: error: (QOSMaxSubmitJobPerUserLimit)` on `--qos=protected` or `--qos=interactive`
+
+**Cause:** Starting May 7, 2026, the `protected` and `interactive` tiers are capped at **1 job/session per user**. When you submit a second job while the first is still running (or queued), Slurm rejects it immediately rather than queueing silently. This is the `DenyOnLimit` flag working as intended — not a bug.
+
+**Resolution:**
+
+- Wait for your existing `protected` or `interactive` job to finish before submitting another.
+- Or submit to the `general` tier, which allows up to 24 concurrent jobs.
+- If you forgot you already had a session running, `squeue -u $USER` will show it.
 
 ---
 
 ### Error: `slurmstepd: error: *** JOB ... CANCELLED AT ... DUE TO TIME LIMIT ***`
 
-**Cause:** Your job ran for longer than the maximum allowed time for the partition it was running in. The default time limit is 12 hours.
+**Cause:** Your job ran for longer than the maximum allowed time for its QoS tier or partition.
 
-**Resolution:** You cannot increase the time limit for a single job. If your job requires more than 12 hours to run, you must implement **checkpointing**. This involves saving the state of your application periodically and then submitting a new job that resumes from the last saved checkpoint.
+- **Before May 7, 2026:** the default wall time is 12 hours. The job is killed with no warning and not requeued.
+- **Starting May 7, 2026:** behavior depends on the QoS tier:
+  - `general` (12h default): Slurm sends `SIGUSR1` 5 minutes before the wall-time limit (if you submitted with `--signal=B:USR1@300 --requeue`) and the job is automatically requeued on exit code 99. See [Handling Preemption]({{ '/using-the-cluster/batch-jobs/#handling-preemption' | relative_url }}).
+  - `protected` (2h cap): hard cancellation at the wall-time limit, not requeued.
+  - `interactive` (4h cap): hard cancellation at the wall-time limit, not requeued.
+
+**Resolution:** For long-running work, implement **checkpointing** using the wrapper pattern in the [batch jobs guide]({{ '/using-the-cluster/batch-jobs/#wrapper-script' | relative_url }}). A checkpointed job resumes from where it left off each time it is requeued.
+
+---
+
+### Job was preempted but did not requeue (stuck in `PREEMPTED` state)
+
+**Cause:** Starting May 7, 2026, `general`-tier jobs can be preempted by `interactive` jobs. A preempted job will only requeue automatically if both of these are true:
+
+- The job was submitted with `#SBATCH --requeue`
+- The job exits with code 99 (the convention for "requeue me")
+
+Common failure modes:
+
+- `--requeue` was not set on the submission — the job is killed and stays in `PREEMPTED`.
+- The signal handler is missing, so the script exits with a non-99 code (typically 143 on `SIGTERM` or 130 on `SIGINT`) and Slurm does not requeue it.
+- The training process did not catch `SIGUSR1` at all, so the grace-period `SIGKILL` leaves the wrapper with no chance to exit cleanly.
+
+**Resolution:** Use the wrapper pattern from the [batch jobs guide]({{ '/using-the-cluster/batch-jobs/#wrapper-script' | relative_url }}). The two minimum SBATCH flags are:
+
+```bash
+#SBATCH --signal=B:USR1@300
+#SBATCH --requeue
+```
+
+And your signal handler should end with `exit 99` once the checkpoint has been written.
 
 ---
 

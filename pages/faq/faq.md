@@ -21,8 +21,9 @@ This document contains some frequently asked questions about the cluster and its
   - [I want to install additional software.](#i-want-to-install-additional-software)
   - [Is there a way to use the cluster via a GUI?](#is-there-a-way-to-use-the-cluster-via-a-gui)
   - [Can I use a containerized workflow, such as Docker?](#can-i-use-a-containerized-workflow-such-as-docker)
+  - [What is the new QoS system rolling out May 7, 2026?](#what-is-the-new-qos-system-rolling-out-may-7-2026)
   - [The current time limit on jobs is too low for what I want to do. Can I increase the job time limit?](#the-current-time-limit-on-jobs-is-too-low-for-what-i-want-to-do-can-i-increase-the-job-time-limit)
-  - [I am currently limited to eight concurrent jobs (on either CPU or GPU), my jobs are very small. Can I increase the job limit? (AKA The QOS which is applied to everyone is limited to 8 concurrent jobs).](#i-am-currently-limited-to-eight-concurrent-jobs-on-either-cpu-or-gpu-my-jobs-are-very-small-can-i-increase-the-job-limit-aka-the-qos-which-is-applied-to-everyone-is-limited-to-8-concurrent-jobs)
+  - [How many concurrent jobs can I run?](#how-many-concurrent-jobs-can-i-run)
   - [I feel like the cluster isn't working for me. Can we set up any additional configurations to allow for my specific job?](#i-feel-like-the-cluster-isnt-working-for-me-can-we-set-up-any-additional-configurations-to-allow-for-my-specific-job)
   - [There are processes not owned by me running on the GPU that I reserved. Is this expected?](#there-are-processes-not-owned-by-me-running-on-the-gpu-that-i-reserved-is-this-expected)
   - [How do I check how much space I'm using in either a project or home directory?](#how-do-i-check-how-much-space-im-using-in-either-a-project-or-home-directory)
@@ -49,13 +50,31 @@ You may be able to set up X11 forwarding for using software that requires a GUI.
 Docker is not available on the cluster because it requires root-equivalent privileges, which would compromise system security. Other container technologies, such as Apptainer (Singularity) and Podman, may be usable as rootless alternatives, but they are neither tested nor formally supported.
 
 
-### The current time limit on jobs is too low for what I want to do. Can I increase the job time limit? 
+### What is the new QoS system rolling out May 7, 2026?
 
-No. The current job limit is already quite high at 12 hours (many research groups enforce much lower limits). If you have a job that requires a longer time horizon to complete you need to use check pointing in order to break up your jobs.
+On **May 7, 2026**, the cluster is moving to a three-tier QoS system that replaces the current flat 8-concurrent-job limit:
 
-### I am currently limited to eight concurrent jobs (on either CPU or GPU), my jobs are very small. Can I increase the job limit? (AKA The QOS which is applied to everyone is limited to 8 concurrent jobs).
+- **`general`** — the default tier. Up to 24 concurrent jobs per user, 200 submitted, 12-hour wall time. Jobs are **preemptable** (with a 5-minute warning and automatic requeue) so that `interactive` sessions can start quickly.
+- **`protected`** — non-preemptable, guaranteed to complete. Limited to 1 job at a time, 2-hour max, 4x fairshare cost. Good for learners and short critical jobs.
+- **`interactive`** — highest priority, preempts `general` jobs so you get on a GPU fast. Limited to 1 session at a time, 4-hour max, 8x fairshare cost. For active development only.
 
-No. The current concurrency limit is set to maximize the cluster's performance given the current mix of jobs that we see. We constantly evaluate this limit, but are not willing to change this for a single user or set of users. Occasionally, the cluster is given jobs that are very short and small and this becomes a significant bottleneck. In this case we recommend exploring alternative computing environments that are designed to facilitate this type of work.
+If you submit jobs without a `--qos=` flag, they now run on `general`. The 12-hour wall time is unchanged, but `general` jobs are **preemptable**: when an `interactive` session needs your GPU, your job receives `SIGUSR1` 5 minutes before being killed and is automatically requeued when a GPU frees up. To avoid losing progress on long runs, implement the [checkpoint contract]({{ '/using-the-cluster/batch-jobs/#the-checkpoint-contract' | relative_url }}).
+
+For the full specification see the [Job Scheduling Policy]({{ '/policies/scheduling/' | relative_url }}). For practical examples see the [batch jobs guide]({{ '/using-the-cluster/batch-jobs/' | relative_url }}) and the [interactive sessions guide]({{ '/using-the-cluster/interactive-sessions/' | relative_url }}).
+
+### The current time limit on jobs is too low for what I want to do. Can I increase the job time limit?
+
+**Before May 7, 2026:** the default wall-time limit is 12 hours and you must implement checkpointing for longer work.
+
+**Starting May 7, 2026:** `general`-tier jobs keep the same 12-hour wall time, but when an `interactive` job needs your resources (or you hit the wall-time limit) your job receives a `SIGUSR1` signal 5 minutes before being killed, and is **automatically requeued** when GPUs free up. Checkpointing is still the right pattern, but the requeue is handled for you — you do not need to resubmit. See [Handling Preemption]({{ '/using-the-cluster/batch-jobs/#handling-preemption' | relative_url }}) for the checkpoint contract.
+
+If you need a short guaranteed (non-preemptable) run, use `--qos=protected` (2-hour max, 1 job at a time).
+
+### How many concurrent jobs can I run?
+
+**Before May 7, 2026:** the concurrency limit is 8 jobs per user across CPU and GPU.
+
+**Starting May 7, 2026:** the `general` tier allows up to **24 concurrent jobs** per user and 200 submitted. `protected` and `interactive` each allow 1 at a time and will reject additional submissions immediately. If you have many small tasks, use a job array with a concurrency throttle — for example, `sbatch --array=0-99%20 ...` runs a 100-task array with at most 20 tasks running at once. See the [batch jobs guide]({{ '/using-the-cluster/batch-jobs/#job-arrays-for-hyperparameter-sweeps' | relative_url }}).
 
 ### I feel like the cluster isn't working for me. Can we set up any additional configurations to allow for my specific job?
 
