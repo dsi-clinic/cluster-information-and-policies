@@ -19,4 +19,4 @@ The cluster does NOT support:
 * Significant data collection operations (such as web scraping)
 * Web servers
 * High-uptime systems
-* High-privacy data storage (HIPPA/SOC2/etc.)
+* High-privacy data storage (HIPAA/SOC2/etc.)

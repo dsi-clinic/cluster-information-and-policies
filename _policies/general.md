@@ -63,6 +63,18 @@ Please adhere to these guidelines to ensure a positive and secure DSI experience
 
 The DSI Cluster is overseen by DSI Techstaff and the DSI’s cluster oversight faculty committee.
 
+### Unsupported Workloads
+
+As described in the [cluster mission statement]({{ "/mission/" | relative_url }}), the DSI Cluster is designed for high-performance computational operations. The cluster does **NOT** support:
+
+* Real-time operations
+* Significant data collection operations (such as web scraping)
+* Web servers
+* High-uptime systems
+* High-privacy data storage (HIPAA/SOC2/etc.)
+
+These workloads are not appropriate for the cluster and may result in job termination or account review.
+
 ### Acceptable Use and Enforcement
 
 Usage of the DSI Cluster is managed by the University’s [Acceptable Use Policy](https://intranet.uchicago.edu/policies/information-technology-policies/acceptable-use-policy/).
