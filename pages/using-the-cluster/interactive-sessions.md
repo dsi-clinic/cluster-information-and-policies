@@ -77,6 +77,48 @@ If you need longer wall time or multiple concurrent jobs, use the `general` tier
 
 **DenyOnLimit:** If you try to submit a second interactive session while one is already running, the request will be **immediately rejected** with a clear error message. It will not queue silently.
 
+## Best Practices
+
+- **Don't rely on SSH disconnect alone.** A dropped SSH connection does not always release `salloc` cleanly. If you have to disconnect ungracefully, follow up with `scancel <jobid>` from a login node to confirm the allocation is freed.
+- **Test preemption-handling code on `general` first.** Before relying on a wrapper script overnight, simulate preemption with `scancel --signal=USR1 --batch <jobid>` against a short `general` job and confirm a checkpoint appears and the job exits with code 99. See [Handling Preemption]({{ '/using-the-cluster/batch-jobs/#handling-preemption' | relative_url }}) in the batch jobs guide.
+
+## Running JupyterLab
+
+To run JupyterLab on a compute node:
+
+### Step 1: Start an interactive session
+
+```bash
+salloc --partition=general --qos=interactive --gres=gpu:1 --time=04:00:00
+```
+
+### Step 2: Note the allocated node name
+
+```bash
+echo $SLURM_NODELIST
+# Output: e.g., g003
+```
+
+### Step 3: Start JupyterLab on the compute node
+
+```bash
+srun jupyter lab --no-browser --port=8888 --ip=0.0.0.0
+```
+
+### Step 4: Create an SSH tunnel from your local machine
+
+Open a new terminal on your local machine:
+
+```bash
+ssh -N -L 8888:g003:8888 <your-cnetid>@fe01.ds.uchicago.edu
+```
+
+Replace `g003` with the actual node name from Step 2.
+
+### Step 5: Open JupyterLab
+
+Open your browser and navigate to `http://localhost:8888`. Use the token displayed in the terminal output from Step 3.
+
 ## When to Use Interactive vs. Batch
 
 | Scenario | Use |
