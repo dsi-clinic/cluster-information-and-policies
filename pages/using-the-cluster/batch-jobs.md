@@ -11,8 +11,6 @@ hide_hero: True
 
 # Submitting Batch Jobs (Slurm Examples)
 
-> **Heads up — this guide describes the job submission system that takes effect Thursday, May 7, 2026.** Before that date, jobs run under the existing default QoS (8 concurrent jobs, 12-hour wall time, no preemption). See the [FAQ]({{ '/faq/faq/' | relative_url }}) for the current behavior. The full scheduling rules live on the [Job Scheduling Policy]({{ '/policies/scheduling/' | relative_url }}) page.
-
 For any task that is computationally intensive or expected to run for more than a few minutes, you should not run it directly on a login node. Instead, submit it to the Slurm workload manager as a **batch job**.
 
 ## Basic Batch Job

@@ -17,10 +17,7 @@ This page lists common error messages you might encounter while using the cluste
 
 ### Error: `sbatch: error: (QOSMaxJobsPerUserLimit)` or `(JobArrayLimit)`
 
-**Cause:** You have submitted a job that would cause you to exceed the concurrent-job limit for your QoS tier.
-
-- **Before May 7, 2026:** the limit is 8 jobs per user (the default QoS).
-- **Starting May 7, 2026:** the limit depends on the tier — 24 on `general`, 1 on `protected`, 1 on `interactive`.
+**Cause:** You have submitted a job that would cause you to exceed the concurrent-job limit for your QoS tier. The limit depends on the tier — 24 on `general`, 1 on `protected`, 1 on `interactive`.
 
 **Resolution:** Wait for some of your currently running jobs to finish. If you have many small, short tasks, use a job array with a concurrency throttle: `sbatch --array=1-100%10 ...` runs a 100-task array with only 10 tasks running at once. See the [batch jobs guide]({{ '/using-the-cluster/batch-jobs/#job-arrays-for-hyperparameter-sweeps' | relative_url }}).
 
@@ -28,7 +25,7 @@ This page lists common error messages you might encounter while using the cluste
 
 ### Error: `sbatch: error: (QOSMaxSubmitJobPerUserLimit)` on `--qos=protected` or `--qos=interactive`
 
-**Cause:** Starting May 7, 2026, the `protected` and `interactive` tiers are capped at **1 job/session per user**. When you submit a second job while the first is still running (or queued), Slurm rejects it immediately rather than queueing silently. This is the `DenyOnLimit` flag working as intended — not a bug.
+**Cause:** The `protected` and `interactive` tiers are capped at **1 job/session per user**. When you submit a second job while the first is still running (or queued), Slurm rejects it immediately rather than queueing silently. This is the `DenyOnLimit` flag working as intended — not a bug.
 
 **Resolution:**
 
@@ -40,13 +37,11 @@ This page lists common error messages you might encounter while using the cluste
 
 ### Error: `slurmstepd: error: *** JOB ... CANCELLED AT ... DUE TO TIME LIMIT ***`
 
-**Cause:** Your job ran for longer than the maximum allowed time for its QoS tier or partition.
+**Cause:** Your job ran for longer than the maximum allowed time for its QoS tier or partition. Behavior depends on the QoS tier:
 
-- **Before May 7, 2026:** the default wall time is 12 hours. The job is killed with no warning and not requeued.
-- **Starting May 7, 2026:** behavior depends on the QoS tier:
-  - `general` (12h default): Slurm sends `SIGUSR1` 5 minutes before the wall-time limit (if you submitted with `--signal=B:USR1@300 --requeue`) and the job is automatically requeued on exit code 99. See [Handling Preemption]({{ '/using-the-cluster/batch-jobs/#handling-preemption' | relative_url }}).
-  - `protected` (2h cap): hard cancellation at the wall-time limit, not requeued.
-  - `interactive` (4h cap): hard cancellation at the wall-time limit, not requeued.
+- `general` (12h default): Slurm sends `SIGUSR1` 5 minutes before the wall-time limit (if you submitted with `--signal=B:USR1@300 --requeue`) and the job is automatically requeued on exit code 99. See [Handling Preemption]({{ '/using-the-cluster/batch-jobs/#handling-preemption' | relative_url }}).
+- `protected` (2h cap): hard cancellation at the wall-time limit, not requeued.
+- `interactive` (4h cap): hard cancellation at the wall-time limit, not requeued.
 
 **Resolution:** For long-running work, implement **checkpointing** using the wrapper pattern in the [batch jobs guide]({{ '/using-the-cluster/batch-jobs/#wrapper-script' | relative_url }}). A checkpointed job resumes from where it left off each time it is requeued.
 
@@ -54,7 +49,7 @@ This page lists common error messages you might encounter while using the cluste
 
 ### Job was preempted but did not requeue (stuck in `PREEMPTED` state)
 
-**Cause:** Starting May 7, 2026, `general`-tier jobs can be preempted by `interactive` jobs. A preempted job will only requeue automatically if both of these are true:
+**Cause:** `general`-tier jobs can be preempted by `interactive` jobs. A preempted job will only requeue automatically if both of these are true:
 
 - The job was submitted with `#SBATCH --requeue`
 - The job exits with code 99 (the convention for "requeue me")

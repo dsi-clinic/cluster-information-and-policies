@@ -9,8 +9,6 @@ classes: [wide, left-aligned]
 hide_hero: True
 ---
 
-> **This policy takes effect Thursday, May 7, 2026.** Jobs submitted without a `--qos=` flag run on the new default tier, `general`. The 12-hour wall time is unchanged, but `general` jobs are now **preemptable**: when an `interactive` session needs the GPU, your job receives a 5-minute warning (`SIGUSR1`) and is automatically requeued. See the [FAQ entry on the new QoS system]({{ '/faq/faq/#what-is-the-new-qos-system-rolling-out-may-7-2026' | relative_url }}) for a short summary.
-
 ## Overview
 
 The DSI Cluster uses a three-tier Quality of Service (QoS) system to balance competing demands for compute resources. This system ensures that interactive development work is always accessible while maximizing hardware utilization for batch computation.

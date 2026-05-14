@@ -11,8 +11,6 @@ hide_hero: True
 
 # Interactive Sessions (JupyterLab)
 
-> **Heads up — this guide describes the interactive session workflow that takes effect Thursday, May 7, 2026.** Before that date, use `salloc` with the existing default QoS. For the full tier specification, see the [Job Scheduling Policy]({{ '/policies/scheduling/' | relative_url }}).
-
 In addition to batch processing, the cluster also supports **interactive sessions**. These allow you to work directly on a compute node, which is essential for tasks like:
 
 - Developing and debugging code
