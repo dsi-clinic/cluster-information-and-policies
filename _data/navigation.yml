@@ -20,6 +20,8 @@ main:
     children:
       - title: "Cluster Status"
         url: "/using-the-cluster/cluster-status/"
+      - title: "Login Nodes & the Load Balancer"
+        url: "/using-the-cluster/login-nodes/"
       - title: "Scheduled Maintenance"
         url: "/using-the-cluster/scheduled-maintenance/"
       - title: "Node-local Storage"

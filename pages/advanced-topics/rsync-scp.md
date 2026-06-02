@@ -47,7 +47,7 @@ scp your_cnetid@fe01.ds.uchicago.edu:/path/to/remote/file.txt /path/to/local/dir
 Transfer a directory from your local machine to the cluster:
 
 ```bash
-rsync -avz /path/to/local/directory/ your_cnetid@fe01.ds.uchicago.eduu:/path/to/remote/directory/
+rsync -avz /path/to/local/directory/ your_cnetid@fe01.ds.uchicago.edu:/path/to/remote/directory/
 ```
 
 Transfer a directory from the cluster to your local machine:

@@ -75,6 +75,17 @@ As described in the [cluster mission statement]({{ "/mission/" | relative_url }}
 
 These workloads are not appropriate for the cluster and may result in job termination or account review.
 
+### Login Node Usage and Limits
+
+The login (frontend) nodes are passthroughs for reaching the cluster — submitting, monitoring, and managing jobs, transferring data, and light file editing. They are **not** for running computation.
+
+As of **June 8, 2026**, the following apply to the login nodes:
+
+* Access is through the load balancer at `login.ds.uchicago.edu`. Direct SSH to individual login nodes (`fe01`, `fe02`, `fe03`) is deprecated.
+* Each user is limited to **1 CPU**, **8&nbsp;GB RAM**, and a **12-hour** wall-time limit per process. The 12-hour limit does not apply to `tmux`/`screen` sessions themselves, so those persist between logins; processes running inside them are still subject to it.
+
+Computationally intensive work, IDE remote/backend servers that scan shared storage, code agents that spawn many processes, and other long-running processes must run on the compute nodes, not the login nodes. For how to update your SSH config and move work to the compute nodes, see [Login Nodes &amp; the Load Balancer]({{ "/using-the-cluster/login-nodes/" | relative_url }}).
+
 ### Acceptable Use and Enforcement
 
 Usage of the DSI Cluster is managed by the University’s [Acceptable Use Policy](https://intranet.uchicago.edu/policies/information-technology-policies/acceptable-use-policy/).
