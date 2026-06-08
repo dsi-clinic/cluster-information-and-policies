@@ -81,8 +81,8 @@ The login (frontend) nodes are passthroughs for reaching the cluster — submitt
 
 As of **June 8, 2026**, the following apply to the login nodes:
 
-* Access is through the load balancer at `login.ds.uchicago.edu`. Direct SSH to individual login nodes (`fe01`, `fe02`, `fe03`) is deprecated.
-* Each user is limited to **1 CPU**, **8&nbsp;GB RAM**, and a **12-hour** wall-time limit per process. The 12-hour limit does not apply to `tmux`/`screen` sessions themselves, so those persist between logins; processes running inside them are still subject to it.
+* Access is through the load balancer at `login.ds.uchicago.edu`. Direct SSH to individual login nodes (`fe01`, `fe02`, `fe03`) is no longer available.
+* Each user is limited to **1 CPU**, **8&nbsp;GB RAM**, and a **12-hour** wall-time limit per process. The 12-hour limit does not apply to the `tmux`/`screen` *server* itself, so those persist between logins; processes running inside them are still subject to it.
 
 Computationally intensive work, IDE remote/backend servers that scan shared storage, code agents that spawn many processes, and other long-running processes must run on the compute nodes, not the login nodes. For how to update your SSH config and move work to the compute nodes, see [Login Nodes &amp; the Load Balancer]({{ "/using-the-cluster/login-nodes/" | relative_url }}).
 

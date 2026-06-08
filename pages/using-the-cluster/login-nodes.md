@@ -10,27 +10,27 @@ hide_hero: True
 ---
 # Login Nodes & the Load Balancer
 
-**Coming Monday, June 8, 2026.** This page describes changes that take effect on that date. Until then, you can continue connecting the way you do today.
-{: .notice--warning}
+**In effect as of June 8, 2026.** The changes described on this page are now live.
+{: .notice--info}
 
-Starting **June 8, 2026**, we are making two changes to the login (frontend) nodes to improve stability and quality of life:
+As of **June 8, 2026**, two changes are in effect on the login (frontend) nodes to improve stability and quality of life:
 
-1. **A load balancer** sits in front of the login nodes. You will connect to a single hostname, `login.ds.uchicago.edu`, and be routed automatically to the least-loaded node. Direct SSH to the individual nodes (`fe01`, `fe02`, `fe03`) will be retired.
+1. **A load balancer** sits in front of the login nodes. You connect to a single hostname, `login.ds.uchicago.edu`, and are routed automatically to the least-loaded node. Direct SSH to the individual nodes (`fe01`, `fe02`, `fe03`) has been retired.
 2. **Per-user resource limits** on the login nodes: **1 CPU**, **8&nbsp;GB RAM**, and a **12-hour** wall-time limit per process.
 
 These changes address the "noisy neighbor" problem, where heavy activity by one user destabilizes the login node for everyone else. The login nodes are passthroughs for *reaching and submitting work* to the compute nodes — not for running computation themselves.
 
 ## Connecting through the load balancer
 
-Today, you may have to log in and out of individual nodes by hand to find one that isn't saturated. The load balancer does this for you: it directs each connection to the login node with the most available resources.
+Previously, you may have had to log in and out of individual nodes by hand to find one that isn't saturated. The load balancer does this for you: it directs each connection to the login node with the most available resources.
 
-After June 8, connect to:
+Connect to:
 
 ```bash
 ssh <cnetid>@login.ds.uchicago.edu
 ```
 
-Direct connections to `fe01.ds.uchicago.edu`, `fe02.ds.uchicago.edu`, and `fe03.ds.uchicago.edu` will no longer be available.
+Direct connections to `fe01.ds.uchicago.edu`, `fe02.ds.uchicago.edu`, and `fe03.ds.uchicago.edu` are no longer available.
 
 ## Action required: update your SSH config
 
@@ -60,15 +60,32 @@ The only line that *must* change is `HostName`. The `Host` line is just a local 
 
 New to SSH config? See [Using the Cluster (ssh)]({{ "/quickstart/ssh/" | relative_url }}).
 
-## Staying on the same node (tmux / screen)
+## tmux / screen: make your session portable
 
-If you run long-lived sessions in `tmux` or `screen`, you need to land on the same node every time so you can reattach. The load balancer is configured for this: **once it places you on a node, it keeps routing you back to that same node**, so your `tmux` and `screen` sessions are there when you reconnect. Your initial placement still accounts for congestion, so you start on a node with capacity.
+The load balancer routes each connection to the **least-loaded** node — it does **not** pin you to a particular node, so the node you land on can change between logins. A `tmux` or `screen` server runs only on the machine where you started it, and you cannot reattach to it from a different login node (the session is local to that host). So if you simply `tmux attach` after reconnecting, your session may appear to be "missing" — it's really still on the other node.
 
-This mapping lasts **one week from your last connection**. If you don't connect for more than a week, the mapping expires and your next login may be placed on a different node — so reattach to anything you want to keep within that window.
+Because your **home directory is shared across all login nodes** (it's the same NFS storage everywhere), you can make your layout follow you with [`tmux-resurrect`](https://github.com/tmux-plugins/tmux-resurrect) and [`tmux-continuum`](https://github.com/tmux-plugins/tmux-continuum). They periodically save your window/pane layout and working directories to `~/.tmux/resurrect` — which, being on shared storage, is visible from whichever node you land on — and restore them automatically when you start `tmux`.
+
+```tmux
+# ~/.tmux.conf
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @continuum-restore 'on'   # auto-restore on tmux start
+
+run '~/.tmux/plugins/tpm/tpm'
+```
+
+```bash
+# one-time install of the plugin manager, then press prefix + I inside tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+**What this does and doesn't do.** It rebuilds your *workspace skeleton* — window/pane layout, working directories, and (for whitelisted programs) editors like `vim`/`nvim` — on whatever node you land on. It does **not** preserve the live state of running programs: a process is relaunched from scratch, not resumed mid-run. Combined with the 12-hour process limit below, the right mental model is "rebuild my editing workspace anywhere," not "resume a running job." For anything long-running, use a [batch job]({{ "/using-the-cluster/batch-jobs/" | relative_url }}) or an [interactive session]({{ "/using-the-cluster/interactive-sessions/" | relative_url }}) on a compute node.
 
 ## Login node resource limits
 
-After June 8, each user is limited on a login node to:
+Each user is limited on a login node to:
 
 | Resource | Limit |
 | --- | --- |
@@ -76,7 +93,7 @@ After June 8, each user is limited on a login node to:
 | Memory | 8&nbsp;GB RAM |
 | Process wall time | 12 hours |
 
-The 12-hour limit applies to processes, not to your `tmux` or `screen` session itself — the multiplexer keeps running so you can reconnect to it. Anything you actually run, including processes you launch *inside* `tmux`, is subject to the 12-hour limit.
+The 12-hour limit applies to processes, not to the `tmux` or `screen` *server* itself — the multiplexer keeps running so you can reconnect to it (see [tmux / screen: make your session portable](#tmux--screen-make-your-session-portable) above). Anything you actually run, including processes you launch *inside* `tmux`, is subject to the 12-hour limit.
 
 This is sufficient for what the login nodes are meant for:
 
