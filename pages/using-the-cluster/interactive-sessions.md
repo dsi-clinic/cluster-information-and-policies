@@ -108,7 +108,7 @@ srun jupyter lab --no-browser --port=8888 --ip=0.0.0.0
 Open a new terminal on your local machine:
 
 ```bash
-ssh -N -L 8888:g003:8888 <your-cnetid>@fe01.ds.uchicago.edu
+ssh -N -L 8888:g003:8888 <your-cnetid>@login.ds.uchicago.edu
 ```
 
 Replace `g003` with the actual node name from Step 2.

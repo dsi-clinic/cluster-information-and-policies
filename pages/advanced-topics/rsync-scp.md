@@ -33,13 +33,13 @@ The source and destination can be local or remote paths. A remote path is specif
 **1. Transfer a file from your local machine to the cluster's home directory:**
 
 ```bash
-scp /path/to/local/file.txt your_cnetid@fe01.ds.uchicago.edu:~/
+scp /path/to/local/file.txt your_cnetid@login.ds.uchicago.edu:~/
 ```
 
 Transfer a file from the cluster to your local machine:
 
 ```bash
-scp your_cnetid@fe01.ds.uchicago.edu:/path/to/remote/file.txt /path/to/local/directory/
+scp your_cnetid@login.ds.uchicago.edu:/path/to/remote/file.txt /path/to/local/directory/
 ```
 
 #### Using `rsync` (Recommended for large or repeated transfers)
@@ -47,17 +47,17 @@ scp your_cnetid@fe01.ds.uchicago.edu:/path/to/remote/file.txt /path/to/local/dir
 Transfer a directory from your local machine to the cluster:
 
 ```bash
-rsync -avz /path/to/local/directory/ your_cnetid@fe01.ds.uchicago.edu:/path/to/remote/directory/
+rsync -avz /path/to/local/directory/ your_cnetid@login.ds.uchicago.edu:/path/to/remote/directory/
 ```
 
 Transfer a directory from the cluster to your local machine:
 
 ```bash
-rsync -avz your_cnetid@fe01.ds.uchicago.edu:/path/to/remote/directory/ /path/to/local/directory/
+rsync -avz your_cnetid@login.ds.uchicago.edu:/path/to/remote/directory/ /path/to/local/directory/
 ```
 
 You can also use the --progress flag to monitor file transfer status:
 
 ```bash
-rsync -avz --progress /path/to/local/ your_cnetid@fe01.ds.uchicago.edu:/remote/path/
+rsync -avz --progress /path/to/local/ your_cnetid@login.ds.uchicago.edu:/remote/path/
 ```

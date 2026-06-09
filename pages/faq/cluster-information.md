@@ -35,7 +35,7 @@ The cluster is organized into a series of nodes and storage servers. Storage ser
 - The `m` series has 500GB SSD locally
 - The `n` series has a 10TB SSD locally -->
 
-Users connect to the cluster via three login (frontend) nodes: **fe01.ds**, **fe02.ds**, and **fe03.ds**. These provide redundant access — if one is unavailable, users can connect to either of the others.
+Users connect to the cluster through the load balancer at **login.ds.uchicago.edu**, which routes each connection to one of three login (frontend) nodes (`fe01`, `fe02`, `fe03`). This provides redundant, balanced access without users having to pick a node by hand. See [Login Nodes & the Load Balancer]({{ "/using-the-cluster/login-nodes/" | relative_url }}).
 
 Note that not all nodes are available on all SLURM partitions and queues.
 
